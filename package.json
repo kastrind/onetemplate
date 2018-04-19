@@ -1,0 +1,19 @@
+{
+  "name": "onetemplate",
+  "version": "1.0.0",
+  "description": "One multi-purpose, customizable CSS template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kastrind/onetemplate.git"
+  },
+  "author": "Dimitrios Kastrinakis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kastrind/onetemplate/issues"
+  },
+  "homepage": "https://github.com/kastrind/onetemplate#readme"
+}
