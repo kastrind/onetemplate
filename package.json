@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/kastrind/onetemplate/issues"
   },
-  "homepage": "https://github.com/kastrind/onetemplate#readme"
+  "homepage": "https://github.com/kastrind/onetemplate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-less": "^4.0.0"
+  }
 }
