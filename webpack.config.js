@@ -16,7 +16,6 @@ module.exports = {
 							exclude: /node_modules/,
 							include : [
 							'./src/script',
-							path.resolve(__dirname, 'node_modules/jquery')
 							],
 							use: {
 									loader: 'babel-loader',
