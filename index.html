@@ -11,6 +11,16 @@
   <body>
     <h1>Hello!</h1>
   <section>
+    <ul id="lightSliderFull" class="lightSliderFull">
+      <li>
+        <img src="src/assets/img/fullwidth/house.jpeg" />
+      </li>
+      <li>
+        <img src="src/assets/img/fullwidth/bridge.jpeg" />
+      </li>
+    </ul>
+  </section>
+  <section>
     <ul id="lightSlider" class="lightSlider">
       <li>
         <h3>First Slide</h3>
@@ -34,31 +44,51 @@
       </li>
     </ul>
   </section>
-	<section>
-	  <div class="container">
-		<div>
-		  <img src="https://www.w3schools.com/bootstrap4/paris.jpg" />
-		</div>
-		<div>
-		  <img src="https://www.w3schools.com/bootstrap4/newyork.jpg" />
-		</div>
-		<div>
-		  <img src="https://www.w3schools.com/bootstrap4/sanfran.jpg" />
-		</div>
-		<div>
-		  <img src="https://www.w3schools.com/bootstrap4/paris.jpg" />
-		</div>
-		<div>
-		  <img src="https://www.w3schools.com/bootstrap4/newyork.jpg" />
-		</div>
-		<div>
-		  <img src="https://www.w3schools.com/bootstrap4/sanfran.jpg" />
-		</div>
+
+  <section>
+	  <div class="gallery">
+  		<div>
+  		  <img src="src/assets/img/paris.jpg" />
+        <div class="caption">Hello, this is a caption, as you can see.</div>
+  		</div>
+  		<div>
+  		  <img src="src/assets/img/newyork.jpg" />
+        <div class="caption">Hello, this is another caption, as you can see.</div>
+  		</div>
+  		<div>
+  		  <img src="src/assets/img/sanfran.jpg" />
+        <div class="caption">Hello, this is yet another caption, as you can see.</div>
+  		</div>
+  		<div>
+  		  <img src="src/assets/img/paris.jpg" />
+        <div class="caption">This is a caption.</div>
+  		</div>
+  		<div>
+  		  <img src="src/assets/img/newyork.jpg" />
+        <div class="caption">Another caption.</div>
+  		</div>
+  		<div>
+  		  <img src="src/assets/img/sanfran.jpg" />
+        <div class="caption">Guess what, another caption.</div>
+  		</div>
+      <div>
+  		  <img src="src/assets/img/paris.jpg" />
+        <div class="caption">Hello, this is a caption, as you can see.</div>
+  		</div>
 	  </div>
 	</section>
+
+  <section>
+      <div id="map"></div>
+  </section>
+
+  <!-- Google Maps -->
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyCAqcBQqzEPYEPcpd_ekebWi2xweRXw350"></script>
+
   <!-- build:js script/min/scripts.min.js -->
   <script src="dist/script/script.js"></script>
   <script src="dist/addons/lightslider/js/lightslider.js"></script>
+  <script src="dist/addons/gmaps/gmaps.js"></script>
   <!-- endbuild -->
 
   </body>

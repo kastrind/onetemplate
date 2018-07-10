@@ -3,20 +3,34 @@ body {
   padding: 0;
 }
 
-section div.container {
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  grid-gap: 5px;
-  grid-template-rows: repeat(2, 180px);
-
+  grid-gap: 0.5rem;
+  /*grid-template-rows: repeat(2, 180px);*/
 }
 
-section div.container div {
-  border: 1px solid red;
+.gallery > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-section div.container > div > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.gallery .caption {
+  width: 100%;
+  margin-top: -5px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  transform: translateY(-100%);
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: left;
+  color: white;
+  text-shadow: 0 0 0.3rem black;
+  background-color: rgba(0,0,0, 0.6);
+}
+
+#map {
+  width: 100%;
+  height: 33vh;
 }

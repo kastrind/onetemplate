@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var del = require("del");
+var del = require('del');
+var replace = require('gulp-replace');
 var less = require('gulp-less');
 var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
@@ -16,6 +17,9 @@ gulp.task('clean', function () {
 
 /* Task to copy js add-ons like jquery plugins */
 gulp.task('copy-addons', function () {
+  gulp.src('node_modules/gmaps/gmaps.js')
+    .pipe(gulp.dest('dist/addons/gmaps'));
+
   return gulp.src('node_modules/lightslider/dist/**')
     .pipe(gulp.dest('dist/addons/lightslider'));
 });
@@ -51,8 +55,9 @@ gulp.task('minify-bundle-js', ['transpile-bundle-scripts'], function() {
 });
 
 /* Task to replace style and script inclusions in HTML with minified, bundled style and script inclusions */
-gulp.task('useref', function () {
+gulp.task('useref', ['minify-bundle-css', 'minify-bundle-js'], function () {
 return gulp.src('index.html')
+    .pipe(replace('src/assets', 'assets'))
     .pipe(useref({ noAssets: true }))
     .pipe(gulp.dest('dist'));
 });
@@ -68,7 +73,13 @@ gulp.task('transpile-bundle-scripts', function (callback) {
 	});
 });
 
-gulp.task('build-prod', ['compile-less', 'copy-addons', 'minify-bundle-css', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
+/* Task to copy assets to dist */
+gulp.task('copy-assets', function () {
+  return gulp.src('assets/**/*')
+    .pipe(gulp.dest('dist/assets'));
+});
+
+gulp.task('build-prod', ['compile-less', 'copy-assets', 'copy-addons', 'minify-bundle-css', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
 
 gulp.task('build-dev', ['compile-less', 'copy-addons', 'transpile-bundle-scripts']);
 
