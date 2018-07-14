@@ -9,6 +9,7 @@ module.exports = {
 		filename: "script.js"
 	},
 	mode: 'development',
+	devtool: 'source-map',
 	module: {
 			rules: [
 					{

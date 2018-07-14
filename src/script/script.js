@@ -2,6 +2,7 @@
 
 import $ from 'jquery';
 import GMaps from 'gmaps';
+import AppearOnLoad from './AppearOnLoad.js';
 window.jQuery = $;
 //require('../../node_modules/lightslider/dist/js/lightslider.js');
 
@@ -13,6 +14,8 @@ $(document).ready(function() {
   $('#lightSlider').lightSlider();
 
 });
+
+new AppearOnLoad();
 
 var initMap = function() {
   var map = new GMaps({

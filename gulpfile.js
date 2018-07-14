@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 var webpack = require('webpack');
+var webpackConfig = require('./webpack.config.js');
 var browserSync = require('browser-sync').create();
 
 /* Task to clean the project from built files */
@@ -62,15 +63,21 @@ return gulp.src('index.html')
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('webpack-prod', function () {
+  webpackConfig.devtool = false;
+  webpackConfig.mode = 'production';
+});
+
 /* transpile and bundle scripts with webpack */
 gulp.task('transpile-bundle-scripts', function (callback) {
-	webpack(require('./webpack.config.js'), function(err, stats) {
+	webpack(webpackConfig, function(err, stats) {
 		if (err) {
 			console.log(err.toString());
 		}
 		console.log(stats.toString());
 		callback();
 	});
+  console.log(webpackConfig);
 });
 
 /* Task to copy assets to dist */
@@ -79,7 +86,7 @@ gulp.task('copy-assets', function () {
     .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('build-prod', ['compile-less', 'copy-assets', 'copy-addons', 'minify-bundle-css', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
+gulp.task('build-prod', ['compile-less', 'copy-assets', 'copy-addons', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
 
 gulp.task('build-dev', ['compile-less', 'copy-addons', 'transpile-bundle-scripts']);
 
