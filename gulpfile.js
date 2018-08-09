@@ -11,6 +11,19 @@ var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var browserSync = require('browser-sync').create();
 
+var sourceStyles = [
+                    'dist/style/*.css',
+                    'dist/addons/lightslider/css/lightslider.css',
+                    'dist/addons/owl.carousel/assets/owl.carousel.css',
+                    'dist/addons/owl.carousel/assets/owl.theme.default.css'
+                   ];
+
+var sourceScripts = [
+                     'dist/script/*.js',
+                     'dist/addons/lightslider/js/lightslider.js',
+                     'dist/addons/owl.carousel/owl.carousel.js'
+                    ];
+
 /* Task to clean the project from built files */
 gulp.task('clean', function () {
   del('./dist/*');
@@ -21,8 +34,11 @@ gulp.task('copy-addons', function () {
   gulp.src('node_modules/gmaps/gmaps.js')
     .pipe(gulp.dest('dist/addons/gmaps'));
 
-  return gulp.src('node_modules/lightslider/dist/**')
+  gulp.src('node_modules/lightslider/dist/**')
     .pipe(gulp.dest('dist/addons/lightslider'));
+
+  return gulp.src('node_modules/owl.carousel/dist/**')
+      .pipe(gulp.dest('dist/addons/owl.carousel'));
 });
 
 /* Task to compile less */
@@ -40,7 +56,7 @@ gulp.task('compile-less', function () {
 
 /* Task to minify & bundle css */
 gulp.task('minify-bundle-css', ['compile-less', 'copy-addons'], function () {
-  return gulp.src(['dist/style/*.css', 'dist/addons/lightslider/css/lightslider.css'])
+  return gulp.src(sourceStyles)
     .pipe(concat('styles.min.css'))
     .pipe(cleanCSS({rebaseTo : 'dist/style/min'}))
     .pipe(gulp.dest('dist/style/min'))
@@ -49,7 +65,7 @@ gulp.task('minify-bundle-css', ['compile-less', 'copy-addons'], function () {
 
 /* Task to minify and bundle js */
 gulp.task('minify-bundle-js', ['transpile-bundle-scripts'], function() {
-  return gulp.src(['dist/script/*.js', 'dist/addons/lightslider/js/lightslider.js'])
+  return gulp.src(sourceScripts)
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
   .pipe(gulp.dest('dist/script/min'));

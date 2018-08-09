@@ -35,6 +35,7 @@
   "dependencies": {
     "gmaps": "^0.4.24",
     "jquery": "^3.3.1",
-    "lightslider": "^1.1.6"
+    "lightslider": "^1.1.6",
+    "owl.carousel": "^2.3.4"
   }
 }

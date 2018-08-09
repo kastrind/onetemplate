@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <title>title</title>
     <!-- build:css style/min/styles.min.css -->
-    <link rel="stylesheet" href="dist/style/style.css">
-    <link rel="stylesheet" href="dist/addons/lightslider/css/lightslider.css">
+    <link rel="stylesheet" href="dist/style/style.css" />
+    <link rel="stylesheet" href="dist/addons/lightslider/css/lightslider.css" />
+    <link rel="stylesheet" href="dist/addons/owl.carousel/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="dist/addons/owl.carousel/assets/owl.theme.default.css" />
     <!-- endbuild -->
   </head>
   <body>
     <h1>Hello!</h1>
   <section>
+
+    <!--
     <ul id="lightSliderFull" class="lightSliderFull">
       <li>
         <img src="src/assets/img/fullwidth/house.jpeg" />
@@ -19,6 +23,13 @@
         <img src="src/assets/img/fullwidth/bridge.jpeg" />
       </li>
     </ul>
+    -->
+
+    <div id="full-width-slideshow" class="owl-carousel owl-theme">
+      <div><img src="src/assets/img/fullwidth/house.jpeg" /></div>
+      <div><img src="src/assets/img/fullwidth/bridge.jpeg" /></div>
+    </div>
+
   </section>
   <section>
     <ul id="lightSlider" class="lightSlider">
@@ -91,6 +102,7 @@
   <script src="dist/script/script.js"></script>
   <script src="dist/addons/lightslider/js/lightslider.js"></script>
   <script src="dist/addons/gmaps/gmaps.js"></script>
+  <script src="dist/addons/owl.carousel/owl.carousel.js"></script>
   <!-- endbuild -->
 
   </body>

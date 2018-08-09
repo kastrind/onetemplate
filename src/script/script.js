@@ -4,14 +4,29 @@ import $ from 'jquery';
 import GMaps from 'gmaps';
 import AppearOnLoad from './AppearOnLoad.js';
 window.jQuery = $;
-//require('../../node_modules/lightslider/dist/js/lightslider.js');
+import 'owl.carousel';
 
 console.log('Javascript working.');
 
 $(document).ready(function() {
   console.log('jQuery working.');
-  $('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});
+
+  //$('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});
   $('#lightSlider').lightSlider();
+
+  $("#full-width-slideshow").owlCarousel({
+    //navigation : true, // Show next and prev buttons
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    smartSpeed : 1500,
+    paginationSpeed : 400,
+    items : 1,
+    itemsDesktop : false,
+    itemsDesktopSmall : false,
+    itemsTablet: false,
+    itemsMobile : false
+  });
 
 });
 
@@ -30,7 +45,7 @@ var initMap = function() {
     lat: 35.51708,
     lng: 24.017993,
     click: function(e) {
-      alert('You clicked in this marker!');
+      alert('You clicked on this marker!');
     }
   });
 }
