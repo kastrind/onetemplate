@@ -15,13 +15,15 @@ var sourceStyles = [
                     'dist/style/*.css',
                     'dist/addons/lightslider/css/lightslider.css',
                     'dist/addons/owl.carousel/assets/owl.carousel.css',
-                    'dist/addons/owl.carousel/assets/owl.theme.default.css'
+                    'dist/addons/owl.carousel/assets/owl.theme.default.css',
+                    'dist/addons/lightbox2/css/lightbox.css'
                    ];
 
 var sourceScripts = [
                      'dist/script/*.js',
                      'dist/addons/lightslider/js/lightslider.js',
-                     'dist/addons/owl.carousel/owl.carousel.js'
+                     'dist/addons/owl.carousel/owl.carousel.js',
+                     'dist/addons/lightbox2/js/lightbox.js'
                     ];
 
 /* Task to clean the project from built files */
@@ -31,6 +33,9 @@ gulp.task('clean', function () {
 
 /* Task to copy js add-ons like jquery plugins */
 gulp.task('copy-addons', function () {
+  gulp.src('node_modules/lightbox2/dist/**')
+    .pipe(gulp.dest('dist/addons/lightbox2'));
+
   gulp.src('node_modules/gmaps/gmaps.js')
     .pipe(gulp.dest('dist/addons/gmaps'));
 

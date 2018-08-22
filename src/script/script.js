@@ -18,6 +18,7 @@ $(document).ready(function() {
     //navigation : true, // Show next and prev buttons
     dots: false,
     autoplay: true,
+    loop: true,
     autoplayTimeout: 3000,
     smartSpeed : 1500,
     paginationSpeed : 400,
