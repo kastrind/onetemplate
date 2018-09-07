@@ -48,7 +48,7 @@ gulp.task('copy-addons', function () {
 
 /* Task to compile less */
 gulp.task('compile-less', function () {
-  return gulp.src('src/less/**/*.less')
+  return gulp.src('src/less/style.less')
     .pipe(less())
 	  .on('error', function(errorInfo){
 		     console.log(errorInfo.toString());
