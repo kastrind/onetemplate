@@ -3,6 +3,7 @@
 import $ from 'jquery';
 import GMaps from 'gmaps';
 import AppearOnLoad from './AppearOnLoad.js';
+import ParallaxImg from './ParallaxImg.js';
 window.jQuery = $;
 import 'owl.carousel';
 
@@ -32,6 +33,8 @@ $(document).ready(function() {
 });
 
 new AppearOnLoad();
+
+new ParallaxImg();
 
 var initMap = function() {
   var map = new GMaps({

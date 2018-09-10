@@ -1,5 +1,6 @@
 @import "./vars";
 @import "./modules/slideshow";
+@import "./modules/parallax";
 @import "./modules/gallery";
 @import "./modules/map";
 
@@ -14,6 +15,16 @@ body * {
 
 .margin-left-right {
   margin: 0 @page-margin-left-right 0 @page-margin-left-right;
+}
+.margin-top {
+  margin-top: @margin-top;
+}
+.margin-bottom {
+  margin-bottom: @margin-bottom;
+}
+.margin-top-bottom {
+  .margin-top();
+  .margin-bottom();
 }
 
 .disappear-on-load {
