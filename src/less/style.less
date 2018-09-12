@@ -28,12 +28,24 @@ body * {
 }
 
 .btn {
-  border: none;
   background-color: @btn-background-color;
-  color: if((@btn-bg-light), @font-color-dark, @font-color-light);
-  font-size: 2rem;
-  padding: 1rem;
+  color: if((@btn-bg-light), @btn-font-color-dark, @btn-font-color-light);
+  border: @btn-border if((@btn-bg-light), darken(@btn-background-color, 20%), lighten(@btn-background-color, 20%));
+  font-size: @btn-font-size;
+  padding: @btn-padding;
   cursor: pointer;
+  transition: all 0.1s;
+  border-radius: @btn-radius;
+}
+
+.btn:hover {
+  background-color: lighten(@btn-background-color, 5%);
+}
+
+.btn:active {
+  padding: @btn-padding - @btn-padding*0.1;
+  font-size: @btn-font-size - @btn-font-size*0.1;
+  background-color: darken(@btn-background-color, 5%);
 }
 
 .disappear-on-load {

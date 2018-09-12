@@ -3,17 +3,20 @@
   position: relative;
   height: @parallax-container-height;
   overflow: hidden;
-}
+  background-color: if((@parallax-overlay), black, none);
 
-.parallax-container img {
-  position: absolute;
-  width: 100%;
-}
+  img {
+    position: absolute;
+    width: 100%;
+    opacity: if((@parallax-overlay), 0.8, 1);;
+  }
 
-.parallax-btn {
-  position: relative;
-  z-index: @z-index-1;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%);
+  .parallax-btn {
+    position: relative;
+    z-index: @z-index-1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 }

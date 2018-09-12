@@ -1,11 +1,10 @@
-@font-color-dark: #333333;
-@font-color-light: #dddddd;
+
+/* General */
 
 @background-color: #dddddd;
-//@bg-light: boolean(luma(@background-color) > 50%);
-
-@btn-background-color: #333333;
-@btn-bg-light: boolean(luma(@btn-background-color) > 50%);
+@bg-light: boolean(luma(@background-color) > 40%);
+@font-color-dark: #333333;
+@font-color-light: #dddddd;
 
 @page-margin-left-right: 5%;
 @margin-top: 1%;
@@ -13,7 +12,26 @@
 
 @z-index-1: 100;
 
+
+/* Buttons */
+
+@btn-background-color: #eeeeee;
+@btn-bg-light: boolean(luma(@btn-background-color) > 40%);
+@btn-font-color-dark: #333333;
+@btn-font-color-light: #dddddd;
+@btn-border: 2px solid;
+@btn-font-size: 2rem;
+@btn-padding: 1rem;
+@btn-radius: 0.3rem;
+
+
+/* Parallax */
+
 @parallax-container-height: 300px;
+@parallax-overlay: true;
+
+
+/* Map */
 
 @map-height: 33vh;
 @map-width: 100%;
