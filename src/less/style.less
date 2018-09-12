@@ -27,6 +27,15 @@ body * {
   .margin-bottom();
 }
 
+.btn {
+  border: none;
+  background-color: @btn-background-color;
+  color: if((@btn-bg-light), @font-color-dark, @font-color-light);
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
 .disappear-on-load {
   position: fixed;
   width: 100vw;
