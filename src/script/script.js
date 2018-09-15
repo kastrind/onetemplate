@@ -7,6 +7,21 @@ import ParallaxImg from './ParallaxImg.js';
 window.jQuery = $;
 import 'owl.carousel';
 
+import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
+
+new Waypoint({
+      element: $('.parallax-container')[0],
+      handler: function(direction) {
+        if (direction == "down") {
+          console.log('TEST-DOWN!!!!');
+          $('.parallax-btn').css({"border" : "10px solid red"});
+        }else {
+          console.log('TEST-UP!!!!!');
+          $('.parallax-btn').css({"border" : "10px solid green"});
+        }
+      }
+});
+
 console.log('Javascript working.');
 
 $(document).ready(function() {

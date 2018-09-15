@@ -29,7 +29,7 @@ class ParallaxImg {
     let inViewAmount = $(document).scrollTop() - this.container.offset().top + $(window).height() - this.correction;
     let factor = this.img.height() / $(window).height();
     let scrollAmount = inViewAmount * factor;
-    console.log(inViewAmount+" "+scrollAmount);
+    //console.log(inViewAmount+" "+scrollAmount);
     if (inViewAmount > 0 && scrollAmount <= this.img.height() - this.container.height()) {
       this.container.find("img").css({"top": -scrollAmount});
     }

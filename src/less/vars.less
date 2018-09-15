@@ -1,6 +1,10 @@
 
 /* General */
 
+@widthSmall: 460px;
+@widthMedium: 768px;
+@widthLarge: 1100px;
+
 @background-color: #dddddd;
 @bg-light: boolean(luma(@background-color) > 40%);
 @font-color-dark: #333333;
@@ -35,3 +39,10 @@
 
 @map-height: 33vh;
 @map-width: 100%;
+
+/* Footer */
+@footer-background-color: #062456;
+@footer-bg-light: boolean(luma(@footer-background-color) > 40%);
+@footer-font-color-dark: #02173a;
+@footer-font-color-light: #dae2ef;
+@footer-border: 1px solid darken(@footer-background-color, 5%);
