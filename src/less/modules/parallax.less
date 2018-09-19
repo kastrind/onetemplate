@@ -5,10 +5,27 @@
   overflow: hidden;
   background-color: if((@parallax-overlay), black, none);
 
-  img {
+  .parallax-img {
     position: absolute;
     width: 100%;
-    opacity: if((@parallax-overlay), 0.8, 1);;
+    opacity: if((@parallax-overlay), 1 - @parallax-overlay-opacity, 1);
+  }
+
+  .parallax-heading {
+    position: relative;
+    top: 30%;
+    margin: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: @parallax-font-size;
+    color: white;
+    font-weight: @parallax-font-weight;
+    text-shadow: @parallax-text-shadow;
+
+    .atSmall({
+      font-size: @parallax-font-size + 1;
+    });
+
   }
 
   .parallax-btn {
