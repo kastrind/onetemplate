@@ -34,31 +34,53 @@
     <link rel="stylesheet" href="dist/addons/lightbox2/css/lightbox.css" />
     <!-- endbuild -->
   </head>
-  <body>
+  <body> <!-- or <body class="margin-left-right"> -->
 
-    <header>
-      <div class="header-wrapper">
+      <header class="site-header">
+        <div class="header-wrapper">
 
-        <div class="header-nav-btn">
-          <div class="header-nav-btn-bar-middle"></div>
+          <div class="header-wrapper-row">
+            <div class="header-wrapper-col">
+              1
+            </div>
+            <div class="header-wrapper-col">
+              2
+            </div>
+            <div class="header-wrapper-col">
+              3
+            </div>
+          </div>
+
+          <div class="header-wrapper-row">
+
+            <div class="header-wrapper-col">
+              <div class="logo"><a href="#" title=""><img src="" alt="logo_here" title="logo_here" /></a></div>
+            </div>
+
+            <div class="header-wrapper-col">
+              <div class="header-nav-btn header-nav-btn-hidden">
+                <div class="header-nav-btn-bar-middle"></div>
+              </div>
+              <nav>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="header-wrapper-col">
+              search
+            </div>
+
+          </div>
+
         </div>
+      </header>
 
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <h1>Hello!</h1>
-
-    <div>
-
-      <section class="margin-top">
+      <section>
 
         <!--
         <ul id="lightSliderFull" class="lightSliderFull">
@@ -169,7 +191,7 @@
         <div id="map"></div>
       </section>
 
-      <footer>
+      <footer class="site-footer">
         <div class="footer-row">
           <div class="footer-col">
             <a href="#">Links</a>
