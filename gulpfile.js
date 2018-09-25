@@ -5,7 +5,8 @@ var less = require('gulp-less');
 var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+//var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 var useref = require('gulp-useref');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
@@ -103,7 +104,7 @@ gulp.task('transpile-bundle-scripts', function (callback) {
 
 /* Task to copy assets to dist */
 gulp.task('copy-assets', function () {
-  return gulp.src('assets/**/*')
+  return gulp.src('src/assets/**/*')
     .pipe(gulp.dest('dist/assets'));
 });
 
@@ -123,11 +124,7 @@ gulp.task('watch-prod', ['build-prod'], function() {
 
   browserSync.init( { server: { baseDir: "./dist" } } );
 
-  gulp.watch('index.html', function() {
-    browserSync.reload();
-  });
-
-  gulp.watch('src/script/**/*.js', function() {
+  gulp.watch(['index.html', 'src/script/**/*.js'], function() {
     gulp.start('refresh-prod');
   });
 
