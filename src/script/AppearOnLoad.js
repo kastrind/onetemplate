@@ -14,8 +14,7 @@ class AppearOnLoad {
   }
 
   events() {
-    var self = this;
-    $(window).on("load", self.hideOnLoad.bind(this));
+    $(window).on("load", this.hideOnLoad.bind(this));
   }
 
 }
