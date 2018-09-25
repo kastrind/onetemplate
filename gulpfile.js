@@ -6,7 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 //var uglify = require('gulp-uglify');
-//to support ES6
+//to support ES6.
 var uglify = require('gulp-uglify-es').default;
 var useref = require('gulp-useref');
 var webpack = require('webpack');
