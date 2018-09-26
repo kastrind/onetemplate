@@ -55,7 +55,7 @@ body * {
   padding: @btn-padding;
   cursor: pointer;
   transition: all 0.1s;
-  border-radius: @btn-radius;
+  border-radius: @btn-border-radius;
 
   .atSmall({
     font-size: @btn-font-size + 0.5;
@@ -93,7 +93,7 @@ body * {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: @loading-overlay-color;
   top: 0;
   z-index: 1000;
   transition: opacity 1s;

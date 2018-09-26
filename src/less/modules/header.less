@@ -1,15 +1,38 @@
-.site-header {
+.header-fixed-mixin() when (@header-is-fixed=true) {
+  position: fixed;
+  z-index: @z-index-1;
+  left: 0;right: 0;
+}
 
-  &-fixed {
-    position: @header-position;
-    z-index: @z-index-1;
-    left: 0;right: 0;
+.header-gradient-mixin() when (@header-has-gradient=true) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.75+0,0+100 */
+  background: -moz-linear-gradient(top, @header-gradient-color 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, @header-gradient-color 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, @header-gradient-color 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.header-row-mixin() {
+  &:nth-of-type(1) {
+    background-color: @header-background-color-1;
+  }
+  &:nth-of-type(2) {
+    background-color: @header-background-color-2;
+  }
+}
+
+.site-header {
+  .header-fixed-mixin();
+  .header-gradient-mixin();
+
+  * {
+    font-family: @header-font-family;
   }
 
   .header-wrapper {
-    border: 1px solid red;
 
     &-row {
+      .header-row-mixin();
+      .header-gradient-mixin();
 
       .atMedium({
         display: grid;
@@ -35,14 +58,16 @@
 
       });
 
-
-
       .atMedium({
         text-align: initial;
       });
 
       .logo {
         text-align: center;
+        img {
+          max-height: 15vh;
+          min-height: 200px;
+        }
       }
     }
 
@@ -102,7 +127,7 @@
 
     }
 
-    nav {
+    nav.menu {
       text-align: center;
 
       ul {
@@ -112,6 +137,9 @@
 
           a {
             text-decoration: none;
+            font-size: @menu-font-size;
+            color: if((@header-bg-2-light), @menu-font-color-dark, @menu-font-color-light);
+            font-weight: @menu-font-weight;
           }
 
         }
