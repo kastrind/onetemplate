@@ -4,27 +4,29 @@ import $ from 'jquery';
 import GMaps from 'gmaps';
 import AppearOnLoad from './AppearOnLoad.js';
 import ParallaxImg from './ParallaxImg.js';
+import BackToTop from './BackToTop.js';
 window.jQuery = $;
 import 'owl.carousel';
 
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 
-new Waypoint({
-      element: $('.parallax-container')[0],
-      handler: function(direction) {
-        if (direction == "down") {
-          console.log('TEST-DOWN!!!!');
-          $('.parallax-btn').css({"border" : "10px solid red"});
-        }else {
-          console.log('TEST-UP!!!!!');
-          $('.parallax-btn').css({"border" : "10px solid green"});
-        }
-      }
-});
+new BackToTop("75%");
 
 console.log('Javascript working.');
 
 $(document).ready(function() {
+
+  $(window).on("load resize", function() {
+    var videoContainer = $(".video-container");
+    var video = videoContainer.find("video");
+    console.log(video.height()+ " "+videoContainer.height());
+    if (video.height() <= videoContainer.height()) {
+      video.css({"top": "50%", "transform": "translateY(-50%)"});
+    }else {
+      video.css({"top": '', "transform": ''});
+    }
+  });
+
   console.log('jQuery working.');
 
   //$('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});

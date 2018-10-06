@@ -36,175 +36,185 @@
   </head>
   <body> <!-- or <body class="margin-left-right"> -->
 
-      <header class="site-header">
-        <div class="header-wrapper">
+    <header class="site-header" id="back-to-top-target">
+      <div class="header-wrapper">
 
-          <div class="header-wrapper-row">
-            <div class="header-wrapper-col">
-              1
-            </div>
-            <div class="header-wrapper-col">
-              2
-            </div>
-            <div class="header-wrapper-col">
-              3
-            </div>
+        <div class="header-wrapper-row">
+          <div class="header-wrapper-col">
+            1
+          </div>
+          <div class="header-wrapper-col">
+            2
+          </div>
+          <div class="header-wrapper-col">
+            3
+          </div>
+        </div>
+
+        <div class="header-wrapper-row">
+
+          <div class="header-wrapper-col">
+            <div class="logo"><a href="#"><img src="/src/assets/img/logo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
           </div>
 
-          <div class="header-wrapper-row">
-
-            <div class="header-wrapper-col">
-              <div class="logo"><a href="#"><img src="/src/assets/img/logo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
+          <div class="header-wrapper-col">
+            <div class="header-nav-btn header-nav-btn-hidden">
+              <div class="header-nav-btn-bar-middle"></div>
             </div>
+            <nav class="menu">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
 
-            <div class="header-wrapper-col">
-              <div class="header-nav-btn header-nav-btn-hidden">
-                <div class="header-nav-btn-bar-middle"></div>
-              </div>
-              <nav class="menu">
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-
-            <div class="header-wrapper-col">
-              search
-            </div>
-
+          <div class="header-wrapper-col">
+            search
           </div>
 
         </div>
-      </header>
 
-      <section>
+      </div>
+    </header>
 
-        <!--
-        <ul id="lightSliderFull" class="lightSliderFull">
-          <li>
-            <img src="src/assets/img/fullwidth/house.jpeg" />
-          </li>
-          <li>
-            <img src="src/assets/img/fullwidth/bridge.jpeg" />
-          </li>
-        </ul>
-        -->
+    <section>
 
-        <div id="full-width-slideshow" class="owl-carousel owl-theme">
-          <div style="position: relative;"><h2 style="position:absolute;left:30%;top:30%;">Amazing Experience</h2><img src="src/assets/img/fullwidth/house.jpeg" /></div>
-          <div><img src="src/assets/img/fullwidth/bridge.jpeg" /></div>
+      <!--
+      <ul id="lightSliderFull" class="lightSliderFull">
+        <li>
+          <img src="src/assets/img/fullwidth/house.jpeg" />
+        </li>
+        <li>
+          <img src="src/assets/img/fullwidth/bridge.jpeg" />
+        </li>
+      </ul>
+      -->
+
+      <div id="full-width-slideshow" class="owl-carousel owl-theme">
+        <div style="position: relative;"><h2 style="position:absolute;left:30%;top:30%;">Amazing Experience</h2><img src="src/assets/img/fullwidth/house.jpeg" /></div>
+        <div><img src="src/assets/img/fullwidth/bridge.jpeg" /></div>
+      </div>
+
+    </section>
+    <section class="margin-top" data-back-to-top="true">
+      <ul id="lightSlider" class="lightSlider">
+        <li>
+          <h3>First Slide</h3>
+          <p>Lorem ipsum Cupidatat quis pariatur anim.</p>
+        </li>
+        <li>
+          <h3>Second Slide</h3>
+          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+        </li>
+        <li>
+          <h3>Third Slide</h3>
+          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+        </li>
+        <li>
+          <h3>Fourth Slide</h3>
+          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+        </li>
+        <li>
+          <h3>Fifth Slide</h3>
+          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="margin-top video-container">
+      <video class="full-width-video" muted autoplay loop>
+        <source src="src/assets/videos/coffee.mp4" type="video/mp4">
+        <!--<source src="assets/videos/coffee.ogg" type="video/ogg">-->
+        Your browser does not support HTML5 video.
+      </video>
+    </section>
+
+    <section class="margin-top">
+      <div class="parallax-container">
+        <img class="parallax-img" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
+        <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
+        <button class="btn parallax-btn">More</button>
+      </div>
+    </section>
+
+    <section class="margin-top">
+  	  <div class="gallery">
+
+    		<div class="gallery-item">
+          <a href="src/assets/img/paris.jpg" data-lightbox="gallery-name" data-title="Example of a title.">
+    		      <img src="src/assets/img/paris.jpg" />
+          </a>
+          <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
+    		</div>
+
+    		<div class="gallery-item">
+          <a href="src/assets/img/newyork.jpg" data-lightbox="gallery-name">
+            <img src="src/assets/img/newyork.jpg" />
+          </a>
+          <div class="gallery-caption">Hello, this is another caption, as you can see.</div>
+    		</div>
+
+    		<div class="gallery-item">
+          <a href="src/assets/img/sanfran.jpg" data-lightbox="gallery-name">
+            <img src="src/assets/img/sanfran.jpg" />
+          </a>
+          <div class="gallery-caption">Hello, this is yet another caption, as you can see.</div>
+    		</div>
+
+    		<div class="gallery-item">
+          <a href="src/assets/img/paris.jpg" data-lightbox="gallery-name">
+            <img src="src/assets/img/paris.jpg" />
+          </a>
+          <div class="gallery-caption">This is a caption.</div>
+    		</div>
+
+    		<div class="gallery-item">
+          <a href="src/assets/img/newyork.jpg" data-lightbox="gallery-name">
+            <img src="src/assets/img/newyork.jpg" />
+          </a>
+          <div class="gallery-caption">Another caption.</div>
+    		</div>
+
+    		<div class="gallery-item">
+          <a href="src/assets/img/sanfran.jpg" data-lightbox="gallery-name">
+            <img src="src/assets/img/sanfran.jpg" />
+          </a>
+          <div class="gallery-caption">Guess what, another caption.</div>
+    		</div>
+
+        <div class="gallery-item">
+          <a href="src/assets/img/paris.jpg" data-lightbox="gallery-name">
+            <img src="src/assets/img/paris.jpg" />
+          </a>
+          <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
+    		</div>
+
+  	  </div>
+  	</section>
+
+    <section class="margin-top">
+      <div id="map"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <div class="footer-col">
+          <a href="#">Links</a>
         </div>
-
-      </section>
-      <section class="margin-top">
-        <ul id="lightSlider" class="lightSlider">
-          <li>
-            <h3>First Slide</h3>
-            <p>Lorem ipsum Cupidatat quis pariatur anim.</p>
-          </li>
-          <li>
-            <h3>Second Slide</h3>
-            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-          </li>
-          <li>
-            <h3>Third Slide</h3>
-            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-          </li>
-          <li>
-            <h3>Fourth Slide</h3>
-            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-          </li>
-          <li>
-            <h3>Fifth Slide</h3>
-            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-          </li>
-        </ul>
-      </section>
-
-      <section class="margin-top">
-        <div class="parallax-container">
-          <img class="parallax-img" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
-          <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
-          <button class="btn parallax-btn">More</button>
+        <div class="footer-col">
+          <a href="#">Privacy Policy</a>
         </div>
-      </section>
-
-      <section class="margin-top">
-    	  <div class="gallery">
-
-      		<div class="gallery-item">
-            <a href="src/assets/img/paris.jpg" data-lightbox="gallery-name" data-title="Example of a title.">
-      		      <img src="src/assets/img/paris.jpg" />
-            </a>
-            <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
-      		</div>
-
-      		<div class="gallery-item">
-            <a href="src/assets/img/newyork.jpg" data-lightbox="gallery-name">
-              <img src="src/assets/img/newyork.jpg" />
-            </a>
-            <div class="gallery-caption">Hello, this is another caption, as you can see.</div>
-      		</div>
-
-      		<div class="gallery-item">
-            <a href="src/assets/img/sanfran.jpg" data-lightbox="gallery-name">
-              <img src="src/assets/img/sanfran.jpg" />
-            </a>
-            <div class="gallery-caption">Hello, this is yet another caption, as you can see.</div>
-      		</div>
-
-      		<div class="gallery-item">
-            <a href="src/assets/img/paris.jpg" data-lightbox="gallery-name">
-              <img src="src/assets/img/paris.jpg" />
-            </a>
-            <div class="gallery-caption">This is a caption.</div>
-      		</div>
-
-      		<div class="gallery-item">
-            <a href="src/assets/img/newyork.jpg" data-lightbox="gallery-name">
-              <img src="src/assets/img/newyork.jpg" />
-            </a>
-            <div class="gallery-caption">Another caption.</div>
-      		</div>
-
-      		<div class="gallery-item">
-            <a href="src/assets/img/sanfran.jpg" data-lightbox="gallery-name">
-              <img src="src/assets/img/sanfran.jpg" />
-            </a>
-            <div class="gallery-caption">Guess what, another caption.</div>
-      		</div>
-
-          <div class="gallery-item">
-            <a href="src/assets/img/paris.jpg" data-lightbox="gallery-name">
-              <img src="src/assets/img/paris.jpg" />
-            </a>
-            <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
-      		</div>
-
-    	  </div>
-    	</section>
-
-      <section class="margin-top">
-        <div id="map"></div>
-      </section>
-
-      <footer class="site-footer">
-        <div class="footer-row">
-          <div class="footer-col">
-            <a href="#">Links</a>
-          </div>
-          <div class="footer-col">
-            <a href="#">Privacy Policy</a>
-          </div>
-          <div class="footer-col">
-            <a href="#">Contact Us</a>
-          </div>
+        <div class="footer-col">
+          <a href="#">Contact Us</a>
         </div>
-        <div class="footer-full">All Rights Reserved.</div>
-      </footer>
+      </div>
+      <div class="footer-full">All Rights Reserved.</div>
+    </footer>
+
+    <a href="#back-to-top-target"><div class="back-to-top">BACK TO TOP</div></a>
 
     <div class="disappear-on-load"></div>
 

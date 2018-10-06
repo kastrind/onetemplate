@@ -3,6 +3,7 @@
 @import "./modules/parallax";
 @import "./modules/gallery";
 @import "./modules/map";
+@import "./modules/video";
 @import "./modules/header";
 @import "./modules/footer";
 
@@ -87,6 +88,24 @@ body * {
     font-size: (@btn-font-size + 1) - (@btn-font-size + 1)*0.1;
     padding: (@btn-padding + 0.5) - (@btn-padding + 0.5)*0.1;
   });
+}
+
+.back-to-top {
+  position: fixed;
+  max-width: 5vw;
+  min-width: 100px;
+  z-index: 100;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border: 1px solid red;
+  cursor: pointer;
+  transition: opacity 1s;
+
+  &-hidden {
+    opacity: 0;
+  }
+
 }
 
 .disappear-on-load {
