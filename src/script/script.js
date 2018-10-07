@@ -16,17 +16,6 @@ console.log('Javascript working.');
 
 $(document).ready(function() {
 
-  $(window).on("load resize", function() {
-    var videoContainer = $(".video-container");
-    var video = videoContainer.find("video");
-    console.log(video.height()+ " "+videoContainer.height());
-    if (video.height() <= videoContainer.height()) {
-      video.css({"top": "50%", "transform": "translateY(-50%)"});
-    }else {
-      video.css({"top": '', "transform": ''});
-    }
-  });
-
   console.log('jQuery working.');
 
   //$('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});
@@ -38,6 +27,7 @@ $(document).ready(function() {
     autoplay: true,
     loop: true,
     autoplayTimeout: 3000,
+    autoHeight: false,
     smartSpeed : 1500,
     paginationSpeed : 400,
     items : 1,
