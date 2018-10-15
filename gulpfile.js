@@ -44,8 +44,8 @@ gulp.task('copy-addons', function () {
   gulp.src('node_modules/lightslider/dist/**')
     .pipe(gulp.dest('dist/addons/lightslider'));
 
-  return gulp.src('node_modules/owl.carousel/dist/**')
-      .pipe(gulp.dest('dist/addons/owl.carousel'));
+  gulp.src('node_modules/owl.carousel/dist/**')
+    .pipe(gulp.dest('dist/addons/owl.carousel'));
 });
 
 /* Task to compile less */
@@ -111,7 +111,7 @@ gulp.task('copy-assets', function () {
 
 gulp.task('build-prod', ['compile-less', 'copy-assets', 'copy-addons', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
 
-gulp.task('build-dev', ['compile-less', 'copy-addons', 'transpile-bundle-scripts']);
+gulp.task('build-dev', ['compile-less', 'copy-assets', 'copy-addons', 'transpile-bundle-scripts']);
 
 gulp.task('refresh-prod', ['build-prod'], function() {
 	browserSync.reload();
