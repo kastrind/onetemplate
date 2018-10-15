@@ -1,3 +1,4 @@
+@import "./paths";
 
 /* General */
 
@@ -5,7 +6,7 @@
 @widthMedium: 768px;
 @widthLarge: 1100px;
 
-@body-background: black url('../assets/img/abstract.jpeg') no-repeat fixed center;
+@body-background: black url(@body-background-path) no-repeat fixed center;
 
 @background-color: #dddddd;
 @bg-light: boolean(luma(@background-color) > 40%);

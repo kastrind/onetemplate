@@ -152,6 +152,11 @@ gulp.task('watch-dev', function() {
     gulp.start('compile-less');
   });
 
+  gulp.start('copy-assets');
+  gulp.watch('src/less/paths.less', function() {
+    gulp.start('copy-assets');
+  });
+
 });
 
 /* Define the default task and add the watch task to it */
