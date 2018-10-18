@@ -1,14 +1,18 @@
 /* Scripts here */
 
 import $ from 'jquery';
-import GMaps from 'gmaps';
+window.jQuery = $;
+
+import Header from './Header.js';
+import BackToTop from './BackToTop.js';
 import AppearOnLoad from './AppearOnLoad.js';
 import ParallaxImg from './ParallaxImg.js';
-import BackToTop from './BackToTop.js';
-window.jQuery = $;
-import 'owl.carousel';
+import GMaps from 'gmaps';
 
+import 'owl.carousel';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
+
+new Header();
 
 new BackToTop("75%");
 

@@ -34,12 +34,12 @@
     <link rel="stylesheet" href="dist/addons/lightbox2/css/lightbox.css" />
     <!-- endbuild -->
   </head>
-  <body> <!-- or <body class="margin-left-right"> -->
+  <body id="back-to-top-target"> <!-- or <body class="margin-left-right"> -->
 
-    <header class="site-header" id="back-to-top-target">
+    <header class="site-header">
       <div class="header-wrapper">
 
-        <div class="header-wrapper-row">
+        <div class="header-wrapper-row" data-hide-when-header-pulled-down="true">
           <div class="header-wrapper-col">
             1
           </div>
@@ -80,7 +80,7 @@
       </div>
     </header>
 
-    <section>
+    <section data-trigger-hide-header="true">
 
       <!--
       <ul id="lightSliderFull" class="lightSliderFull">
@@ -99,7 +99,7 @@
       </div>
 
     </section>
-    <section class="margin-top" data-back-to-top="true">
+    <section class="margin-top" data-trigger-pullDown-header="true" data-trigger-back-to-top="true">
       <ul id="lightSlider" class="lightSlider">
         <li>
           <h3>First Slide</h3>

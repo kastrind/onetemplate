@@ -5,7 +5,7 @@ class BackToTop {
 
 	constructor(offset) {
 		this.backToTopElem = $(".back-to-top");
-		this.triggerElem = $("[data-back-to-top=true]");
+		this.triggerElem = $("[data-trigger-back-to-top=true]");
 		this.offsetPercentage = offset;
 		this.hideInitially();
 		this.createWaypoints();
