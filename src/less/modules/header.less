@@ -96,15 +96,23 @@
     }
 
     .header-nav-btn {
-      width: 25px;
+      min-width: 25px;
+      max-width: 5vw;
+      margin: 1vh auto;
+      cursor: pointer;
+      transition: all 0.1s;
 
-      &-hidden {
-        display: none;
+      &:hover {
+        background-color: lighten(@header-background-color-2, 7%);
       }
+
+      .atMedium({
+        display: none;
+      });
 
       .header-nav-btn-bar-mixin {
         width: 100%;
-        height: 3px;
+        height: 5px;
         background-color: black;
         border-radius: 3px;
       }
@@ -113,7 +121,7 @@
         content: "";
         display: block;
         .header-nav-btn-bar-mixin();
-        margin-bottom: 3px;
+        margin-bottom: 5px;
         transition: transform .3s ease-out;
       }
 
@@ -126,25 +134,24 @@
         content: "";
         display: block;
         .header-nav-btn-bar-mixin();
-        margin-top: 3px;
+        margin-top: 5px;
         transition: transform .3s ease-out;
       }
 
       &-close {
 
         &::before {
-          transform: rotate(45deg) scaleX(1.25);
+          transform:  translateY(200%) rotate(45deg);
+          transform-origin: 50% 50%;
         }
 
         .header-nav-btn-bar-middle {
-          opacity: 0;
-          transform: scaleX(0);
+          transform: rotate(-45deg);
+          transform-origin: 50% 50%;
         }
 
         &::after {
-          transform: rotate(-45deg) scaleX(1.25);
-          position: relative;
-          top: -12px;
+          transform: scaleX(0);
         }
 
       }
@@ -153,18 +160,38 @@
 
     nav.menu {
       text-align: center;
+      transition: all linear 1s;
+      display: none;
+
+      &-visible {
+        display: block;
+      }
 
       ul {
         margin: 0;
 
         li {
-          display: inline-block;
+          display: block;
+          text-align: left;
+
+          .atMedium({
+            display: inline-block;
+          });
 
           a {
             text-decoration: none;
             font-size: @menu-font-size;
             color: if((@header-bg-2-light), @menu-font-color-dark, @menu-font-color-light);
             font-weight: @menu-font-weight;
+
+            .atMedium({
+              font-size: (@menu-font-size + 0.5) - (@menu-font-size + 0.5)*0.1;
+            });
+
+            .atLarge({
+              font-size: (@menu-font-size + 0.75) - (@menu-font-size + 0.75)*0.1;
+            });
+
           }
 
         }
@@ -172,11 +199,10 @@
       }
 
       .atMedium({
-
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-
+        display: block;
       });
 
     }

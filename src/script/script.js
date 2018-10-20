@@ -3,16 +3,19 @@
 import $ from 'jquery';
 window.jQuery = $;
 
-import Header from './Header.js';
-import BackToTop from './BackToTop.js';
-import AppearOnLoad from './AppearOnLoad.js';
-import ParallaxImg from './ParallaxImg.js';
+import Header from './Header';
+import NavMenu from './NavMenu';
+import BackToTop from './BackToTop';
+import AppearOnLoad from './AppearOnLoad';
+import ParallaxImg from './ParallaxImg';
 import GMaps from 'gmaps';
 
 import 'owl.carousel';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 
 new Header();
+
+new NavMenu();
 
 new BackToTop("75%");
 
