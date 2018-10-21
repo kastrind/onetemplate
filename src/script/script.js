@@ -8,7 +8,7 @@ import NavMenu from './NavMenu';
 import BackToTop from './BackToTop';
 import AppearOnLoad from './AppearOnLoad';
 import ParallaxImg from './ParallaxImg';
-//import GMaps from 'gmaps';
+import GMaps from 'gmaps';
 
 import 'owl.carousel';
 import lightSlider from '../../node_modules/lightslider/dist/js/lightslider';;
