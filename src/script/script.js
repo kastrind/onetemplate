@@ -50,7 +50,7 @@ $(document).ready(function() {
 new AppearOnLoad();
 
 new ParallaxImg();
-/*
+
 var initMap = function() {
   var map = new GMaps({
     el: '#map',
@@ -70,4 +70,3 @@ var initMap = function() {
 }
 
 initMap();
-*/
