@@ -8,7 +8,7 @@ import NavMenu from './NavMenu';
 import BackToTop from './BackToTop';
 import AppearOnLoad from './AppearOnLoad';
 import ParallaxImg from './ParallaxImg';
-import GMaps from 'gmaps';
+//import GMaps from 'gmaps';
 
 import 'owl.carousel';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
@@ -49,7 +49,7 @@ $(document).ready(function() {
 new AppearOnLoad();
 
 new ParallaxImg();
-
+/*
 var initMap = function() {
   var map = new GMaps({
     el: '#map',
@@ -69,3 +69,4 @@ var initMap = function() {
 }
 
 initMap();
+*/
