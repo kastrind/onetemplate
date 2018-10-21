@@ -1,0 +1,1 @@
+Place images, documents, audio, or any other file considered an asset here.

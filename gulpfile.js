@@ -31,6 +31,7 @@ var sourceScripts = [
 /* Task to clean the project from built files */
 gulp.task('clean', function () {
   del('./dist/*');
+  del('./docs/*');
 });
 
 /* Task to copy js add-ons like jquery plugins */
@@ -157,6 +158,12 @@ gulp.task('watch-dev', function() {
     gulp.start('copy-assets');
   });
 
+});
+
+/* Task to create folder to be published on github */
+gulp.task('create-github-page', ['build-prod'], function () {
+  return gulp.src('dist/**/*')
+    .pipe(gulp.dest('docs'));
 });
 
 /* Define the default task and add the watch task to it */
