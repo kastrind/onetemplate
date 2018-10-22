@@ -23,12 +23,14 @@ class NavMenu {
 
 		//on click of the menu item, show or hide its submenu
 		this.menuItem.on("click", function (event) {
-			let adj_ul = $(event.target).next("ul:first");
-			if (adj_ul.is(":not(:visible)")) {
-				adj_ul.slideDown();
-			}else if (adj_ul.is(":visible")) {
-				adj_ul.slideUp();
-			}
+				setTimeout(function(event) {
+					let adj_ul = $(event.target).next("ul:first");
+					if (adj_ul.is(":not(:visible)")) {
+						adj_ul.slideDown();
+					}else if (adj_ul.is(":visible")) {
+						adj_ul.slideUp();
+					}
+				}.bind(this, event), 300);
 		}.bind(this));
 
 		//on click of something outside the menu, hide all submenus
