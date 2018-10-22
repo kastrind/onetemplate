@@ -18,7 +18,12 @@ class NavMenu {
 		//on hovering over a menu item, show its submenu, if not already visible
 		this.menuItem.on("mouseenter", function (event) {
 			if ($(event.target).next("ul:first").is(":not(:visible)"))
-			this.toggleSubMenu(event, 'show');
+			this.setSubMenu(event, 'show');
+		}.bind(this));
+
+		//on hovering away from a menu item, hide its submenu
+		this.subMenu.on("mouseleave", function (event) {
+			this.setSubMenu(event, 'hide');
 		}.bind(this));
 
 		//on click of the menu item, show or hide its submenu
@@ -40,10 +45,6 @@ class NavMenu {
 			}
 		}.bind(this));
 
-		//on hovering away from a menu item, hide its submenu
-		this.subMenu.on("mouseleave", function (event) {
-			this.toggleSubMenu(event, 'hide');
-		}.bind(this));
 	}
 
 	toggleTheMenu() {
@@ -54,9 +55,13 @@ class NavMenu {
 			this.menuContent.slideDown();
 			this.menuIcon.addClass("header-nav-btn-close");
 		}
+		//on resizing the window, make sure menu is not hidden
+		$(window).on("resize", function() {
+			this.menuContent.css({display: ""});
+		}.bind(this));
 	}
 
-	toggleSubMenu(event, status) {
+	setSubMenu(event, status) {
 		if (status=='show') {
 			$(event.target).next("ul:first").slideDown();
 		}else if (status=='hide') {
