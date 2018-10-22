@@ -243,6 +243,7 @@
 }
 .site-header .header-wrapper nav.menu ul {
   margin: 0;
+  list-style: none;
 }
 .site-header .header-wrapper nav.menu ul li {
   display: block;
@@ -277,6 +278,7 @@
   background-color: #f0f0f0;
   border: 1px solid #808080;
   border-radius: 3px;
+  list-style: none;
 }
 .site-header .header-wrapper nav.menu ul li ul li {
   display: block;
