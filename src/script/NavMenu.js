@@ -58,6 +58,7 @@ class NavMenu {
 		//on resizing the window, make sure menu is not hidden
 		$(window).on("resize", function() {
 			this.menuContent.css({display: ""});
+			this.menuIcon.removeClass("header-nav-btn-close");
 		}.bind(this));
 	}
 
