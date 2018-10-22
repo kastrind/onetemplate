@@ -162,6 +162,13 @@
       text-align: center;
       display: none;
 
+      .atMedium({
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+      });
+
       &-visible {
         display: block;
       }
@@ -171,6 +178,7 @@
 
         li {
           display: block;
+          padding-right: 40px;
           text-align: left;
 
           .atMedium({
@@ -193,16 +201,32 @@
 
           }
 
+          ul {
+            position: absolute;
+            display: none;
+            padding: 0 1rem;
+            background-color: #f0f0f0;
+            border: 1px solid #808080;
+            border-radius: 3px;
+
+            li {
+              display: block;
+              padding: 0.5rem 0;
+
+              a {
+              }
+
+              ul {
+                left: 30%;
+              }
+
+            }
+
+          }
+
         }
 
       }
-
-      .atMedium({
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block;
-      });
 
     }
 
