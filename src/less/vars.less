@@ -29,12 +29,22 @@
 /* Header */
 
 @header-is-fixed: false;
-@header-background-color-1: #062456;
+@header-background-color-1: #303030;
 @header-bg-1-light: boolean(luma(@header-background-color-1) > 40%);
-@header-background-color-2: #cccccc;
+@header-background-color-2: #c0c0c0;
 @header-bg-2-light: boolean(luma(@header-background-color-2) > 40%);
-@header-has-gradient: false;
+
+@header-background-alt-color-1: #c0c0c0;
+@header-bg-alt-1-light: boolean(luma(@header-background-alt-color-1) > 40%);
+@header-background-alt-color-2: #303030;
+@header-bg-alt-2-light: boolean(luma(@header-background-alt-color-2) > 40%);
+
+@header-has-gradient: falsetrue;
 @header-gradient-color: rgba(0, 0, 0, 0.75);
+
+@header-has-gradient-alt: false;
+@header-gradient-alt-color: rgba(0, 0, 0, 0.75);
+
 @header-font-family: Arial;
 @menu-font-color-dark: #333333;
 @menu-font-color-light: #dddddd;

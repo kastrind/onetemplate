@@ -8,6 +8,9 @@ class Header {
     //the site header
     this.siteHeader = $(".site-header");
 
+    //the site header rows the style of which to alternate
+    this.siteHeaderRows = $(".site-header").find(".header-wrapper-row");
+
     //the element after which site header hides
     this.triggerHideSiteHeader = $("[data-trigger-hide-header=true]");
 
@@ -17,7 +20,10 @@ class Header {
     //the element to hide when site header is revealed
     this.hiddenWhenSiteHeaderPulledDown = $("[data-hide-when-header-pulled-down=true]");
 
-    //the logo in site header to shrink when site header is revealed
+    //the alternative logo in site header to show when site header is revealed
+    this.altLogo = $(".site-header").find(".altLogo");
+
+    //the logo in site header to shrink when site header is revealed, if alternative logo is not found
     this.logo = $(".site-header").find(".logo");
 
     //in case page refreshed in the middle of the document:
@@ -88,13 +94,17 @@ class Header {
   }
 
   restoreHeader() {
-    this.logo.removeClass("logo-shrunk");
+    this.siteHeader.removeClass("site-header-alt");
+    this.siteHeaderRows.removeClass("header-wrapper-row-alt");
+    !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
     this.siteHeader.removeClass("site-header-pushedUp site-header-fixed site-header-animated");
     this.hiddenWhenSiteHeaderPulledDown.css({display: ""});
   }
 
   pullDownHeader() {
-    this.logo.addClass("logo-shrunk");
+    this.siteHeader.addClass("site-header-alt");
+    this.siteHeaderRows.addClass("header-wrapper-row-alt");
+    !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();
     this.hiddenWhenSiteHeaderPulledDown.css({display: "none"});
     this.siteHeader.removeClass("site-header-pushedUp").addClass("site-header-fixed");
   }
