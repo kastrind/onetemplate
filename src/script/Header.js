@@ -26,6 +26,12 @@ class Header {
     //the logo in site header to shrink when site header is revealed, if alternative logo is not found
     this.logo = $(".site-header").find(".logo");
 
+    //the hamburger icon the style of which to alternate
+    this.menuIcon = $(".site-header .header-nav-btn");
+
+    //the submenu the style of which to alternate
+    this.subMenu = $(".site-header nav.menu ul li > ul");
+
     //in case page refreshed in the middle of the document:
     //if we are scrolling before the trigger, prepare header for pull down
     if (this.isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem()) {
@@ -94,6 +100,8 @@ class Header {
   }
 
   restoreHeader() {
+    this.subMenu.removeClass("alt");
+    this.menuIcon.removeClass("alt");
     this.siteHeader.removeClass("site-header-alt");
     this.siteHeaderRows.removeClass("header-wrapper-row-alt");
     !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
@@ -102,6 +110,8 @@ class Header {
   }
 
   pullDownHeader() {
+    this.subMenu.addClass("alt");
+    this.menuIcon.addClass("alt");
     this.siteHeader.addClass("site-header-alt");
     this.siteHeaderRows.addClass("header-wrapper-row-alt");
     !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();

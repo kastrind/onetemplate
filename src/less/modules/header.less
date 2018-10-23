@@ -11,17 +11,11 @@
 }
 
 .header-gradient-mixin() when (@header-has-gradient=true) {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.75+0,0+100 */
-  background: -moz-linear-gradient(top, @header-gradient-color 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, @header-gradient-color 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, @header-gradient-color 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: @header-gradient;
 }
 
 .header-gradient-alt-mixin() when (@header-has-gradient-alt=true) {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.75+0,0+100 */
-  background: -moz-linear-gradient(top, @header-gradient-alt-color 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, @header-gradient-alt-color 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, @header-gradient-alt-color 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: @header-gradient-alt;
 }
 
 .header-row-mixin() {
@@ -30,6 +24,8 @@
     * {
       color: if((@header-bg-1-light), @menu-font-color-dark, @menu-font-color-light);
     }
+    padding: 0.2rem;
+    border-bottom: @header-border-1;
   }
   &:nth-of-type(2) {
     background-color: if((@header-has-gradient), none, @header-background-color-2);
@@ -37,6 +33,7 @@
     * {
       color: if((@header-bg-2-light), @menu-font-color-dark, @menu-font-color-light);
     }
+    border-bottom: @header-border-2;
   }
 }
 
@@ -46,6 +43,8 @@
     * {
       color: if((@header-bg-alt-1-light), @menu-font-color-dark, @menu-font-color-light);
     }
+    padding: 0.2rem;
+    border-bottom: @header-border-alt-1;
   }
   &:nth-of-type(2) {
     background-color: if((@header-has-gradient-alt), none, @header-background-alt-color-2);
@@ -53,6 +52,7 @@
     * {
       color: if((@header-bg-alt-2-light), @menu-font-color-dark, @menu-font-color-light);
     }
+    border-bottom: @header-border-alt-2;
   }
 }
 
@@ -82,6 +82,10 @@
     font-family: @header-font-family;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .header-wrapper {
 
     &-row {
@@ -100,7 +104,6 @@
     }
 
     &-col {
-      border: 1px solid red;
       text-align: center;
 
       .atMedium({
@@ -154,9 +157,28 @@
       margin: 1vh auto;
       cursor: pointer;
       transition: all 0.1s;
+      background-color: @header-nav-btn-background-color;
+      border-radius: @header-nav-btn-radius;
+      padding: @header-nav-btn-padding;
+
+      &.alt {
+        background-color: @header-nav-btn-background-alt-color;
+
+        .header-nav-btn-bar-alt-mixin {
+          background-color: @header-nav-btn-alt-color;
+        }
+        &::before, .header-nav-btn-bar-middle, &:after {
+          .header-nav-btn-bar-alt-mixin();
+        }
+
+        &:hover {
+          background-color: lighten(@header-nav-btn-background-alt-color, 7%);
+        }
+
+      }
 
       &:hover {
-        background-color: lighten(@header-background-color-2, 7%);
+        background-color: lighten(@header-nav-btn-background-color, 7%);
       }
 
       .atMedium({
@@ -165,17 +187,17 @@
 
       .header-nav-btn-bar-mixin {
         width: 100%;
-        height: 5px;
-        background-color: black;
-        border-radius: 3px;
+        height: @header-nav-btn-bar-height;
+        background-color: @header-nav-btn-color;
+        border-radius: @header-nav-btn-bar-radius;
       }
 
       &::before {
         content: "";
         display: block;
         .header-nav-btn-bar-mixin();
-        margin-bottom: 5px;
-        transition: transform .3s ease-out;
+        margin-bottom: @header-nav-btn-bar-height;
+        transition: all .3s ease-out;
       }
 
       &-bar-middle {
@@ -187,24 +209,26 @@
         content: "";
         display: block;
         .header-nav-btn-bar-mixin();
-        margin-top: 5px;
-        transition: transform .3s ease-out;
+        margin-top: @header-nav-btn-bar-height;
+        transition: all .3s ease-out;
       }
 
       &-close {
 
         &::before {
-          transform:  translateY(200%) rotate(45deg);
+          margin-bottom: 0;
+          transform:  translateY(100%) rotate(45deg);
           transform-origin: 50% 50%;
         }
 
         .header-nav-btn-bar-middle {
-          transform: rotate(-45deg);
-          transform-origin: 50% 50%;
+          transform: scaleX(0);
         }
 
         &::after {
-          transform: scaleX(0);
+          margin-top: 0;
+          transform: translateY(-100%) rotate(-45deg);
+          transform-origin: 50% 50%;
         }
 
       }
@@ -240,7 +264,6 @@
           });
 
           a {
-            text-decoration: none;
             font-size: @menu-font-size;
             font-weight: @menu-font-weight;
             cursor: pointer;
@@ -260,10 +283,24 @@
             display: none;
             margin-left: 1rem;
             padding: 0 1rem;
-            background-color: #f0f0f0;
-            border: 1px solid #808080;
+            background-color: @header-submenu-background-color;
+            border: @header-submenu-border;
             border-radius: 3px;
             list-style: none;
+
+            li * {
+              color: if((@header-submenu-bg-light), @menu-font-color-dark, @menu-font-color-light);
+            }
+
+            &.alt {
+              background-color: @header-submenu-background-alt-color;
+              border: @header-submenu-alt-border;
+
+              li * {
+                color: if((@header-submenu-bg-alt-light), @menu-font-color-dark, @menu-font-color-light);
+              }
+
+            }
 
             .atMedium({
               position: absolute;
