@@ -67,8 +67,6 @@ class Header {
     //create waypoint for pulling down the header
     this.createPullDownHeaderWaypoint();
 
-    this.lazyImages = $(".lazyload");
-    this.refreshWaypoints();
   }
 
   isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem() {
@@ -120,12 +118,6 @@ class Header {
     !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();
     this.hiddenWhenSiteHeaderPulledDown.css({display: "none"});
     this.siteHeader.removeClass("site-header-pushedUp").addClass("site-header-fixed");
-  }
-
-  refreshWaypoints() {
-    this.lazyImages.on('load', function () {
-      Waypoint.refreshAll();
-    });
   }
 
 }

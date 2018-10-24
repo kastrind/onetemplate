@@ -127,39 +127,47 @@
 
         img {
           margin: 0.5rem 0;
-          max-height: 15vh;
-          min-height: 200px;
+          max-height: 10vh;
+          min-height: 120px;
         }
         &-shrunk {
           img {
             margin: 0.2rem 0;
-            max-height: 10vh;
-            min-height: 100px;
+            max-height: 5vh;
+            min-height: 60px;
           }
         }
       }
 
       .altLogo {
-        display: none;
         text-align: center;
+        display: none;
+
         img {
           margin: 0.2rem 0;
-          max-height: 10vh;
-          min-height: 100px;
+          max-height: 5vh;
+          min-height: 60px;
         }
       }
 
     }
 
     .header-nav-btn {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-right: 0.5rem;
       min-width: 25px;
       max-width: 5vw;
-      margin: 1vh auto;
       cursor: pointer;
       transition: all 0.1s;
       background-color: @header-nav-btn-background-color;
       border-radius: @header-nav-btn-radius;
       padding: @header-nav-btn-padding;
+
+      .atMedium({
+        display: none;
+      });
 
       &.alt {
         background-color: @header-nav-btn-background-alt-color;
@@ -180,10 +188,6 @@
       &:hover {
         background-color: lighten(@header-nav-btn-background-color, 7%);
       }
-
-      .atMedium({
-        display: none;
-      });
 
       .header-nav-btn-bar-mixin {
         width: 100%;
@@ -231,6 +235,26 @@
           transform-origin: 50% 50%;
         }
 
+      }
+
+    }
+
+    form[name=searchForm] {
+      padding: 0.5rem 0;
+      margin-right: 0.2rem;
+
+      input[name=searchField] {
+        min-width: 80px;
+        max-width: 10vw;
+        display:inline-block;
+        height: 20px;
+        box-sizing: border-box;
+        color: #333;
+      }
+
+      button[name=searchButton] {
+        cursor: pointer;
+        color: #333;
       }
 
     }

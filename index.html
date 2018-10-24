@@ -46,7 +46,7 @@
             <a href="#">here</a>
           </div>
           <div class="header-wrapper-col">
-            perhaps a slogan here
+            perhaps a slogan or a tel.:<a href="#">+30 28210 00000</a> here
           </div>
           <div class="header-wrapper-col">
             <a href="#">maybe</a>
@@ -61,12 +61,13 @@
           <div class="header-wrapper-col">
             <div class="logo"><a href="#"><img src="src/assets/img/logo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
             <div class="altLogo"><a href="#"><img src="src/assets/img/altlogo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
-          </div>
-
-          <div class="header-wrapper-col">
             <div class="header-nav-btn">
               <div class="header-nav-btn-bar-middle"></div>
             </div>
+          </div>
+
+          <div class="header-wrapper-col">
+
             <nav class="menu">
               <ul>
                 <li><a href="#">Home</a></li>
@@ -101,7 +102,10 @@
           </div>
 
           <div class="header-wrapper-col">
-            search
+            <form name="searchForm" action="" method="POST">
+              <input type="text" value="" placeholder="search..." name="searchField" />
+              <button type="submit" name="searchButton">go</button>
+            </form>
           </div>
 
         </div>
@@ -128,7 +132,7 @@
       </div>
 
     </section>
-    <section class="margin-top" data-trigger-pullDown-header="true" data-trigger-back-to-top="true">
+    <section class="margin-top" data-trigger-back-to-top="true">
       <ul id="lightSlider" class="lightSlider">
         <li>
           <h3>First Slide</h3>
@@ -161,7 +165,7 @@
       </video>
     </section>
 
-    <section class="margin-top">
+    <section class="margin-top" data-trigger-pullDown-header="true">
       <div class="parallax-container">
         <img class="parallax-img lazyload" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
         <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
