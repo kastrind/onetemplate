@@ -126,7 +126,7 @@
 }
 .site-header .header-wrapper-row:nth-of-type(1) {
   background-color: #303030;
-  padding: 0.2rem;
+  padding: 0.5rem;
   border-bottom: none;
 }
 .site-header .header-wrapper-row:nth-of-type(1) * {
@@ -134,6 +134,7 @@
 }
 .site-header .header-wrapper-row:nth-of-type(2) {
   background-color: #c0c0c0;
+  padding: 0.5rem;
   border-bottom: none;
 }
 .site-header .header-wrapper-row:nth-of-type(2) * {
@@ -141,7 +142,6 @@
 }
 .site-header .header-wrapper-row-alt:nth-of-type(1) {
   background-color: #c0c0c0;
-  padding: 0.2rem;
   border-bottom: none;
 }
 .site-header .header-wrapper-row-alt:nth-of-type(1) * {
@@ -165,6 +165,9 @@
   text-align: center;
 }
 @media screen and (min-width: 768px) {
+  .site-header .header-wrapper-col {
+    text-align: initial;
+  }
   .site-header .header-wrapper-col:not(:first-of-type):not(:last-of-type) {
     text-align: center;
   }
@@ -172,21 +175,14 @@
     text-align: right;
   }
 }
-@media screen and (min-width: 768px) {
-  .site-header .header-wrapper-col {
-    text-align: initial;
-  }
-}
 .site-header .header-wrapper-col .logo {
   text-align: center;
 }
 .site-header .header-wrapper-col .logo img {
-  margin: 0.5rem 0;
   max-height: 10vh;
   min-height: 120px;
 }
 .site-header .header-wrapper-col .logo-shrunk img {
-  margin: 0.2rem 0;
   max-height: 5vh;
   min-height: 60px;
 }
@@ -201,9 +197,8 @@
 }
 .site-header .header-wrapper .header-nav-btn {
   position: absolute;
-  right: 0;
-  top: 50%;
-  margin-right: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
   min-width: 25px;
   max-width: 5vw;
   cursor: pointer;
@@ -286,8 +281,16 @@
           transform-origin: 50% 50%;
 }
 .site-header .header-wrapper form[name=searchForm] {
-  padding: 0.5rem 0;
-  margin-right: 0.2rem;
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .site-header .header-wrapper form[name=searchForm] {
+    margin-top: initial;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
 }
 .site-header .header-wrapper form[name=searchForm] input[name=searchField] {
   min-width: 80px;
