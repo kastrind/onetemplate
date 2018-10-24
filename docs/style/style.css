@@ -182,32 +182,40 @@
 }
 .site-header .header-wrapper-col .logo img {
   margin: 0.5rem 0;
-  max-height: 15vh;
-  min-height: 200px;
+  max-height: 10vh;
+  min-height: 120px;
 }
 .site-header .header-wrapper-col .logo-shrunk img {
   margin: 0.2rem 0;
-  max-height: 10vh;
-  min-height: 100px;
+  max-height: 5vh;
+  min-height: 60px;
 }
 .site-header .header-wrapper-col .altLogo {
-  display: none;
   text-align: center;
+  display: none;
 }
 .site-header .header-wrapper-col .altLogo img {
   margin: 0.2rem 0;
-  max-height: 10vh;
-  min-height: 100px;
+  max-height: 5vh;
+  min-height: 60px;
 }
 .site-header .header-wrapper .header-nav-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-right: 0.5rem;
   min-width: 25px;
   max-width: 5vw;
-  margin: 1vh auto;
   cursor: pointer;
   transition: all 0.1s;
   background-color: #303030;
   border-radius: 3px;
   padding: 8px;
+}
+@media screen and (min-width: 768px) {
+  .site-header .header-wrapper .header-nav-btn {
+    display: none;
+  }
 }
 .site-header .header-wrapper .header-nav-btn.alt {
   background-color: #f0f0f0;
@@ -225,11 +233,6 @@
 }
 .site-header .header-wrapper .header-nav-btn:hover {
   background-color: #424242;
-}
-@media screen and (min-width: 768px) {
-  .site-header .header-wrapper .header-nav-btn {
-    display: none;
-  }
 }
 .site-header .header-wrapper .header-nav-btn .header-nav-btn-bar-mixin {
   width: 100%;
@@ -281,6 +284,22 @@
           transform: translateY(-100%) rotate(-45deg);
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+}
+.site-header .header-wrapper form[name=searchForm] {
+  padding: 0.5rem 0;
+  margin-right: 0.2rem;
+}
+.site-header .header-wrapper form[name=searchForm] input[name=searchField] {
+  min-width: 80px;
+  max-width: 10vw;
+  display: inline-block;
+  height: 20px;
+  box-sizing: border-box;
+  color: #333;
+}
+.site-header .header-wrapper form[name=searchForm] button[name=searchButton] {
+  cursor: pointer;
+  color: #333;
 }
 .site-header .header-wrapper nav.menu {
   text-align: center;
