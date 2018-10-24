@@ -155,7 +155,7 @@
 
     <section class="margin-top video-container">
       <video class="full-width-video" muted autoplay loop>
-        <source src="src/assets/videos/coffee.mp4" type="video/mp4">
+        <source src="src/assets/videos/coffee.mp4" type="video/mp4"  class="lazyload">
         <!--<source src="assets/videos/coffee.ogg" type="video/ogg">-->
         Your browser does not support HTML5 video.
       </video>
@@ -163,7 +163,7 @@
 
     <section class="margin-top">
       <div class="parallax-container">
-        <img class="parallax-img" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
+        <img class="parallax-img lazyload" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
         <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
         <button class="btn parallax-btn">More</button>
       </div>
@@ -172,7 +172,7 @@
     <section class="margin-top">
       <div class="parallax-container">
         <video class="parallax-img full-width-video" muted autoplay loop>
-          <source src="src/assets/videos/coffee.mp4" type="video/mp4">
+          <source src="src/assets/videos/coffee.mp4" type="video/mp4" class="lazyload">
           <!--<source src="assets/videos/coffee.ogg" type="video/ogg">-->
           Your browser does not support HTML5 video.
         </video>
@@ -186,49 +186,49 @@
 
     		<div class="gallery-item">
           <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name" data-title="Example of a title.">
-    		      <img srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" />
+    		      <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
     		</div>
 
     		<div class="gallery-item">
           <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
-            <img srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" />
+            <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">Hello, this is another caption, as you can see.</div>
     		</div>
 
     		<div class="gallery-item">
           <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
-            <img srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" />
+            <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">Hello, this is yet another caption, as you can see.</div>
     		</div>
 
     		<div class="gallery-item">
           <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
-            <img srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" />
+            <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">This is a caption.</div>
     		</div>
 
     		<div class="gallery-item">
           <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
-            <img srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" />
+            <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">Another caption.</div>
     		</div>
 
     		<div class="gallery-item">
           <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
-            <img srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" />
+            <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">Guess what, another caption.</div>
     		</div>
 
         <div class="gallery-item">
           <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
-            <img srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" />
+            <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
           </a>
           <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
     		</div>
@@ -268,6 +268,7 @@
     <script src="dist/addons/gmaps/gmaps.js"></script>
     <script src="dist/addons/owl.carousel/owl.carousel.js"></script>
     <script src="dist/addons/lightbox2/js/lightbox.js"></script>
+    <script src="dist/addons/lazysizes/lazysizes.js"></script>
     <!-- endbuild -->
 
   </body>

@@ -25,7 +25,8 @@ var sourceScripts = [
                      'dist/script/*.js',
                      'dist/addons/lightslider/js/lightslider.js',
                      'dist/addons/owl.carousel/owl.carousel.js',
-                     'dist/addons/lightbox2/js/lightbox.js'
+                     'dist/addons/lightbox2/js/lightbox.js',
+                     'dist/addons/lazysizes/lazysizes.js'
                     ];
 
 /* Task to clean the project from built files */
@@ -47,6 +48,9 @@ gulp.task('copy-addons', function () {
 
   gulp.src('node_modules/owl.carousel/dist/**')
     .pipe(gulp.dest('dist/addons/owl.carousel'));
+
+  gulp.src('node_modules/lazysizes/lazysizes.js')
+    .pipe(gulp.dest('dist/addons/lazysizes'));
 });
 
 /* Task to compile less */

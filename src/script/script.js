@@ -11,8 +11,9 @@ import ParallaxImg from './ParallaxImg';
 import GMaps from 'gmaps';
 
 import 'owl.carousel';
-import lightSlider from '../../node_modules/lightslider/dist/js/lightslider';;
+import lightSlider from '../../node_modules/lightslider/dist/js/lightslider';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
+import lazySizes from '../../node_modules/lazysizes/lazysizes';
 
 new Header();
 
