@@ -21,14 +21,15 @@
 .header-row-mixin() {
   &:nth-of-type(1) {
     background-color: @header-background-color-1;
+    padding: 0.5rem;
     * {
       color: if((@header-bg-1-light), @menu-font-color-dark, @menu-font-color-light);
     }
-    padding: 0.2rem;
     border-bottom: @header-border-1;
   }
   &:nth-of-type(2) {
     background-color: if((@header-has-gradient), none, @header-background-color-2);
+    padding: 0.5rem;
     .header-gradient-mixin();
     * {
       color: if((@header-bg-2-light), @menu-font-color-dark, @menu-font-color-light);
@@ -43,7 +44,6 @@
     * {
       color: if((@header-bg-alt-1-light), @menu-font-color-dark, @menu-font-color-light);
     }
-    padding: 0.2rem;
     border-bottom: @header-border-alt-1;
   }
   &:nth-of-type(2) {
@@ -107,6 +107,7 @@
       text-align: center;
 
       .atMedium({
+        text-align: initial;
 
         &:not(:first-of-type):not(:last-of-type) {
           text-align: center;
@@ -118,21 +119,15 @@
 
       });
 
-      .atMedium({
-        text-align: initial;
-      });
-
       .logo {
         text-align: center;
 
         img {
-          margin: 0.5rem 0;
           max-height: 10vh;
           min-height: 120px;
         }
         &-shrunk {
           img {
-            margin: 0.2rem 0;
             max-height: 5vh;
             min-height: 60px;
           }
@@ -154,9 +149,8 @@
 
     .header-nav-btn {
       position: absolute;
-      right: 0;
-      top: 50%;
-      margin-right: 0.5rem;
+      right: 0.5rem;
+      bottom: 0.5rem;
       min-width: 25px;
       max-width: 5vw;
       cursor: pointer;
@@ -240,8 +234,15 @@
     }
 
     form[name=searchForm] {
-      padding: 0.5rem 0;
-      margin-right: 0.2rem;
+      margin-top: 0.5rem;
+
+
+      .atMedium({
+        margin-top: initial;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      });
 
       input[name=searchField] {
         min-width: 80px;

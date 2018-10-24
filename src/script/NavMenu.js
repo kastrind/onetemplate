@@ -24,12 +24,12 @@ class NavMenu {
 				//on mobile view
 				if (this.isMobile) {
 					//on touching a menu item, toggle its submenu visibility
-					this.menuItem.on("touchstart", this.handleTouches.bind(this));
+					this.menuItem.on("click", this.handleTouches.bind(this));
 					this.menuItem.off("mouseenter");
 					this.subMenu.off("mouseleave");
 				//on a larger view
 				}else {
-					this.menuItem.off("touchstart");
+					this.menuItem.off("click");
 					//on hovering over a menu item, show its submenu, if not already visible
 					this.menuItem.on("mouseenter", this.handleMouseEnter.bind(this));
 					//on hovering away from a menu item, hide its submenu
@@ -41,7 +41,7 @@ class NavMenu {
 	}
 
 	handleTouches(event) {
-		console.log("yes");
+		console.log("yes!!!!");
 		let adj_ul = $(event.target).next("ul:first");
 		if (adj_ul.is(":not(:visible)")) {
 			adj_ul.slideDown();
@@ -51,6 +51,7 @@ class NavMenu {
 	}
 
 	handleMouseEnter(event) {
+		console.log("yes");
 		let adj_ul = $(event.target).next("ul:first");
 		if (adj_ul.is(":not(:visible)")) {
 			adj_ul.slideDown();
