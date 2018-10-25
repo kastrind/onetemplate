@@ -12,6 +12,7 @@ var useref = require('gulp-useref');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var browserSync = require('browser-sync').create();
+var base64 = require('gulp-base64');
 
 var sourceStyles = [
                     'dist/style/*.css',
@@ -69,6 +70,7 @@ gulp.task('compile-less', function () {
 /* Task to minify & bundle css */
 gulp.task('minify-bundle-css', ['compile-less', 'copy-addons'], function () {
   return gulp.src(sourceStyles)
+    .pipe(base64({exclude: [sourceStyles[0]]}))
     .pipe(concat('styles.min.css'))
     .pipe(cleanCSS({rebaseTo : 'dist/style/min'}))
     .pipe(gulp.dest('dist/style/min'))
