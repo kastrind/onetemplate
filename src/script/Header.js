@@ -30,8 +30,8 @@ class Header {
     this.menuIcon = $(".site-header .header-nav-btn");
 
     //the submenu the style of which to alternate
-    this.subMenu = $(".site-header nav.menu ul li > ul");
 
+    this.subMenu = $(".site-header nav.menu ul li > ul");
     //in case page refreshed in the middle of the document:
     //if we are scrolling before the trigger, prepare header for pull down
     if (this.isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem()) {
@@ -61,6 +61,8 @@ class Header {
       }else if (this.isScrollingBeforeHeader()) {
         this.restoreHeader();
       }
+      this.siteHeader = $(".site-header");
+      this.subMenu = $(".site-header nav.menu ul li > ul");
 
     }.bind(this));
 
@@ -108,6 +110,7 @@ class Header {
     !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
     this.siteHeader.removeClass("site-header-pushedUp site-header-fixed site-header-animated");
     this.hiddenWhenSiteHeaderPulledDown.css({display: ""});
+    $(document).trigger("recalcEvent");
   }
 
   pullDownHeader() {
@@ -118,6 +121,7 @@ class Header {
     !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();
     this.hiddenWhenSiteHeaderPulledDown.css({display: "none"});
     this.siteHeader.removeClass("site-header-pushedUp").addClass("site-header-fixed");
+    $(document).trigger("recalcEvent");
   }
 
 }

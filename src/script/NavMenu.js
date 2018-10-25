@@ -41,7 +41,6 @@ class NavMenu {
 	}
 
 	handleTouches(event) {
-		console.log("yes!!!!");
 		let adj_ul = $(event.target).next("ul:first");
 		if (adj_ul.is(":not(:visible)")) {
 			adj_ul.slideDown();
@@ -51,7 +50,6 @@ class NavMenu {
 	}
 
 	handleMouseEnter(event) {
-		console.log("yes");
 		let adj_ul = $(event.target).next("ul:first");
 		if (adj_ul.is(":not(:visible)")) {
 			adj_ul.slideDown();
