@@ -23,6 +23,24 @@ new BackToTop("75%");
 
 console.log('Javascript working.');
 
+var initMap = function() {
+  var map = new GMaps({
+    el: '#map',
+    lat: 35.51708,
+    lng: 24.017993,
+    zoom: 15
+  });
+
+  map.addMarker({
+    title: 'Marker',
+    lat: 35.51708,
+    lng: 24.017993,
+    click: function(e) {
+      alert('You clicked on this marker!');
+    }
+  });
+}
+
 $(document).ready(function() {
 
   console.log('jQuery working.');
@@ -46,28 +64,14 @@ $(document).ready(function() {
     itemsMobile : false
   });
 
+  initMap();
+
 });
 
 new AppearOnLoad();
 
 new ParallaxImg();
 
-var initMap = function() {
-  var map = new GMaps({
-    el: '#map',
-    lat: 35.51708,
-    lng: 24.017993,
-    zoom: 15
-  });
-
-  map.addMarker({
-    title: 'Marker',
-    lat: 35.51708,
-    lng: 24.017993,
-    click: function(e) {
-      alert('You clicked on this marker!');
-    }
-  });
-}
-
-initMap();
+$(window).on("load", function () {
+  initMap();
+});
