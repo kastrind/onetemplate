@@ -93,18 +93,24 @@ body * {
 
 .back-to-top {
   position: fixed;
-  max-width: 5vw;
-  min-width: 100px;
-  z-index: 100;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  border: 1px solid red;
+  z-index: @z-index-1;
+  right: 1rem;
+  bottom: 1rem;
   cursor: pointer;
   transition: opacity 1s;
+  font-size: 3rem;
+  padding: 1rem;
+  color: @back-to-top-color;
+  background-color: @back-to-top-background-color;
 
   &-hidden {
     opacity: 0;
+  }
+
+  .point-up {
+    display: block;
+    line-height: 0;
+    transform: translateX(-50%) rotate(-90deg);
   }
 
 }
