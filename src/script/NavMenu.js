@@ -42,17 +42,22 @@ class NavMenu {
 
 	handleTouches(event) {
 		let adj_ul = $(event.target).next("ul:first");
+		let point = $(event.target).find(".point");
 		if (adj_ul.is(":not(:visible)")) {
 			adj_ul.slideDown();
+			$(point).removeClass("point-down").addClass("point-up");
 		}else if (adj_ul.is(":visible")) {
 			adj_ul.slideUp();
+			$(point).removeClass("point-up").addClass("point-down");
 		}
 	}
 
 	handleMouseEnter(event) {
 		let adj_ul = $(event.target).next("ul:first");
+		let point = $(event.target).find(".point");
 		if (adj_ul.is(":not(:visible)")) {
 			adj_ul.slideDown();
+			$(point).removeClass("point-down").addClass("point-up");
 		}
 		clearTimeout(this.timer);
 
@@ -63,7 +68,11 @@ class NavMenu {
 	}
 
 	handleMouseLeave(event) {
-		event.currentTarget.timer = setTimeout(function(event) {$(event.currentTarget).slideUp();}.bind(this, event), 1000);
+		event.currentTarget.timer = setTimeout(function(event) {
+			$(event.currentTarget).slideUp();
+			let point = $(event.currentTarget).prev("a").find(".point");
+			$(point).removeClass("point-up").addClass("point-down");
+		}.bind(this, event), 1000);
 	}
 
 	toggleTheMenu() {

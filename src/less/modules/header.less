@@ -312,6 +312,21 @@
               font-size: (@menu-font-size + 0.75) - (@menu-font-size + 0.75)*0.1;
             });
 
+            .point {
+              font-size: @menu-font-size;
+              transition: all linear 0.5s;
+              display: inline-block;
+              margin-left: @menu-font-size*0.2;
+
+              &-down {
+                transform: rotate(90deg);
+              }
+
+              &-up {
+                transform: rotate(-90deg);
+              }
+            }
+
           }
 
           ul {
