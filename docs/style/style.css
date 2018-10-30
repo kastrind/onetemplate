@@ -4,6 +4,7 @@
 /* Buttons */
 /* Parallax */
 /* Map */
+/* Back to top */
 /* Footer */
 #full-width-slideshow img {
   display: block;
@@ -23,7 +24,7 @@
 }
 .parallax-container .parallax-heading {
   position: relative;
-  top: 30%;
+  top: 20%;
   margin: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -39,7 +40,7 @@
   }
 }
 .parallax-container .parallax-btn {
-  position: relative;
+  position: absolute;
   z-index: 100;
   top: 50%;
   left: 50%;
@@ -347,6 +348,7 @@
   font-size: 1.2rem;
   font-weight: 100;
   cursor: pointer;
+  white-space: nowrap;
 }
 @media screen and (min-width: 768px) {
   .site-header .header-wrapper nav.menu ul li a {
@@ -357,6 +359,23 @@
   .site-header .header-wrapper nav.menu ul li a {
     font-size: 1.755rem;
   }
+}
+.site-header .header-wrapper nav.menu ul li a.is-current-link {
+  text-decoration: underline;
+}
+.site-header .header-wrapper nav.menu ul li a .point {
+  font-size: 1.2rem;
+  transition: all linear 0.5s;
+  display: inline-block;
+  margin-left: 0.6rem;
+}
+.site-header .header-wrapper nav.menu ul li a .point-down {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.site-header .header-wrapper nav.menu ul li a .point-up {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 .site-header .header-wrapper nav.menu ul li ul {
   display: none;
@@ -504,18 +523,24 @@ body * {
 }
 .back-to-top {
   position: fixed;
-  max-width: 5vw;
-  min-width: 100px;
   z-index: 100;
-  right: 0;
-  bottom: 0;
-  background-color: white;
-  border: 1px solid red;
+  right: 1rem;
+  bottom: 1rem;
   cursor: pointer;
   transition: opacity 1s;
+  font-size: 3rem;
+  padding: 1rem;
+  color: white;
+  background-color: black;
 }
 .back-to-top-hidden {
   opacity: 0;
+}
+.back-to-top .point-up {
+  display: block;
+  line-height: 0;
+  -webkit-transform: translateX(-50%) rotate(-90deg);
+          transform: translateX(-50%) rotate(-90deg);
 }
 .disappear-on-load {
   position: fixed;

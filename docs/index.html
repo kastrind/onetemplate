@@ -66,19 +66,19 @@
               <ul>
                 <li><a href="#">Home</a></li>
                 <li>
-                  <a>About</a>
+                  <a>About<span class="point point-down">&#8250;</span></a>
                   <ul>
-                    <li><a href="">Our Company</a></li>
+                    <li><a href="#">Our Company</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                   </ul>
                 </li>
                 <li>
-                  <a>Services</a>
+                  <a>Services<span class="point point-down">&#8250;</span></a>
                   <ul>
-                    <li><a>Features</a>
+                    <li><a>Features<span class="point point-down">&#8250;</span></a>
                       <ul>
                         <li><a href="#">All the features</a></li>
-                        <li><a>Details</a>
+                        <li><a>Details<span class="point point-down">&#8250;</span></a>
                           <ul>
                             <li><a href="#">Stats</a></li>
                             <li><a href="#">Screenshots</a></li>
@@ -90,6 +90,8 @@
                     <li><a href="#">Partner up</a></li>
                   </ul>
                 </li>
+                <li><a href="#video" id="video-link">Video</a></li>
+                <li><a href="#gallery" id="gallery-link">Gallery</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
             </nav>
@@ -159,7 +161,7 @@
       </video>
     </section>
 
-    <section class="margin-top">
+    <section class="margin-top" data-internal-ref="nothing, clear link styling">
       <div class="parallax-container">
         <img class="parallax-img lazyload" src="assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
         <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
@@ -167,7 +169,7 @@
       </div>
     </section>
 
-    <section class="margin-top">
+    <section id="video" class="margin-top" data-internal-ref="#video-link">
       <div class="parallax-container">
         <video class="parallax-img full-width-video" muted autoplay loop>
           <source src="assets/videos/coffee.mp4" type="video/mp4" class="lazyload">
@@ -179,7 +181,7 @@
       </div>
     </section>
 
-    <section class="margin-top">
+    <section id="gallery" class="margin-top" data-internal-ref="#gallery-link">
   	  <div class="gallery">
 
     		<div class="gallery-item">
@@ -253,7 +255,7 @@
       <div class="footer-full">All Rights Reserved.</div>
     </footer>
 
-    <a href="#back-to-top-target"><div class="back-to-top">BACK TO TOP</div></a>
+    <a href="#back-to-top-target" title="back to top"><div class="back-to-top"><span class="point-up">&#8250;</span></div></a>
 
     <div class="disappear-on-load"></div>
 

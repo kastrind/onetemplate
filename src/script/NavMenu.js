@@ -22,7 +22,7 @@ class NavMenu {
 	events() {
 
 		//smooth scroll menu links
-		$("nav.menu ul li").click(function(e) {
+		$("nav.menu ul li a[href^='#']").parent().click(function(e) {
 			e.preventDefault();
 			new SmoothScroll($(e.target));
 		});
