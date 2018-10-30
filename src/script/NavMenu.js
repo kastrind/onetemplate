@@ -118,7 +118,7 @@ class NavMenu {
 						$(matchingHeaderLink).addClass("is-current-link");
 					}
 				},
-				offset: "18%"
+				offset: "30%"
 			});
 			new Waypoint({
 				element: currentDest,
@@ -129,7 +129,7 @@ class NavMenu {
 						$(matchingHeaderLink).addClass("is-current-link");
 					}
 				},
-				offset: "-40%"
+				offset: 0
 			});
 		});
 	}
