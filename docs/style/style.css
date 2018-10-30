@@ -22,35 +22,33 @@
   width: 100%;
   opacity: 0.6;
 }
-.parallax-container .parallax-heading {
+.parallax-container .parallax-content {
   position: relative;
-  top: 20%;
-  margin: 0;
+  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   text-align: center;
+  z-index: 100;
+}
+.parallax-container .parallax-content .parallax-heading {
+  margin: 0 0 0.5rem 0;
   font-size: 1rem;
   color: white;
   font-weight: 100;
   text-shadow: 2px 2px 3px black;
 }
 @media screen and (min-width: 460px) {
-  .parallax-container .parallax-heading {
+  .parallax-container .parallax-content .parallax-heading {
     font-size: 2rem;
   }
-}
-.parallax-container .parallax-btn {
-  position: absolute;
-  z-index: 100;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   grid-gap: 0.5rem;
+}
+.gallery-item {
+  height: 100%;
 }
 .gallery-item img {
   width: 100%;
