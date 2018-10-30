@@ -74,7 +74,7 @@
                 <li>
                   <a>About<span class="point point-down">&#8250;</span></a>
                   <ul>
-                    <li><a href="">Our Company</a></li>
+                    <li><a href="#">Our Company</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                   </ul>
                 </li>
@@ -96,6 +96,8 @@
                     <li><a href="#">Partner up</a></li>
                   </ul>
                 </li>
+                <li><a href="#video" id="video-link">Video</a></li>
+                <li><a href="#gallery" id="gallery-link">Gallery</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
             </nav>
@@ -165,7 +167,7 @@
       </video>
     </section>
 
-    <section class="margin-top">
+    <section class="margin-top" data-internal-ref="nothing, clear link styling">
       <div class="parallax-container">
         <img class="parallax-img lazyload" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
         <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
@@ -173,7 +175,7 @@
       </div>
     </section>
 
-    <section class="margin-top">
+    <section id="video" class="margin-top" data-internal-ref="#video-link">
       <div class="parallax-container">
         <video class="parallax-img full-width-video" muted autoplay loop>
           <source src="src/assets/videos/coffee.mp4" type="video/mp4" class="lazyload">
@@ -185,7 +187,7 @@
       </div>
     </section>
 
-    <section class="margin-top">
+    <section id="gallery" class="margin-top" data-internal-ref="#gallery-link">
   	  <div class="gallery">
 
     		<div class="gallery-item">
@@ -267,11 +269,6 @@
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyCAqcBQqzEPYEPcpd_ekebWi2xweRXw350" async defer></script>
 
     <!-- build:js script/min/scripts.min.js -->
-    <script src="dist/addons/lightslider/js/lightslider.js"></script>
-    <script src="dist/addons/gmaps/gmaps.js" defer></script>
-    <script src="dist/addons/owl.carousel/owl.carousel.js"></script>
-    <script src="dist/addons/lightbox2/js/lightbox.js"></script>
-    <script src="dist/addons/lazysizes/lazysizes.js"></script>
     <script src="dist/script/script.js"></script>
     <!-- endbuild -->
 

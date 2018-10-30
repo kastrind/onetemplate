@@ -1,5 +1,6 @@
 import $ from 'jquery';
 window.jQuery = $;
+import SmoothScroll from './SmoothScroll';
 
 class NavMenu {
 	constructor() {
@@ -9,10 +10,23 @@ class NavMenu {
 		this.menuItem = $(".site-header nav.menu ul li a");
 		this.subMenu = $(".site-header nav.menu ul li > ul");
 		this.isMobile = null;
+
+		//style internal links
+		this.inRefDests = $("[data-internal-ref]");
+		this.inRefs = this.menuItem;
+		this.createInternalRefsWaypoints();
+
 		this.events();
 	}
 
 	events() {
+
+		//smooth scroll menu links
+		$("nav.menu ul li").click(function(e) {
+			e.preventDefault();
+			new SmoothScroll($(e.target));
+		});
+
 		//toggle the menu on click of the hamburger icon
 		this.menuIcon.click(this.toggleTheMenu.bind(this));
 
@@ -88,6 +102,35 @@ class NavMenu {
 			this.menuContent.css({display: ""});
 			this.menuIcon.removeClass("header-nav-btn-close");
 		}.bind(this));
+	}
+
+	createInternalRefsWaypoints() {
+		var that = this;
+		this.inRefDests.each(function () {
+			var currentDest = this;
+			new Waypoint({
+				element: currentDest,
+				handler: function (direction) {
+					if (direction == "down") {
+						var matchingHeaderLink = currentDest.getAttribute("data-internal-ref");
+						that.menuItem.removeClass("is-current-link");
+						$(matchingHeaderLink).addClass("is-current-link");
+					}
+				},
+				offset: "20%"
+			});
+			new Waypoint({
+				element: currentDest,
+				handler: function (direction) {
+					if (direction == "up") {
+						var matchingHeaderLink = currentDest.getAttribute("data-internal-ref");
+						that.menuItem.removeClass("is-current-link");
+						$(matchingHeaderLink).addClass("is-current-link");
+					}
+				},
+				offset: "-20%"
+			});
+		});
 	}
 
 }

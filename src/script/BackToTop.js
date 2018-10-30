@@ -1,5 +1,6 @@
 import $ from 'jquery';
 window.jQuery = $;
+import SmoothScroll from './SmoothScroll';
 
 class BackToTop {
 
@@ -31,18 +32,10 @@ class BackToTop {
 		});
 	}
 
-	smoothScroll() {
-		var target = this.backToTopElem.parent().attr('href');
-		var $target = $(target);
-		$('html, body').stop().animate({'scrollTop': $target.offset().top}, 900, 'swing', function () {
-				window.location.hash = target;
-		});
-	}
-
 	events() {
 		this.backToTopElem.click(function(e) {
 			e.preventDefault();
-			this.smoothScroll();
+			new SmoothScroll(this.backToTopElem.parent());
 		}.bind(this));
 	}
 

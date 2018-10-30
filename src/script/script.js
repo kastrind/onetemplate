@@ -12,6 +12,7 @@ import GMaps from 'gmaps';
 
 import 'owl.carousel';
 import lightSlider from '../../node_modules/lightslider/dist/js/lightslider';
+import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
 
@@ -63,8 +64,6 @@ $(document).ready(function() {
     itemsTablet: false,
     itemsMobile : false
   });
-
-  initMap();
 
 });
 

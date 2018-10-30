@@ -303,6 +303,7 @@
             font-size: @menu-font-size;
             font-weight: @menu-font-weight;
             cursor: pointer;
+            white-space: nowrap;
 
             .atMedium({
               font-size: (@menu-font-size + 0.5) - (@menu-font-size + 0.5)*0.1;
@@ -312,11 +313,15 @@
               font-size: (@menu-font-size + 0.75) - (@menu-font-size + 0.75)*0.1;
             });
 
+            &.is-current-link {
+              text-decoration: underline;
+            }
+
             .point {
               font-size: @menu-font-size;
               transition: all linear 0.5s;
               display: inline-block;
-              margin-left: @menu-font-size*0.2;
+              margin-left: @menu-font-size*0.5;
 
               &-down {
                 transform: rotate(90deg);
