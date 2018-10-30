@@ -110,7 +110,6 @@ class Header {
     !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
     this.siteHeader.removeClass("site-header-pushedUp site-header-fixed site-header-animated");
     this.hiddenWhenSiteHeaderPulledDown.css({display: ""});
-    $(document).trigger("recalcEvent");
   }
 
   pullDownHeader() {
@@ -121,7 +120,6 @@ class Header {
     !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();
     this.hiddenWhenSiteHeaderPulledDown.css({display: "none"});
     this.siteHeader.removeClass("site-header-pushedUp").addClass("site-header-fixed");
-    $(document).trigger("recalcEvent");
   }
 
 }

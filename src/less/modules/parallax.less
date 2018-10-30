@@ -11,29 +11,29 @@
     opacity: if((@parallax-overlay), 1 - @parallax-overlay-opacity, 1);
   }
 
-  .parallax-heading {
-    position: relative;
-    top: 20%;
-    margin: 0;
+  .parallax-content {
+    position:relative;
+    top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    font-size: @parallax-font-size;
-    color: white;
-    font-weight: @parallax-font-weight;
-    text-shadow: @parallax-text-shadow;
-
-    .atSmall({
-      font-size: @parallax-font-size + 1;
-    });
-
-  }
-
-  .parallax-btn {
-    position: absolute;
     z-index: @z-index-1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    .parallax-heading {
+      margin: 0 0 0.5rem 0;
+      font-size: @parallax-font-size;
+      color: white;
+      font-weight: @parallax-font-weight;
+      text-shadow: @parallax-text-shadow;
+
+      .atSmall({
+        font-size: @parallax-font-size + 1;
+      });
+
+    }
+
+    .parallax-btn {
+    }
+
   }
 
 }

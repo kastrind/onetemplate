@@ -21,12 +21,6 @@ class NavMenu {
 
 	events() {
 
-		//smooth scroll menu links
-		$("nav.menu ul li a[href^='#']").parent().click(function(e) {
-			e.preventDefault();
-			new SmoothScroll($(e.target));
-		});
-
 		//toggle the menu on click of the hamburger icon
 		this.menuIcon.click(this.toggleTheMenu.bind(this));
 
@@ -50,6 +44,13 @@ class NavMenu {
 					this.subMenu.on("mouseleave", this.handleMouseLeave.bind(this));
 				}
 			}
+			$("nav.menu ul li a[href^='#']").parent().off("click");
+			//smooth scroll menu links
+			$("nav.menu ul li a[href^='#']").parent().click(function(e) {
+				e.preventDefault();
+				new SmoothScroll($(e.target), -this.siteHeader.height()*1.5, 900, 'swing');
+			}.bind(this));
+
 		}.bind(this));
 
 	}
@@ -117,7 +118,7 @@ class NavMenu {
 						$(matchingHeaderLink).addClass("is-current-link");
 					}
 				},
-				offset: "20%"
+				offset: "18%"
 			});
 			new Waypoint({
 				element: currentDest,
@@ -128,7 +129,7 @@ class NavMenu {
 						$(matchingHeaderLink).addClass("is-current-link");
 					}
 				},
-				offset: "-20%"
+				offset: "-40%"
 			});
 		});
 	}

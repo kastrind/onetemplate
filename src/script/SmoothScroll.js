@@ -3,11 +3,13 @@ window.jQuery = $;
 
 class SmoothScroll {
 
-  constructor(element) {
+  constructor(element, offset_correction, time, timing_func) {
     var target = $(element).attr('href');
     var $target = $(target);
-    $('html, body').stop().animate({'scrollTop': $target.offset().top}, 900, 'swing', function () {
+    $('html, body').stop().animate({'scrollTop': $target.offset().top + offset_correction}, time, timing_func, function () {
+      if (!offset_correction) {
         window.location.hash = target;
+      }
     });
   }
 

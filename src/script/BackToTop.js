@@ -35,7 +35,7 @@ class BackToTop {
 	events() {
 		this.backToTopElem.click(function(e) {
 			e.preventDefault();
-			new SmoothScroll(this.backToTopElem.parent());
+			new SmoothScroll(this.backToTopElem.parent(), 0, 900, 'swing');
 		}.bind(this));
 	}
 
