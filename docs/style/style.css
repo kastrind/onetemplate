@@ -6,93 +6,7 @@
 /* Map */
 /* Back to top */
 /* Footer */
-#full-width-slideshow img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.parallax-container {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-  background-color: black;
-}
-.parallax-container .parallax-img {
-  position: absolute;
-  width: 100%;
-  opacity: 0.6;
-}
-.parallax-container .parallax-content {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  text-align: center;
-  z-index: 100;
-}
-.parallax-container .parallax-content .parallax-heading {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  color: white;
-  font-weight: 100;
-  text-shadow: 2px 2px 3px black;
-}
-@media screen and (min-width: 460px) {
-  .parallax-container .parallax-content .parallax-heading {
-    font-size: 2rem;
-  }
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  grid-gap: 0.5rem;
-}
-.gallery-item {
-  height: 100%;
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.gallery-caption {
-  width: 100%;
-  margin-top: -5px;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  font-size: 1rem;
-  line-height: 1rem;
-  text-align: left;
-  color: white;
-  text-shadow: 0 0 0.3rem black;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-#map {
-  width: 100%;
-  height: 40vh;
-}
-.video-container {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
-  background-color: black;
-  z-index: 100;
-}
-.video-container .full-width-video {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 100%;
-  -webkit-transform: none;
-          transform: none;
-  opacity: 0.5;
-}
+/* Modal */
 .site-header {
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -409,6 +323,93 @@
     left: 30%;
   }
 }
+#full-width-slideshow img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.parallax-container {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-color: black;
+}
+.parallax-container .parallax-img {
+  position: absolute;
+  width: 100%;
+  opacity: 0.6;
+}
+.parallax-container .parallax-content {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+  z-index: 100;
+}
+.parallax-container .parallax-content .parallax-heading {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: white;
+  font-weight: 100;
+  text-shadow: 2px 2px 3px black;
+}
+@media screen and (min-width: 460px) {
+  .parallax-container .parallax-content .parallax-heading {
+    font-size: 2rem;
+  }
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-gap: 0.5rem;
+}
+.gallery-item {
+  height: 100%;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery-caption {
+  width: 100%;
+  margin-top: -5px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: left;
+  color: white;
+  text-shadow: 0 0 0.3rem black;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#map {
+  width: 100%;
+  height: 40vh;
+}
+.video-container {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  background-color: black;
+  z-index: 100;
+}
+.video-container .full-width-video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  -webkit-transform: none;
+          transform: none;
+  opacity: 0.5;
+}
 .site-footer {
   background-color: #062456;
   color: #dae2ef;
@@ -449,6 +450,43 @@
   padding-top: 0.5rem;
   margin-top: 1rem;
   border-top: 1px solid #041a3e;
+}
+.modal {
+  position: fixed;
+  z-index: 500;
+  background-color: rgba(255, 255, 255, 0.94);
+  padding: 1rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  transition: all 0.3s ease-out;
+}
+.modal-is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  -webkit-transform: scaleX(1.2);
+          transform: scaleX(1.2);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.modal-close:hover {
+  opacity: 1;
 }
 body {
   margin: 0;
