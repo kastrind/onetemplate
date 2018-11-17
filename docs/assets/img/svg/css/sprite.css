@@ -1,0 +1,38 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 37.261900000000004em 63.8em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .icon.altlogo:before {
+      background-position: 0em 0em;
+      width: 37.261900000000004em;
+      height: 32.9411em;
+  }
+
+
+
+
+  .icon.logo:before {
+      background-position: 0em -33em;
+      width: 23.1782em;
+      height: 30.708800000000004em;
+  }
+
+
+
+
+

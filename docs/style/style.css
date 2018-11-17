@@ -526,8 +526,8 @@ body * {
   bottom: 1rem;
   cursor: pointer;
   transition: opacity 1s;
-  font-size: 3rem;
-  padding: 1rem;
+  font-size: 2rem;
+  padding: 0 1rem;
   color: white;
   background-color: black;
 }
@@ -536,7 +536,6 @@ body * {
 }
 .back-to-top .point-up {
   display: block;
-  line-height: 0;
   -webkit-transform: translateX(-50%) rotate(-90deg);
           transform: translateX(-50%) rotate(-90deg);
 }

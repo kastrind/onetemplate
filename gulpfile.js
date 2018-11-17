@@ -13,13 +13,15 @@ var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var browserSync = require('browser-sync').create();
 var base64 = require('gulp-base64');
+var svgSprite = require("gulp-svg-sprites");
 
 var sourceStyles = [
                     'dist/style/*.css',
+                    'dist/assets/img/svg/css/sprite.css',
                     'dist/addons/lightslider/css/lightslider.css',
                     'dist/addons/owl.carousel/assets/owl.carousel.css',
                     'dist/addons/owl.carousel/assets/owl.theme.default.css',
-                    'dist/addons/lightbox2/css/lightbox.css'
+                    'dist/addons/lightbox2/css/lightbox.css',
                    ];
 
 var sourceScripts = [
@@ -55,7 +57,7 @@ gulp.task('copy-addons', function () {
 });
 
 /* Task to compile less */
-gulp.task('compile-less', function () {
+gulp.task('compile-less', ['copy-assets'], function () {
   return gulp.src('src/less/style.less')
     .pipe(less())
 	  .on('error', function(errorInfo){
@@ -68,11 +70,11 @@ gulp.task('compile-less', function () {
 });
 
 /* Task to minify & bundle css */
-gulp.task('minify-bundle-css', ['compile-less', 'copy-addons'], function () {
+gulp.task('minify-bundle-css', ['compile-less', 'copy-addons', 'create-svg-sprites'], function () {
   return gulp.src(sourceStyles)
     .pipe(base64({exclude: [sourceStyles[0]]}))
-    .pipe(concat('styles.min.css'))
     .pipe(cleanCSS({rebaseTo : 'dist/style/min'}))
+    .pipe(concat('styles.min.css'))
     .pipe(gulp.dest('dist/style/min'))
     .pipe(browserSync.stream());
 });
@@ -116,7 +118,13 @@ gulp.task('copy-assets', function () {
     .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('build-prod', ['compile-less', 'copy-assets', 'copy-addons', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
+gulp.task('create-svg-sprites', ['copy-assets'], function () {
+    return gulp.src('src/assets/img/**/*.svg')
+        .pipe(svgSprite())
+        .pipe(gulp.dest("dist/assets/img/svg"));
+});
+
+gulp.task('build-prod', ['copy-assets', 'compile-less', 'create-svg-sprites', 'copy-addons', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
 
 gulp.task('build-dev', ['compile-less', 'copy-assets', 'copy-addons', 'transpile-bundle-scripts']);
 
