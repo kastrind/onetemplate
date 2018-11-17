@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  z-index: @z-index-5;
+  background-color: @modal-background-color;
+  padding: @modal-padding;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.2);
+  transition: all .3s ease-out;
+
+  &-is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  &-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    transform: scaleX(1.2);
+    transform-origin: 100% 0;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
