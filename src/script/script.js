@@ -5,6 +5,7 @@ window.jQuery = $;
 
 import Header from './Header';
 import NavMenu from './NavMenu';
+import Sidebar from './Sidebar';
 import BackToTop from './BackToTop';
 import AppearOnLoad from './AppearOnLoad';
 import ParallaxImg from './ParallaxImg';
@@ -20,6 +21,8 @@ import lazySizes from '../../node_modules/lazysizes/lazysizes';
 new Header();
 
 new NavMenu();
+
+new Sidebar();
 
 new BackToTop("75%");
 

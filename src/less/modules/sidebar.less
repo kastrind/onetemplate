@@ -1,0 +1,46 @@
+.sidebar {
+    height: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: @z-index-2;
+    background-color: #ffffff;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: all ease-in 0.5s;
+
+    &-is-visible {
+      width: 30%;
+      height: 100%;
+      padding: 1rem;
+      opacity: 1;
+    }
+
+    &-hide {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      transform: scaleX(1.2);
+      transform-origin: 100% 0;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: all .3s linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+}
+
+.main {
+  transition: all ease-in 0.5s;
+
+    &-squashed {
+      margin-left: 30%;
+    }
+}

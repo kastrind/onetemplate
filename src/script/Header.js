@@ -30,7 +30,6 @@ class Header {
     this.menuIcon = $(".site-header .header-nav-btn");
 
     //the submenu the style of which to alternate
-
     this.subMenu = $(".site-header nav.menu ul li > ul");
     //in case page refreshed in the middle of the document:
     //if we are scrolling before the trigger, prepare header for pull down
@@ -69,6 +68,7 @@ class Header {
     //create waypoint for pulling down the header
     this.createPullDownHeaderWaypoint();
 
+    this.sidebar = $(".sidebar");
   }
 
   isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem() {
@@ -110,6 +110,9 @@ class Header {
     !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
     this.siteHeader.removeClass("site-header-pushedUp site-header-fixed site-header-animated");
     this.hiddenWhenSiteHeaderPulledDown.css({display: ""});
+    if (!this.sidebar.hasClass("sidebar-is-visible")) {
+      this.siteHeader.removeClass("site-header-fixed-squashed");
+    }
   }
 
   pullDownHeader() {
@@ -120,6 +123,9 @@ class Header {
     !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();
     this.hiddenWhenSiteHeaderPulledDown.css({display: "none"});
     this.siteHeader.removeClass("site-header-pushedUp").addClass("site-header-fixed");
+    if (this.sidebar.hasClass("sidebar-is-visible")) {
+      this.siteHeader.addClass("site-header-fixed-squashed");
+    }
   }
 
 }

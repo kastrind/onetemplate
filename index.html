@@ -36,238 +36,248 @@
   </head>
   <body id="back-to-top-target"> <!-- or <body class="margin-left-right"> -->
 
-    <header class="site-header">
-      <div class="header-wrapper">
+    <div class="sidebar">
+      <div class="sidebar-hide">&#x274c;</div>
+      <h3>This is a sidebar.</h3>
+      <p>This is a paragraph.</p>
+    </div>
 
-        <div class="header-wrapper-row" data-hide-when-header-pulled-down="true">
-          <div class="header-wrapper-col">
-            <a href="#">some</a>
-            <a href="#">links</a>
-            <a href="#">here</a>
-          </div>
-          <div class="header-wrapper-col">
-            perhaps a slogan or a tel.:<a href="#">+30 28210 00000</a> here
-          </div>
-          <div class="header-wrapper-col">
-            <a href="#">maybe</a>
-            <a href="#">social</a>
-            <a href="#">icons</a>
-            <a href="#">here</a>
-          </div>
-        </div>
+    <div class="main">
 
-        <div class="header-wrapper-row">
+      <header class="site-header">
+        <div class="header-wrapper">
 
-          <div class="header-wrapper-col">
-            <div class="logo"><a href="#"><img src="src/assets/img/logo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
-            <div class="altLogo"><a href="#"><img src="src/assets/img/altlogo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
-            <div class="header-nav-btn">
-              <div class="header-nav-btn-bar-middle"></div>
+          <div class="header-wrapper-row" data-hide-when-header-pulled-down="true">
+            <div class="header-wrapper-col">
+              <a href="#">some</a>
+              <a href="#">links</a>
+              <a href="#">here</a>
+            </div>
+            <div class="header-wrapper-col">
+              perhaps a slogan or a tel.:<a href="#">+30 28210 00000</a> here
+            </div>
+            <div class="header-wrapper-col">
+              <a href="#">maybe</a>
+              <a href="#">social</a>
+              <a href="#">icons</a>
+              <a href="#">here</a>
             </div>
           </div>
 
-          <div class="header-wrapper-col">
+          <div class="header-wrapper-row">
 
-            <nav class="menu">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li>
-                  <a>About<span class="point point-down">&#8250;</span></a>
-                  <ul>
-                    <li><a href="#">Our Company</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a>Services<span class="point point-down">&#8250;</span></a>
-                  <ul>
-                    <li><a>Features<span class="point point-down">&#8250;</span></a>
-                      <ul>
-                        <li><a href="#">All the features</a></li>
-                        <li><a>Details<span class="point point-down">&#8250;</span></a>
-                          <ul>
-                            <li><a href="#">Stats</a></li>
-                            <li><a href="#">Screenshots</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Partner up</a></li>
-                  </ul>
-                </li>
-                <li><a href="#video" id="video-link">Video</a></li>
-                <li><a href="#gallery" id="gallery-link">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
+            <div class="header-wrapper-col">
+              <div class="logo"><a href="#"><img src="src/assets/img/logo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
+              <div class="altLogo"><a href="#"><img src="src/assets/img/altlogo.svg" alt="logo_alt_here" title="logo_title_here" /></a></div>
+              <div class="header-nav-btn">
+                <div class="header-nav-btn-bar-middle"></div>
+              </div>
+            </div>
 
-          <div class="header-wrapper-col">
-            <form name="searchForm" action="" method="POST">
-              <input type="text" value="" placeholder="search..." name="searchField" />
-              <button type="submit" name="searchButton">go</button>
-            </form>
+            <div class="header-wrapper-col">
+
+              <nav class="menu">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li>
+                    <a>About<span class="point point-down">&#8250;</span></a>
+                    <ul>
+                      <li><a href="#">Our Company</a></li>
+                      <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>Services<span class="point point-down">&#8250;</span></a>
+                    <ul>
+                      <li><a>Features<span class="point point-down">&#8250;</span></a>
+                        <ul>
+                          <li><a href="#">All the features</a></li>
+                          <li><a>Details<span class="point point-down">&#8250;</span></a>
+                            <ul>
+                              <li><a href="#">Stats</a></li>
+                              <li><a href="#">Screenshots</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Pricing</a></li>
+                      <li><a href="#">Partner up</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#video" id="video-link">Video</a></li>
+                  <li><a href="#gallery" id="gallery-link">Gallery</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="header-wrapper-col">
+              <form name="searchForm" action="" method="POST">
+                <input type="text" value="" placeholder="search..." name="searchField" />
+                <button type="submit" name="searchButton">go</button>
+              </form>
+            </div>
+
           </div>
 
         </div>
+      </header>
 
-      </div>
-    </header>
+      <section data-trigger-hide-header="true">
 
-    <section data-trigger-hide-header="true">
+        <!--
+        <ul id="lightSliderFull" class="lightSliderFull">
+          <li>
+            <img src="src/assets/img/fullwidth/house.jpeg" />
+          </li>
+          <li>
+            <img src="src/assets/img/fullwidth/bridge.jpeg" />
+          </li>
+        </ul>
+        -->
 
-      <!--
-      <ul id="lightSliderFull" class="lightSliderFull">
-        <li>
-          <img src="src/assets/img/fullwidth/house.jpeg" />
-        </li>
-        <li>
-          <img src="src/assets/img/fullwidth/bridge.jpeg" />
-        </li>
-      </ul>
-      -->
-
-      <div id="full-width-slideshow" class="owl-carousel owl-theme">
-        <div style="position: relative;"><h2 style="position:absolute;left:30%;top:30%;">Amazing Experience</h2><img src="src/assets/img/fullwidth/house.jpeg" /></div>
-        <div><img src="src/assets/img/fullwidth/bridge.jpeg" /></div>
-      </div>
-
-    </section>
-    <section class="margin-top" data-trigger-pullDown-header="true" data-trigger-back-to-top="true">
-      <ul id="lightSlider" class="lightSlider">
-        <li>
-          <h3>First Slide</h3>
-          <p>Lorem ipsum Cupidatat quis pariatur anim.</p>
-        </li>
-        <li>
-          <h3>Second Slide</h3>
-          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-        </li>
-        <li>
-          <h3>Third Slide</h3>
-          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-        </li>
-        <li>
-          <h3>Fourth Slide</h3>
-          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-        </li>
-        <li>
-          <h3>Fifth Slide</h3>
-          <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="margin-top video-container">
-      <video class="full-width-video" muted autoplay loop>
-        <source src="src/assets/videos/coffee.mp4" type="video/mp4"  class="lazyload">
-        <!--<source src="assets/videos/coffee.ogg" type="video/ogg">-->
-        Your browser does not support HTML5 video.
-      </video>
-    </section>
-
-    <section class="margin-top" data-internal-ref="nothing, clear link styling">
-      <div class="parallax-container">
-        <img class="parallax-img lazyload" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
-        <div class="parallax-content">
-          <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
-          <button class="btn parallax-btn open-modal">More</button>
+        <div id="full-width-slideshow" class="owl-carousel owl-theme">
+          <div style="position: relative;"><h2 style="position:absolute;left:30%;top:30%;">Amazing Experience</h2><img src="src/assets/img/fullwidth/house.jpeg" /></div>
+          <div><img src="src/assets/img/fullwidth/bridge.jpeg" /></div>
         </div>
-      </div>
-    </section>
 
-    <section id="video" class="margin-top" data-internal-ref="#video-link">
-      <div class="parallax-container">
-        <video class="parallax-img full-width-video" muted autoplay loop>
-          <source src="src/assets/videos/coffee.mp4" type="video/mp4" class="lazyload">
+      </section>
+      <section class="margin-top" data-trigger-pullDown-header="true" data-trigger-back-to-top="true">
+        <ul id="lightSlider" class="lightSlider">
+          <li>
+            <h3>First Slide</h3>
+            <p>Lorem ipsum Cupidatat quis pariatur anim.</p>
+          </li>
+          <li>
+            <h3>Second Slide</h3>
+            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+          </li>
+          <li>
+            <h3>Third Slide</h3>
+            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+          </li>
+          <li>
+            <h3>Fourth Slide</h3>
+            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+          </li>
+          <li>
+            <h3>Fifth Slide</h3>
+            <p>Lorem ipsum Excepteur amet adipisicing fugiat velit nisi.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="margin-top video-container">
+        <video class="full-width-video" muted autoplay loop>
+          <source src="src/assets/videos/coffee.mp4" type="video/mp4"  class="lazyload">
           <!--<source src="assets/videos/coffee.ogg" type="video/ogg">-->
           Your browser does not support HTML5 video.
         </video>
-        <div class="parallax-content">
-          <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
-          <button class="btn parallax-btn open-modal">More</button>
+      </section>
+
+      <section class="margin-top" data-internal-ref="nothing, clear link styling">
+        <div class="parallax-container">
+          <img class="parallax-img lazyload" src="src/assets/img/fullwidth/waterfall.jpeg" title="Waterfall" alt="Waterfall" />
+          <div class="parallax-content">
+            <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
+            <button class="btn parallax-btn show-sidebar">More</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="gallery" class="margin-top" data-internal-ref="#gallery-link">
-  	  <div class="gallery">
-
-    		<div class="gallery-item">
-          <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name" data-title="Example of a title.">
-    		      <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
-    		</div>
-
-    		<div class="gallery-item">
-          <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
-            <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">Hello, this is another caption, as you can see.</div>
-    		</div>
-
-    		<div class="gallery-item">
-          <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
-            <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">Hello, this is yet another caption, as you can see.</div>
-    		</div>
-
-    		<div class="gallery-item">
-          <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
-            <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">This is a caption.</div>
-    		</div>
-
-    		<div class="gallery-item">
-          <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
-            <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">Another caption.</div>
-    		</div>
-
-    		<div class="gallery-item">
-          <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
-            <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">Guess what, another caption.</div>
-    		</div>
-
-        <div class="gallery-item">
-          <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
-            <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
-          </a>
-          <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
-    		</div>
-
-  	  </div>
-  	</section>
-
-    <section class="margin-top">
-      <div id="map"></div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="footer-row">
-        <div class="footer-col">
-          <a href="#">Links</a>
+      <section id="video" class="margin-top" data-internal-ref="#video-link">
+        <div class="parallax-container">
+          <video class="parallax-img full-width-video" muted autoplay loop>
+            <source src="src/assets/videos/coffee.mp4" type="video/mp4" class="lazyload">
+            <!--<source src="assets/videos/coffee.ogg" type="video/ogg">-->
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="parallax-content">
+            <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
+            <button class="btn parallax-btn open-modal">More</button>
+          </div>
         </div>
-        <div class="footer-col">
-          <a href="#">Privacy Policy</a>
+      </section>
+
+      <section id="gallery" class="margin-top" data-internal-ref="#gallery-link">
+    	  <div class="gallery">
+
+      		<div class="gallery-item">
+            <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name" data-title="Example of a title.">
+      		      <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
+      		</div>
+
+      		<div class="gallery-item">
+            <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
+              <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">Hello, this is another caption, as you can see.</div>
+      		</div>
+
+      		<div class="gallery-item">
+            <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
+              <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">Hello, this is yet another caption, as you can see.</div>
+      		</div>
+
+      		<div class="gallery-item">
+            <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
+              <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">This is a caption.</div>
+      		</div>
+
+      		<div class="gallery-item">
+            <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
+              <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">Another caption.</div>
+      		</div>
+
+      		<div class="gallery-item">
+            <a href="src/assets/img/winter.jpeg" data-lightbox="gallery-name">
+              <img data-srcset="src/assets/img/winter.jpeg 720w, src/assets/img/winter-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">Guess what, another caption.</div>
+      		</div>
+
+          <div class="gallery-item">
+            <a href="src/assets/img/lake.jpeg" data-lightbox="gallery-name">
+              <img data-srcset="src/assets/img/lake.jpeg 720w, src/assets/img/lake-hi.jpeg 1100w" data-sizes="auto" class="lazyload"/>
+            </a>
+            <div class="gallery-caption">Hello, this is a caption, as you can see.</div>
+      		</div>
+
+    	  </div>
+    	</section>
+
+      <section class="margin-top">
+        <div id="map"></div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-row">
+          <div class="footer-col">
+            <a href="#">Links</a>
+          </div>
+          <div class="footer-col">
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-col">
+            <a href="#">Contact Us</a>
+          </div>
         </div>
-        <div class="footer-col">
-          <a href="#">Contact Us</a>
-        </div>
-      </div>
-      <div class="footer-full">All Rights Reserved.</div>
-    </footer>
+        <div class="footer-full">All Rights Reserved.</div>
+      </footer>
+
+    </div>
 
     <div class="modal">
       <h3>This is a modal.</h3>
-      <p>This is an example paragraph.</p>
+      <p>This is a paragraph.</p>
       <div class="modal-close">&#x274c;</div>
     </div>
 

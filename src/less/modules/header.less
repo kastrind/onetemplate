@@ -1,13 +1,13 @@
 .header-fixed-mixin() when (@header-is-fixed=true) {
   position: fixed;
-  z-index: @z-index-2;
+  z-index: @z-index-3;
   left: 0;right: 0;
   .submenu-expansion-fix-mixin();
 }
 
 .header-fixed-when-pulled-down-mixin() {
   position: fixed;
-  z-index: @z-index-2;
+  z-index: @z-index-3;
   left: 0;right: 0;
   .submenu-expansion-fix-mixin();
 }
@@ -76,14 +76,18 @@
 
 .site-header {
   .header-fixed-mixin();
-
   transform: translateY(0);
+  transition: margin ease-in 0.5s;
 
   &-animated {
-    transition: transform ease-in 0.5s;
+    transition: transform ease-in 0.5s, margin ease-in 0.5s;
   }
   &-fixed {
     .header-fixed-when-pulled-down-mixin();
+
+    &-squashed {
+      margin-left: 30%;
+    }
   }
   &-pushedUp {
     transform: translateY(-100%);
