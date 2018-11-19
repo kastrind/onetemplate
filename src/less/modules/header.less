@@ -86,7 +86,7 @@
     .header-fixed-when-pulled-down-mixin();
 
     &-squashed {
-      margin-left: 30%;
+      margin: if((@sidebar-is-left), 0 0 0 30%, 0 30% 0 0);
     }
   }
   &-pushedUp {

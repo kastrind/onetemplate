@@ -1,5 +1,7 @@
 @import "./paths";
 
+
+
 /* General */
 
 @widthSmall: 460px;
@@ -26,9 +28,10 @@
 @loading-overlay-color: black;
 
 
+
 /* Header */
 
-@header-is-fixed: true;
+@header-is-fixed: false;
 @header-font-family: Arial;
 @menu-font-color-dark: #333333;
 @menu-font-color-light: #dddddd;
@@ -78,6 +81,16 @@
 
 
 
+/* Sidebar */
+
+@sidebar-is-left: true;
+@sidebar-background-color: rgba(200, 200, 200, .94);
+@sidebar-bg-light: boolean(luma(@sidebar-background-color) > 40%);
+@sidebar-font-color-dark: #333333;
+@sidebar-font-color-light: #cccccc;
+@sidebar-padding: 1rem;
+
+
 /* Video */
 
 @video-container-height: 80vh;
@@ -100,6 +113,7 @@
 @btn-border-radius: 0.3rem;
 
 
+
 /* Parallax */
 
 @parallax-container-height: 300px;
@@ -111,29 +125,39 @@
 @parallax-text-shadow: 2px 2px 3px black;
 
 
+
 /* Map */
 
 @map-height: 40vh;
 @map-width: 100%;
 
 
+
 /* Back to top */
+
 @back-to-top-background-color: black;
 @back-to-top-color: white;
 @back-to-top-font-size: 2rem;
 @back-to-top-padding: 0 1rem;
 
 
+
 /* Footer */
 
-@footer-background-color: #062456;
+@footer-background-color: #303040;
 @footer-bg-light: boolean(luma(@footer-background-color) > 40%);
-@footer-font-color-dark: #02173a;
-@footer-font-color-light: #dae2ef;
+@footer-font-color-dark: #333333;
+@footer-font-color-light: #cccccc;
 @footer-border: 1px solid darken(@footer-background-color, 5%);
+
 
 
 /* Modal */
 
-@modal-background-color: rgba(255, 255, 255, .94);
+@modal-background-color: rgba(200, 200, 200, .94);
+@modal-bg-light: boolean(luma(@modal-background-color) > 40%);
+@modal-font-color-dark: #333333;
+@modal-font-color-light: #cccccc;
 @modal-padding: 1rem;
+@modal-width: 90%;
+@modal-height: 90%;

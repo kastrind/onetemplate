@@ -1,21 +1,31 @@
+.sidebar-is-left-mixin() when (@sidebar-is-left=true) {
+  left: 0;
+}
+
+.sidebar-is-right-mixin() when (@sidebar-is-left=false) {
+  right: 0;
+}
+
 .sidebar {
     height: 0;
     width: 0;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: @z-index-2;
-    background-color: #ffffff;
+    background-color: @sidebar-background-color;
+    color: if((@sidebar-bg-light), @sidebar-font-color-dark, @sidebar-font-color-light);
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     opacity: 0;
     transition: all ease-in 0.5s;
+    .sidebar-is-left-mixin();
+    .sidebar-is-right-mixin();
 
     &-is-visible {
       width: 30%;
       height: 100%;
-      padding: 1rem;
+      padding: @sidebar-padding;
       opacity: 1;
     }
 
@@ -41,6 +51,6 @@
   transition: all ease-in 0.5s;
 
     &-squashed {
-      margin-left: 30%;
+      margin: if((@sidebar-is-left), 0 0 0 30%, 0 30% 0 0);
     }
 }

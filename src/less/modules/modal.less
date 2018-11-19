@@ -2,7 +2,11 @@
   position: fixed;
   z-index: @z-index-5;
   background-color: @modal-background-color;
+  color: if((@modal-bg-light), @modal-font-color-dark, @modal-font-color-light);
   padding: @modal-padding;
+  width: @modal-width;
+  height: @modal-height;
+  margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
