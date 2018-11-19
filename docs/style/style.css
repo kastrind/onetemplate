@@ -1,5 +1,6 @@
 /* General */
 /* Header */
+/* Sidebar */
 /* Video */
 /* Buttons */
 /* Parallax */
@@ -8,25 +9,9 @@
 /* Footer */
 /* Modal */
 .site-header {
-  position: fixed;
-  z-index: 300;
-  left: 0;
-  right: 0;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   transition: margin ease-in 0.5s;
-}
-.site-header nav.menu {
-  max-width: 90vw;
-  max-height: 50vh;
-  overflow: auto;
-}
-@media screen and (min-width: 768px) {
-  .site-header nav.menu {
-    max-width: initial;
-    max-height: initial;
-    overflow: initial;
-  }
 }
 .site-header-animated {
   transition: margin ease-in 0.5s, -webkit-transform ease-in 0.5s;
@@ -52,7 +37,7 @@
   }
 }
 .site-header-fixed-squashed {
-  margin-left: 30%;
+  margin: 0 0 0 30%;
 }
 .site-header-pushedUp {
   -webkit-transform: translateY(-100%);
@@ -348,14 +333,15 @@
   width: 0;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 200;
-  background-color: #ffffff;
+  background-color: rgba(200, 200, 200, 0.94);
+  color: #333333;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   opacity: 0;
   transition: all ease-in 0.5s;
+  left: 0;
 }
 .sidebar-is-visible {
   width: 30%;
@@ -383,7 +369,7 @@
   transition: all ease-in 0.5s;
 }
 .main-squashed {
-  margin-left: 30%;
+  margin: 0 0 0 30%;
 }
 #full-width-slideshow img {
   display: block;
@@ -473,8 +459,8 @@
   opacity: 0.5;
 }
 .site-footer {
-  background-color: #062456;
-  color: #dae2ef;
+  background-color: #303040;
+  color: #cccccc;
   padding: 0.5rem;
 }
 .site-footer .footer-row {
@@ -494,7 +480,7 @@
 }
 @media screen and (min-width: 768px) {
   .site-footer .footer-row .footer-col:not(:first-of-type) {
-    border-left: 1px solid #041a3e;
+    border-left: 1px solid #252531;
   }
   .site-footer .footer-row .footer-col:not(:first-of-type):not(:last-of-type) {
     text-align: center;
@@ -504,20 +490,24 @@
   }
 }
 .site-footer .footer-row .footer-col a {
-  color: #dae2ef;
+  color: #cccccc;
   text-decoration: none;
 }
 .site-footer .footer-full {
   width: 100%;
   padding-top: 0.5rem;
   margin-top: 1rem;
-  border-top: 1px solid #041a3e;
+  border-top: 1px solid #252531;
 }
 .modal {
   position: fixed;
   z-index: 500;
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: rgba(200, 200, 200, 0.94);
+  color: #333333;
   padding: 1rem;
+  width: 90%;
+  height: 90%;
+  margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
