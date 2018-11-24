@@ -625,7 +625,7 @@ body * {
 }
 .back-to-top .caretup {
   display: block;
-  font-size: 0.05rem;
+  font-size: 1px;
 }
 .disappear-on-load {
   position: fixed;
