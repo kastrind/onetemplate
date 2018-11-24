@@ -100,7 +100,6 @@ body * {
   bottom: 1rem;
   cursor: pointer;
   transition: opacity 1s;
-  font-size: @back-to-top-font-size;
   padding: @back-to-top-padding;
   color: @back-to-top-color;
   background-color: @back-to-top-background-color;
@@ -109,9 +108,9 @@ body * {
     opacity: 0;
   }
 
-  .point-up {
+  .caretup {
     display: block;
-    transform: translateX(-50%) rotate(-90deg);
+    font-size: @back-to-top-font-size;
   }
 
 }

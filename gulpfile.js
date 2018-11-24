@@ -172,6 +172,11 @@ gulp.task('watch-dev', function() {
     gulp.start('copy-assets');
   });
 
+  gulp.start('create-svg-sprites');
+  gulp.watch('src/assets/img/**/*.svg', function() {
+    gulp.start('create-svg-sprites');
+  });
+
 });
 
 /* Task to create folder to be published on github */

@@ -616,18 +616,16 @@ body * {
   bottom: 1rem;
   cursor: pointer;
   transition: opacity 1s;
-  font-size: 2rem;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   color: white;
   background-color: black;
 }
 .back-to-top-hidden {
   opacity: 0;
 }
-.back-to-top .point-up {
+.back-to-top .caretup {
   display: block;
-  -webkit-transform: translateX(-50%) rotate(-90deg);
-          transform: translateX(-50%) rotate(-90deg);
+  font-size: 0.05rem;
 }
 .disappear-on-load {
   position: fixed;
