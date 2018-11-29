@@ -1,0 +1,39 @@
+
+.previewlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: @previewlist-grid-gap;
+
+  &-item {
+    width: 100%;
+    padding: @previewlist-item-padding;
+    box-sizing: border-box;
+    color: if((@previewlist-bg-light), @previewlist-font-color-dark, @previewlist-font-color-light);
+    background-color: @previewlist-background-color;
+    border-radius: 10px;
+
+    img {
+      height: 50px;
+      clear: left;
+      float: left;
+      padding: 0 0.5rem 0.5rem 0;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.8rem;
+
+      a {
+        color: #888888;
+      }
+    }
+
+  }
+
+}

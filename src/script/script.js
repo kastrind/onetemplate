@@ -51,7 +51,7 @@ $(document).ready(function() {
   console.log('jQuery working.');
 
   //$('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});
-  $('#lightSlider').lightSlider();
+  $('#lightSlider').lightSlider({item: 5, auto: true, loop: true});
 
   $("#full-width-slideshow").owlCarousel({
     //navigation : true, // Show next and prev buttons
@@ -60,13 +60,13 @@ $(document).ready(function() {
     loop: true,
     autoplayTimeout: 3000,
     autoHeight: false,
-    smartSpeed : 1500,
-    paginationSpeed : 400,
-    items : 1,
-    itemsDesktop : false,
-    itemsDesktopSmall : false,
+    smartSpeed: 1500,
+    paginationSpeed: 400,
+    items: 1,
+    itemsDesktop: false,
+    itemsDesktopSmall: false,
     itemsTablet: false,
-    itemsMobile : false
+    itemsMobile: false
   });
 
 });

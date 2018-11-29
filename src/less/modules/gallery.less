@@ -2,7 +2,7 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  grid-gap: 0.5rem;
+  grid-gap: @gallery-grid-gap;
 
   &-item {
     height: 100%;
@@ -12,21 +12,21 @@
       height: 100%;
       object-fit: cover;
     }
-    
+
   }
 
   &-caption {
     width: 100%;
     margin-top: -5px;
-    padding: 0.5rem;
+    padding: @gallery-caption-padding;
     box-sizing: border-box;
     transform: translateY(-100%);
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: @gallery-font-size;
+    line-height: @gallery-line-height;
     text-align: left;
-    color: white;
-    text-shadow: 0 0 0.3rem black;
-    background-color: rgba(0,0,0, 0.6);
+    color: @gallery-font-color;
+    text-shadow: @gallery-text-shadow;
+    background-color: @gallery-background-color;
   }
 
 }

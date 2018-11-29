@@ -1,0 +1,31 @@
+
+.itemlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: @itemlist-grid-gap;
+  margin-bottom: 150px;
+
+  &-item {
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  &-caption {
+    width: 100%;
+    min-height: 100px;
+    margin-top: -5px;
+    padding: @itemlist-caption-padding;
+    box-sizing: border-box;
+    font-size: @itemlist-font-size;
+    line-height: @itemlist-line-height;
+    text-align: left;
+    background-color: @itemlist-background-color;
+    color: if((@itemlist-bg-light), @itemlist-font-color-dark, @itemlist-font-color-light);;
+  }
+
+}

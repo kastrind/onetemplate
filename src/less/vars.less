@@ -16,8 +16,8 @@
 @font-color-light: #dddddd;
 
 @page-margin-left-right: 5vw;
-@margin-top: 5vh;
-@margin-bottom: 5vh;
+@margin-top: 10vh;
+@margin-bottom: 10vh;
 
 @z-index-1: 100;
 @z-index-2: 200;
@@ -91,6 +91,43 @@
 @sidebar-padding: 1rem;
 
 
+
+/* Gallery */
+
+@gallery-grid-gap:  0.5rem;
+@gallery-caption-padding: 0.5rem;
+@gallery-font-size: 1rem;
+@gallery-line-height: 1rem;
+@gallery-background-color: rgba(0, 0, 0, 0.6);
+@gallery-font-color: #cccccc;
+@gallery-text-shadow: 0 0 0.3rem black;
+
+
+
+/* Itemlist */
+
+@itemlist-grid-gap: 150px 2rem;
+@itemlist-caption-padding: 0.5rem;
+@itemlist-font-size: 0.8rem;
+@itemlist-line-height: 1rem;
+@itemlist-background-color: rgba(255, 255, 255, 0.9);
+@itemlist-bg-light: boolean(luma(@itemlist-background-color) > 40%);
+@itemlist-font-color-light: #cccccc;
+@itemlist-font-color-dark: #333333;
+
+
+
+/* Previewlist */
+
+@previewlist-grid-gap:  1rem;
+@previewlist-item-padding: 0.5rem;
+@previewlist-font-size: 1rem;
+@previewlist-background-color: rgba(0, 0, 0, 0.8);
+@previewlist-bg-light: boolean(luma(@previewlist-background-color) > 40%);
+@previewlist-font-color-light: #cccccc;
+@previewlist-font-color-dark: #333333;
+
+
 /* Video */
 
 @video-container-height: 80vh;
@@ -137,7 +174,7 @@
 
 @back-to-top-background-color: black;
 @back-to-top-color: white;
-@back-to-top-font-size: 1px; //still relative because of the contained svg dimensions
+@back-to-top-font-size: 0.5px; //still relative because of the contained svg dimensions
 @back-to-top-padding: 0 0.5rem;
 
 
