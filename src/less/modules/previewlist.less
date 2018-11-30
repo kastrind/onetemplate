@@ -10,10 +10,11 @@
     box-sizing: border-box;
     color: if((@previewlist-bg-light), @previewlist-font-color-dark, @previewlist-font-color-light);
     background-color: @previewlist-background-color;
-    border-radius: 10px;
+    border-radius: @previewlist-border-radius;
+    border: @previewlist-border;
 
     img {
-      height: 50px;
+      height: @previewlist-img-height;
       clear: left;
       float: left;
       padding: 0 0.5rem 0.5rem 0;
@@ -21,16 +22,32 @@
 
     h4 {
       margin: 0;
-      font-size: 1rem;
+      font-size: @previewlist-font-size;
+
+      .atMedium({
+        font-size: (@previewlist-font-size + 0.05) - (@previewlist-font-size + 0.05)*0.1;
+      });
+
+      .atLarge({
+        font-size: (@previewlist-font-size + 0.1) - (@previewlist-font-size + 0.1)*0.1;
+      });
 
     }
 
     p {
       margin: 0;
-      font-size: 0.8rem;
+      font-size: @previewlist-font-size - 0.2;
+
+      .atMedium({
+        font-size: (@previewlist-font-size - 0.1) - (@previewlist-font-size - 0.1)*0.1;
+      });
+
+      .atLarge({
+        font-size: (@previewlist-font-size) - (@previewlist-font-size)*0.1;
+      });
 
       a {
-        color: #888888;
+        color: @previewlist-more-link-color;
       }
     }
 

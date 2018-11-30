@@ -1,11 +1,12 @@
 
 .itemlist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: @itemlist-grid-gap;
   margin-bottom: 150px;
 
   &-item {
+    height: 100%;
 
     img {
       width: 100%;
@@ -25,7 +26,16 @@
     line-height: @itemlist-line-height;
     text-align: left;
     background-color: @itemlist-background-color;
-    color: if((@itemlist-bg-light), @itemlist-font-color-dark, @itemlist-font-color-light);;
+    color: if((@itemlist-bg-light), @itemlist-font-color-dark, @itemlist-font-color-light);
+
+    .atMedium({
+      font-size: (@itemlist-font-size + 0.1) - (@itemlist-font-size + 0.1)*0.1;
+    });
+
+    .atLarge({
+      font-size: (@itemlist-font-size + 0.2) - (@itemlist-font-size + 0.2)*0.1;
+    });
+
   }
 
 }

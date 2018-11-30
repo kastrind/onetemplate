@@ -1,0 +1,45 @@
+.textcontent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .col {
+    min-width: 200px;
+    box-sizing: border-box;
+    padding: @textcontent-padding;
+    background-color: @textcontent-background-color;
+    color: if((@textcontent-bg-light), @textcontent-font-color-dark, @textcontent-font-color-light);
+    border: @textcontent-border;
+    border-radius: @textcontent-border-radius;
+    font-size: @textcontent-font-size;
+
+    .atLarge({
+      font-size: (@textcontent-font-size + 0.2) - (@textcontent-font-size + 0.2)*0.1;
+    });
+
+    &-second {
+      .atMedium({
+        max-width: 50%;
+      });
+    }
+
+    &-third {
+      .atMedium({
+        max-width: 33.33%;
+      });
+    }
+
+    &-fourth {
+      .atMedium({
+        max-width: 25%;
+      });
+    }
+
+    &-full {
+      max-width: 100%;
+    }
+
+  }
+
+}

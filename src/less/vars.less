@@ -8,6 +8,9 @@
 @widthMedium: 768px;
 @widthLarge: 1100px;
 
+@main-content-max-width-large: 80vw;
+@main-content-max-width-medium: 90vw;
+
 @body-background: black url(@body-background-path) no-repeat fixed center;
 
 @background-color: #dddddd;
@@ -92,6 +95,12 @@
 
 
 
+/* Slideshow */
+
+@slideshow-font-size: 2rem;
+
+
+
 /* Gallery */
 
 @gallery-grid-gap:  0.5rem;
@@ -126,6 +135,24 @@
 @previewlist-bg-light: boolean(luma(@previewlist-background-color) > 40%);
 @previewlist-font-color-light: #cccccc;
 @previewlist-font-color-dark: #333333;
+@previewlist-border: none;
+@previewlist-border-radius: 10px;
+@previewlist-more-link-color: #c0c0c0;
+@previewlist-img-height: 60px;
+
+
+
+/* Textcontent */
+
+@textcontent-padding: 0.5rem;
+@textcontent-font-size: 1rem;
+@textcontent-background-color: rgba(255, 255, 255, .94);
+@textcontent-bg-light: boolean(luma(@textcontent-background-color) > 40%);
+@textcontent-font-color-light: #cccccc;
+@textcontent-font-color-dark: #333333;
+@textcontent-border-radius: none;
+@textcontent-border: none;
+
 
 
 /* Video */
