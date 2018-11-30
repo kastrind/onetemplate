@@ -23,16 +23,18 @@ class Modal {
 
   keypressHandler(e) {
     if (e.keyCode == 27) {
-      this.closeModal();
+      this.closeModal(e);
     }
   }
 
-  openModal() {
+  openModal(e) {
+    e.preventDefault();
     this.modal.addClass("modal-is-visible");
     return false;
   }
 
-  closeModal() {
+  closeModal(e) {
+    e.preventDefault();
     this.modal.removeClass("modal-is-visible");
   }
 }

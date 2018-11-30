@@ -110,7 +110,7 @@ class Header {
     !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
     this.siteHeader.removeClass("site-header-pushedUp site-header-fixed site-header-animated");
     this.hiddenWhenSiteHeaderPulledDown.css({display: ""});
-    if (!this.sidebar.hasClass("sidebar-is-visible")) {
+    if (!this.sidebar.hasClass("sidebar-is-visible") || this.siteHeader.css("position") != "fixed") {
       this.siteHeader.removeClass("site-header-fixed-squashed");
     }
   }

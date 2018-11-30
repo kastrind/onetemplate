@@ -25,7 +25,7 @@ class Sidebar {
 
   keypressHandler(e) {
     if (e.keyCode == 27) {
-      this.hideSidebar();
+      this.hideSidebar(e);
     }
   }
 
