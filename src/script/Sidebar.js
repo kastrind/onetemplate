@@ -19,7 +19,7 @@ class Sidebar {
     //clicking the hide sidebar button
     this.hideSidebarButton.click(this.hideSidebar.bind(this));
 
-    //pushes any key
+    //pushing any key closes sidebar
     $(document).keyup(this.keypressHandler.bind(this));
   }
 

@@ -17,8 +17,15 @@ class Modal {
     //clicking the x close modal button
     this.closeModalButton.click(this.closeModal.bind(this));
 
-    //pushes any key
+    //pushing esc key closes modal
     $(document).keyup(this.keypressHandler.bind(this));
+
+    //clicking out of modal closes it
+    $(document).click(function(e) {
+      if(!$(e.target).is(this.modal) && !this.modal.find($(e.target)).length ) {
+        this.closeModal(e);
+      }
+    }.bind(this));
   }
 
   keypressHandler(e) {
