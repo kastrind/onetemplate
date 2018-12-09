@@ -251,7 +251,6 @@
     form[name=searchForm] {
       margin-top: 0.5rem;
 
-
       .atMedium({
         margin-top: initial;
         position: relative;
@@ -260,17 +259,24 @@
       });
 
       input[name=searchField] {
-        min-width: 80px;
-        max-width: 10vw;
+        min-width: 60px;
+        max-width: 7vw;
         display:inline-block;
         height: 20px;
         box-sizing: border-box;
-        color: #333;
-      }
+        border: @header-search-border;
+        border-bottom: @header-search-border;
+        border-radius: @header-search-border-radius;
+        color: @header-search-color;
+        font-size: @header-search-font-size;
+        background-color: rgba(0, 0, 0, 0);
 
-      button[name=searchButton] {
-        cursor: pointer;
-        color: #333;
+        &.alt {
+          border: @header-search-border-alt;
+          border-bottom: @header-search-alt-border;
+          color: @header-search-alt-color;
+        }
+
       }
 
     }

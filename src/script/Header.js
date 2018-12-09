@@ -69,6 +69,9 @@ class Header {
     this.createPullDownHeaderWaypoint();
 
     this.sidebar = $(".sidebar");
+
+    //the search field the style of which to alternate
+    this.searchField = $(".site-header form[name='searchForm'] input[name='searchField']");
   }
 
   isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem() {
@@ -103,6 +106,7 @@ class Header {
   }
 
   restoreHeader() {
+    this.searchField.removeClass("alt");
     this.subMenu.removeClass("alt");
     this.menuIcon.removeClass("alt");
     this.siteHeader.removeClass("site-header-alt");
@@ -116,6 +120,7 @@ class Header {
   }
 
   pullDownHeader() {
+    this.searchField.addClass("alt");
     this.subMenu.addClass("alt");
     this.menuIcon.addClass("alt");
     this.siteHeader.addClass("site-header-alt");

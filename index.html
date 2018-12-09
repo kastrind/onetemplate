@@ -114,8 +114,10 @@
 
             <div class="header-wrapper-col">
               <form name="searchForm" action="" method="POST">
-                <input type="text" value="" placeholder="search..." name="searchField" />
-                <button type="submit" name="searchButton">go</button>
+                <label for="header-search-field" onclick="document.getElementById('header-search-field').focus(); return false;">
+                  <span class="icon magnifier">
+                </label>
+                <input type="text" placeholder="search" name="searchField" id="header-search-field" />
               </form>
             </div>
 
