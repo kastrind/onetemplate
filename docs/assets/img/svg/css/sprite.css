@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("../svg/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 51.2em 129.7em;
+    background-size: 51.2em 131.5em;
 }
 
 .no-svg .icon:before {
@@ -44,8 +44,17 @@
 
 
 
-  .icon.partner1:before {
+  .icon.magnifier:before {
       background-position: 0em -115em;
+      width: 1.8em;
+      height: 1.8em;
+  }
+
+
+
+
+  .icon.partner1:before {
+      background-position: 0em -116.8em;
       width: 6.665000000000001em;
       height: 6.4375em;
   }
@@ -54,7 +63,7 @@
 
 
   .icon.partner2:before {
-      background-position: 0em -121.5em;
+      background-position: 0em -123.3em;
       width: 7.5986em;
       height: 8.1091em;
   }

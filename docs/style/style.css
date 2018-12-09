@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Montserrat Light'), local('Montserrat-Light'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_cJD3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
+}
 /* General */
 /* Header */
 /* Sidebar */
@@ -49,7 +67,7 @@
           transform: translateY(-100%);
 }
 .site-header * {
-  font-family: Arial;
+  font-family: "Montserrat", sans-serif;
 }
 .site-header a {
   text-decoration: none;
@@ -224,17 +242,27 @@
             transform: translateY(-50%);
   }
 }
+.site-header .header-wrapper form[name=searchForm] label .magnifier {
+  cursor: pointer;
+}
 .site-header .header-wrapper form[name=searchForm] input[name=searchField] {
-  min-width: 80px;
-  max-width: 10vw;
+  min-width: 60px;
+  max-width: 7vw;
   display: inline-block;
   height: 20px;
   box-sizing: border-box;
-  color: #333;
+  border: none;
+  border-bottom: 1px solid #404040;
+  border-radius: 0;
+  color: #404040;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0);
 }
-.site-header .header-wrapper form[name=searchForm] button[name=searchButton] {
-  cursor: pointer;
-  color: #333;
+.site-header .header-wrapper form[name=searchForm] input[name=searchField].alt {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  color: #cfcfcf;
+  background-color: rgba(0, 0, 0, 0);
 }
 .site-header .header-wrapper nav.menu {
   text-align: center;
@@ -465,7 +493,7 @@
 }
 .itemlist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-gap: 150px 2rem;
   margin-bottom: 150px;
 }
@@ -706,7 +734,7 @@ body {
   background: black url('../assets/img/abstract.jpeg') no-repeat fixed center;
 }
 body * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .margin-left-right {
   margin: 0 5vw 0 5vw;
