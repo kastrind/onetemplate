@@ -258,6 +258,14 @@
         transform: translateY(-50%);
       });
 
+      label {
+
+        .magnifier {
+          cursor: pointer;
+        }
+
+      }
+
       input[name=searchField] {
         min-width: 60px;
         max-width: 7vw;
@@ -265,16 +273,17 @@
         height: 20px;
         box-sizing: border-box;
         border: @header-search-border;
-        border-bottom: @header-search-border;
+        border-bottom: @header-search-border-bottom;
         border-radius: @header-search-border-radius;
         color: @header-search-color;
         font-size: @header-search-font-size;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: @header-search-bg-color;
 
         &.alt {
-          border: @header-search-border-alt;
-          border-bottom: @header-search-alt-border;
+          border: @header-search-alt-border;
+          border-bottom: @header-search-alt-border-bottom;
           color: @header-search-alt-color;
+          background-color: @header-search-alt-bg-color;
         }
 
       }
