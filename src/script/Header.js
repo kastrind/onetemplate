@@ -49,8 +49,12 @@ class Header {
       this.triggerPullDownSiteHeaderOffsetTop = this.triggerPullDownSiteHeader.offset().top;
     }.bind(this));
 
+    var prevScrollpos = window.pageYOffset;
+
     //on scroll,
     $(window).on("scroll", function () {
+
+      var currentScrollPos = window.pageYOffset;
 
       //if we are scrolling before the trigger, prepare header for pull down
       if (this.isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem()) {
@@ -59,6 +63,16 @@ class Header {
       //if we are on top, restore header
       }else if (this.isScrollingBeforeHeader()) {
         this.restoreHeader();
+      }else {
+
+        //when the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
+        if (prevScrollpos > currentScrollPos) {
+          this.siteHeader.removeClass("site-header-pushedUp");
+        } else {
+          this.siteHeader.addClass("site-header-pushedUp");
+        }
+        prevScrollpos = currentScrollPos;
+
       }
       this.siteHeader = $(".site-header");
       this.subMenu = $(".site-header nav.menu ul li > ul");
@@ -72,6 +86,7 @@ class Header {
 
     //the search field the style of which to alternate
     this.searchField = $(".site-header form[name='searchForm'] input[name='searchField']");
+
   }
 
   isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem() {

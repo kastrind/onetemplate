@@ -86,7 +86,12 @@
     .header-fixed-when-pulled-down-mixin();
 
     &-squashed {
-      margin: if((@sidebar-is-left), 0 0 0 30%, 0 30% 0 0);
+
+      .atMedium({
+        /* this mixin is defined in sidebar.css */
+        .sidebar-squashes-main-mixin();
+      });
+      
     }
   }
   &-pushedUp {

@@ -6,12 +6,16 @@
   right: 0;
 }
 
+.sidebar-squashes-main-mixin() when (@sidebar-squashes-main=true) {
+  margin: if((@sidebar-is-left), 0 0 0 30%, 0 30% 0 0 );
+}
+
 .sidebar {
     height: 0;
     width: 0;
     position: fixed;
     top: 0;
-    z-index: @z-index-2;
+    z-index: @z-index-4;
     background-color: @sidebar-background-color;
     color: if((@sidebar-bg-light), @sidebar-font-color-dark, @sidebar-font-color-light);
     padding: 0;
@@ -23,10 +27,18 @@
     .sidebar-is-right-mixin();
 
     &-is-visible {
-      width: 30%;
+      max-width: 50%;
+      min-width: 200px;
       height: 100%;
       padding: @sidebar-padding;
       opacity: 1;
+
+      .atMedium({
+        width: 30%;
+        max-width: none;
+        min-width: none;
+      });
+
     }
 
     &-hide {
@@ -51,6 +63,10 @@
   transition: all ease-in 0.5s;
 
     &-squashed {
-      margin: if((@sidebar-is-left), 0 0 0 30%, 0 30% 0 0);
+
+      .atMedium({
+        .sidebar-squashes-main-mixin();
+      });
+
     }
 }
