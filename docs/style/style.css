@@ -856,6 +856,14 @@ body * {
   z-index: 1000;
   transition: opacity 1s;
 }
+.disappear-on-load .splash-logo {
+  width: 10%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 .disappeared-on-load {
   opacity: 0;
 }
