@@ -10,6 +10,8 @@ Written in ES2015+ and LESS for CSS preprocessing.
 - run `gulp watch-dev` for development
 - run `gulp build-prod` to create the distribution
 
+## Next steps
+
 - Integrate a CMS
 - Install favicons: https://www.favicon-generator.org/
 - EU Cookie law compliance: http://www.cookiechoices.org/ or https://cookiepolicygenerator.com/
