@@ -24,9 +24,9 @@ Written in ES2015+ and LESS for CSS preprocessing.
 ## SEO
 - Google Analytics: https://analytics.google.com/
 - Google Search Console: https://search.google.com/search-console
-- SEO: fill out the meta tags in the index.hmtl
-- SEO: include microdata - https://schema.org/
-- SEO: generate a sitemap.xml - https://www.xml-sitemaps.com/
+- Fill out the meta tags in the index.hmtl
+- Include microdata: https://schema.org/
+- Generate a sitemap.xml: https://www.xml-sitemaps.com/
 
 ## Optional
 - Create a Progressive Web App (PWA) for users to be able to add site to their Home Screen: https://codelabs.developers.google.com/codelabs/add-to-home-screen/#0
