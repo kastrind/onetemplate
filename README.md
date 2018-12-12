@@ -11,6 +11,7 @@ Written in ES2015+ and LESS for CSS preprocessing.
 - run `gulp build-prod` to create the distribution
 
 - Generate favicons: https://www.favicon-generator.org/
+- If Google APIs and Services are used, obtain keys: https://console.cloud.google.com/home/dashboard
 - Integrate it to a Content Management System
 
 ## Deployment
@@ -21,7 +22,8 @@ Written in ES2015+ and LESS for CSS preprocessing.
 - Speed evaluation and optimization guide: https://gtmetrix.com/ or https://www.pingdom.com/product/page-speed/
 
 ## SEO
-- Install Google Analytics: https://analytics.google.com/
+- Google Analytics: https://analytics.google.com/
+- Google Search Console: https://search.google.com/search-console
 - SEO: fill out the meta tags in the index.hmtl
 - SEO: include microdata - https://schema.org/
 - SEO: generate a sitemap.xml - https://www.xml-sitemaps.com/
