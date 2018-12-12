@@ -11,10 +11,11 @@ Written in ES2015+ and LESS for CSS preprocessing.
 - run `gulp build-prod` to create the distribution
 
 ## Deployment
+- Install favicons: https://www.favicon-generator.org/
 - Integrate it to a Content Management System
 - Update the domain name servers at your domain registrar
-- Upload to a web server and enable SSL/TLS
-- Install favicons: https://www.favicon-generator.org/
+- Upload to a web server
+- Enable SSL/TLS
 - Comply to EU Cookie law: http://www.cookiechoices.org/ or https://cookiepolicygenerator.com/
 - Speed evaluation and optimization guide: https://gtmetrix.com/ or https://www.pingdom.com/product/page-speed/
 
