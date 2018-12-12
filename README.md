@@ -24,7 +24,7 @@ Written in ES2015+ and LESS for CSS preprocessing.
 ## SEO
 - Google Analytics: https://analytics.google.com/
 - Google Search Console: https://search.google.com/search-console
-- Fill out the meta tags in the index.hmtl
+- Fill out the meta tags in the index.html
 - Include microdata: https://schema.org/
 - Generate a sitemap.xml: https://www.xml-sitemaps.com/
 
