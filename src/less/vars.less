@@ -9,14 +9,15 @@
 @widthMedium: 768px;
 @widthLarge: 1100px;
 
-@main-content-max-width-large: 80vw;
-@main-content-max-width-medium: 90vw;
+@main-content-max-width-large: 100vw;
+@main-content-max-width-medium: 100vw;
 
-@body-background: black url(@body-background-path) no-repeat fixed center;
+//@body-background: black url(@body-background-path) no-repeat fixed center;
+@body-background: white;
 
 @background-color: #dddddd;
 @bg-light: boolean(luma(@background-color) > 40%);
-@font-color-dark: #333333;
+@font-color-dark: #536928;
 @font-color-light: #dddddd;
 
 @font-family: "Montserrat", sans-serif;
@@ -31,28 +32,28 @@
 @z-index-4: 400;
 @z-index-5: 500;
 
-@loading-overlay-color: black;
+@loading-overlay-color: white;
 
 
 
 /* Header */
 
-@header-is-fixed: false;
+@header-is-fixed: true;
 @header-font-family: "Montserrat", sans-serif;
-@menu-font-color-dark: #333333;
+@menu-font-color-dark: #536928;
 @menu-font-color-light: #dddddd;
 @menu-font-size: 1.2rem;
 @menu-font-weight: 100;
 
 //regular header, first and second row, gradient
-@header-background-color-1: #303030;
+@header-background-color-1: #536928;
 @header-bg-1-light: boolean(luma(@header-background-color-1) > 40%);
 @header-border-1: none;
-@header-background-color-2: #c0c0c0;
+@header-background-color-2: #ffffff;
 @header-bg-2-light: boolean(luma(@header-background-color-2) > 40%);
 @header-border-2: none;
-@header-has-gradient: false;
-@header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0,0,0,0) 100%);
+@header-has-gradient: true;
+@header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
 
 
 //alternative header, first and second row, gradient
@@ -225,10 +226,10 @@
 
 /* Footer */
 
-@footer-background-color: #303040;
+@footer-background-color: #536928;
 @footer-bg-light: boolean(luma(@footer-background-color) > 40%);
-@footer-font-color-dark: #333333;
-@footer-font-color-light: #cccccc;
+@footer-font-color-dark: #536928;
+@footer-font-color-light: #dddddd;
 @footer-border: 1px solid darken(@footer-background-color, 5%);
 
 
