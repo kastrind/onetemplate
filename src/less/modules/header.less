@@ -30,8 +30,8 @@
   background-image: @header-gradient;
 }
 
-.header-gradient-alt-mixin() when (@header-has-gradient-alt=true) {
-  background-image: @header-gradient-alt;
+.header-gradient-alt-mixin() {
+  background-image: if((@header-has-gradient-alt), @header-gradient-alt, none);
 }
 
 .header-row-mixin() {
