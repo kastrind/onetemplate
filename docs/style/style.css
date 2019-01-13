@@ -93,22 +93,30 @@
   font-size: 0.84rem;
   color: #333333;
 }
-.site-header .header-wrapper-row-alt:nth-of-type(1) {
+@media screen and (min-width: 768px) {
+  .site-header .header-wrapper-row {
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-gap: 0;
+  }
+}
+.site-header .header-wrapper-row.header-wrapper-row-alt:nth-of-type(1) {
   background-color: #c0c0c0;
   border-bottom: none;
 }
-.site-header .header-wrapper-row-alt:nth-of-type(1) * {
+.site-header .header-wrapper-row.header-wrapper-row-alt:nth-of-type(1) * {
   color: #333333;
 }
-.site-header .header-wrapper-row-alt:nth-of-type(2) {
+.site-header .header-wrapper-row.header-wrapper-row-alt:nth-of-type(2) {
   background-color: #303030;
+  background-image: none;
   border-bottom: none;
 }
-.site-header .header-wrapper-row-alt:nth-of-type(2) * {
+.site-header .header-wrapper-row.header-wrapper-row-alt:nth-of-type(2) * {
   color: #dddddd;
 }
 @media screen and (min-width: 768px) {
-  .site-header .header-wrapper-row {
+  .site-header .header-wrapper-row.header-wrapper-row-alt {
     display: grid;
     grid-template-columns: 2fr 6fr 2fr;
     grid-gap: 0;

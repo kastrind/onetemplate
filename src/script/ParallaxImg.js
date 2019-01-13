@@ -7,7 +7,6 @@ class ParallaxImg {
     this.container = $("div.parallax-container");
     this.img = $("div.parallax-container").find(".parallax-img");
     this.events();
-    this.correction = 150;
   }
 
   events() {
@@ -29,8 +28,11 @@ class ParallaxImg {
     var that = this;
     this.container.each(function () {
       let img = $(this).find(".parallax-img");
-      let inViewAmount = $(document).scrollTop() - $(this).offset().top + $(window).height() - that.correction;
-      let factor = img.height() / $(window).height();
+      let correction = $(this).attr("data-scroll-start-correction");
+      correction = (isNaN(correction)) ? 0 : correction;
+      let inViewAmount = $(document).scrollTop() - $(this).offset().top + $(window).height() - correction;
+      let factor = $(this).attr("data-scroll-factor");
+      factor = (isNaN(factor)) ? img.height() / $(window).height() : factor;
       let scrollAmount = inViewAmount * factor;
       //console.log(inViewAmount+" "+scrollAmount);
       if (inViewAmount > 0 && scrollAmount <= img.height() - $(this).height()) {
