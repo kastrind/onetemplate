@@ -50,30 +50,6 @@ $(document).ready(function() {
 
   console.log('jQuery working.');
 
-  //$('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});
-  $('#lightSlider').lightSlider({
-    item: 4,
-    auto: true,
-    loop: true,
-    responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            item: 3,
-            slideMove: 1,
-            slideMargin: 6,
-          }
-        },
-        {
-          breakpoint: 460,
-          settings: {
-            item: 2,
-            slideMove: 1
-          }
-        }
-    ]
-  });
-
   $("#full-width-slideshow").owlCarousel({
     //navigation : true, // Show next and prev buttons
     dots: false,
