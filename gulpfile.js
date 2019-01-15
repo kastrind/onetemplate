@@ -22,6 +22,7 @@ var sourceStyles = [
                     'dist/addons/owl.carousel/assets/owl.carousel.css',
                     'dist/addons/owl.carousel/assets/owl.theme.default.css',
                     'dist/addons/lightbox2/css/lightbox.css',
+                    'dist/addons/fontawesome-free/css/all.css'
                    ];
 
 var sourceScripts = [
@@ -54,6 +55,9 @@ gulp.task('copy-addons', function () {
 
   gulp.src('node_modules/lazysizes/lazysizes.js')
     .pipe(gulp.dest('dist/addons/lazysizes'));
+
+  gulp.src('node_modules/@fortawesome/fontawesome-free/**')
+    .pipe(gulp.dest('dist/addons/fontawesome-free'));
 });
 
 /* Task to compile less */
