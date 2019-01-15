@@ -11,6 +11,10 @@
 @import "./modules/video";
 @import "./modules/footer";
 @import "./modules/modal";
+@import "../../node_modules/@fortawesome/fontawesome-free/less/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/less/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/less/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/less/regular";
 
 .atSmall(@rules) {
   @media screen and (min-width: @widthSmall) { @rules(); }
@@ -113,8 +117,8 @@ body * {
 .back-to-top {
   position: fixed;
   z-index: @z-index-1;
-  right: 1rem;
-  bottom: 1rem;
+  right: 3rem;
+  bottom: 3rem;
   cursor: pointer;
   transition: opacity 1s;
   padding: @back-to-top-padding;
