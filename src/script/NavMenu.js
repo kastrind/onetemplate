@@ -113,6 +113,7 @@ class NavMenu {
 				element: currentDest,
 				handler: function (direction) {
 					if (direction == "down") {
+						if (!$(window).scrollTop()) { return; } // if on top, do not proceed
 						var matchingHeaderLink = currentDest.getAttribute("data-internal-ref");
 						that.menuItem.removeClass("is-current-link");
 						$(matchingHeaderLink).addClass("is-current-link");
