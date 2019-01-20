@@ -11,11 +11,11 @@ class Header {
     //the site header rows the style of which to alternate
     this.siteHeaderRows = $(".site-header").find(".header-wrapper-row");
 
-    //the element after which site header hides
-    this.triggerHideSiteHeader = $("[data-trigger-hide-header=true]");
-
     //the element after which site header is revealed
     this.triggerPullDownSiteHeader = $("[data-trigger-pullDown-header=true]");
+
+    //the element after which the header hides
+    this.triggerHideSiteHeader = $("[data-trigger-hide-header=true]");
 
     //the element to hide when site header is revealed
     this.hiddenWhenSiteHeaderPulledDown = $("[data-hide-when-header-pulled-down=true]");
@@ -63,15 +63,15 @@ class Header {
       //if we are on top, restore header
       }else if (this.isScrollingBeforeHeader()) {
         this.restoreHeader();
-      }else {
+      }else if ($(window).scrollTop() >= this.triggerPullDownSiteHeaderOffsetTop) {
 
         //when the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
-        if (prevScrollpos > currentScrollPos) {
-          this.siteHeader.removeClass("site-header-pushedUp");
-        } else {
-          this.siteHeader.addClass("site-header-pushedUp");
-        }
-        prevScrollpos = currentScrollPos;
+          if (prevScrollpos > currentScrollPos) {
+            this.siteHeader.removeClass("site-header-pushedUp");
+          } else {
+            this.siteHeader.addClass("site-header-pushedUp");
+          }
+          prevScrollpos = currentScrollPos;
 
       }
       this.siteHeader = $(".site-header");
@@ -90,12 +90,15 @@ class Header {
   }
 
   isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem() {
+    console.log($(window).scrollTop()+":"+this.siteHeaderHeight+":"+this.triggerPullDownSiteHeaderOffsetTop);
     return $(window).scrollTop() > this.siteHeaderHeight &&
-           $(window).scrollTop() < this.triggerPullDownSiteHeaderOffsetTop;
+           $(window).scrollTop() < this.triggerPullDownSiteHeaderOffsetTop &&
+           $(window).scrollTop() > this.triggerHideSiteHeader.offset().top;
   }
 
   isScrollingBeforeHeader() {
-    return $(window).scrollTop() <= this.siteHeaderHeight;
+    return $(window).scrollTop() <= this.siteHeaderHeight &&
+           $(window).scrollTop() <= this.triggerHideSiteHeader.offset().top;
   }
 
   prepareHeaderForPullDown() {

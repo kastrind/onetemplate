@@ -18,13 +18,13 @@ import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
 
-//new Header();
+new Header();
 
-//new NavMenu();
+new NavMenu();
 
-//new Sidebar();
+new Sidebar();
 
-//new BackToTop("75%");
+new BackToTop("75%");
 
 console.log('Javascript working.');
 
