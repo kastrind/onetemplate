@@ -41,12 +41,19 @@ class Header {
     this.siteHeaderHeight = this.siteHeader.outerHeight();
     //Y position of the element after which site header is revealed
     this.triggerPullDownSiteHeaderOffsetTop = this.triggerPullDownSiteHeader.offset().top;
+    //Y position of the element after which site header hides, if any
+    this.triggerHideSiteHeaderOffsetTop = (this.triggerHideSiteHeader.length)
+                                          ? this.triggerHideSiteHeader.offset().top
+                                          : 0;
 
     //refresh these values on load resize of the window
     $(window).on("load resize", function() {
       this.scrollTop = $(window).scrollTop();
       this.siteHeaderHeight = this.siteHeader.outerHeight();
       this.triggerPullDownSiteHeaderOffsetTop = this.triggerPullDownSiteHeader.offset().top;
+      this.triggerHideSiteHeaderOffsetTop = (this.triggerHideSiteHeader.length)
+                                            ? this.triggerHideSiteHeader.offset().top
+                                            : 0;
     }.bind(this));
 
     var prevScrollpos = window.pageYOffset;
@@ -90,15 +97,21 @@ class Header {
   }
 
   isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem() {
-    console.log($(window).scrollTop()+":"+this.siteHeaderHeight+":"+this.triggerPullDownSiteHeaderOffsetTop);
-    return $(window).scrollTop() > this.siteHeaderHeight &&
-           $(window).scrollTop() < this.triggerPullDownSiteHeaderOffsetTop &&
-           $(window).scrollTop() > this.triggerHideSiteHeader.offset().top;
+    return (this.triggerHideSiteHeaderOffsetTop)
+            ?
+            $(window).scrollTop() < this.triggerPullDownSiteHeaderOffsetTop &&
+            $(window).scrollTop() > this.triggerHideSiteHeaderOffsetTop
+            :
+            $(window).scrollTop() > this.siteHeaderHeight &&
+            $(window).scrollTop() < this.triggerPullDownSiteHeaderOffsetTop;
   }
 
   isScrollingBeforeHeader() {
-    return $(window).scrollTop() <= this.siteHeaderHeight &&
-           $(window).scrollTop() <= this.triggerHideSiteHeader.offset().top;
+    return (this.triggerHideSiteHeaderOffsetTop)
+            ?
+            $(window).scrollTop() <= this.triggerHideSiteHeaderOffsetTop
+            :
+            $(window).scrollTop() <= this.siteHeaderHeight;
   }
 
   prepareHeaderForPullDown() {
