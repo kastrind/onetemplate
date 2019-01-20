@@ -18,30 +18,30 @@ import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
 
-new Header();
+//new Header();
 
-new NavMenu();
+//new NavMenu();
 
-new Sidebar();
+//new Sidebar();
 
-new BackToTop("75%");
+//new BackToTop("75%");
 
 console.log('Javascript working.');
 
 var initMap = function() {
   var map = new GMaps({
     el: '#map',
-    lat: 35.51708,
-    lng: 24.017993,
+    lat: 35.5145555,
+    lng: 23.9273744,
     zoom: 15
   });
 
   map.addMarker({
-    title: 'Marker',
-    lat: 35.51708,
-    lng: 24.017993,
+    title: 'Diktamo House',
+    lat: 35.5145555,
+    lng: 23.9273744,
     click: function(e) {
-      alert('You clicked on this marker!');
+      //alert('You clicked on this marker!');
     }
   });
 }
