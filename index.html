@@ -262,7 +262,7 @@
             </video>
             <div class="parallax-content">
               <h3 class="parallax-heading">Feast your eyes on this wonderful scenery.</h3>
-              <button class="btn parallax-btn open-modal">More</button>
+              <button class="btn parallax-btn open-modal" data-open-modal-id="#modal_1">More</button>
             </div>
           </div>
         </section>
@@ -529,7 +529,7 @@
             <a href="#">Links</a>
           </div>
           <div class="footer-col">
-            <a href="#">Privacy Policy</a>
+            <a href="#" class="open-modal" data-open-modal-id="#modal_2">Privacy Policy</a>
           </div>
           <div class="footer-col">
             <a href="#">Contact Us</a>
@@ -540,10 +540,20 @@
 
     </div>
 
-    <div class="modal">
-      <h3>This is a modal.</h3>
-      <p>This is a paragraph.</p>
-      <div class="modal-close">&#x274c;</div>
+    <div class="modal" id="modal_1">
+      <div class="modal-content">
+        <h3>This is a modal.</h3>
+        <p>This is a paragraph.</p>
+        <div class="modal-close">&#x274c;</div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal_2">
+      <div class="modal-content">
+        <h3>This is another modal.</h3>
+        <p>This is another paragraph.</p>
+        <div class="modal-close">&#x274c;</div>
+      </div>
     </div>
 
     <a href="#back-to-top-target" title="back to top"><div class="back-to-top"><span class="icon caretup"></span></div></a>
