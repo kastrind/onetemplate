@@ -31,6 +31,7 @@ class Header {
 
     //the submenu the style of which to alternate
     this.subMenu = $(".site-header nav.menu ul li > ul");
+
     //in case page refreshed in the middle of the document:
     //if we are scrolling before the trigger, prepare header for pull down
     if (this.isScrollingAfterHeaderAndBeforeTriggerPullDownHeaderElem()) {
@@ -120,7 +121,7 @@ class Header {
 
   createPullDownHeaderWaypoint() {
     var that = this;
-
+    that.siteHeader.addClass("site-header-animated");
     new Waypoint({
       element: that.triggerPullDownSiteHeader[0],
       handler: function(direction) {
