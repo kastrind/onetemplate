@@ -10,7 +10,9 @@ class AppearOnLoad {
 
   hideOnLoad() {
     this.overlay.addClass('disappeared-on-load');
-    this.overlay.bind('transitionend', (function() {this.overlay.hide();}).bind(this) );
+    this.overlay.bind('transitionend', (function() {
+      this.overlay.hide();
+      this.overlay.trigger("onOverlayDisappear");}).bind(this) );
   }
 
   events() {
