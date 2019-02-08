@@ -167,8 +167,13 @@
         background-color: white;
 
         img {
-          max-height: 10vh;
-          min-height: 80px;
+          height: 30px;
+
+          .atSmall({
+            max-height: 10vh;
+            min-height: 80px;
+          });
+
         }
         &-shrunk {
           img {
