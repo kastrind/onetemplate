@@ -1,0 +1,35 @@
+.genericFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+    .col {
+      min-width: 200px;
+      box-sizing: border-box;
+  
+      &-second {
+        .atMedium({
+          max-width: 50%;
+        });
+      }
+  
+      &-third {
+        .atMedium({
+          max-width: 33.33%;
+        });
+      }
+  
+      &-fourth {
+        .atMedium({
+          max-width: 25%;
+        });
+      }
+  
+      &-full {
+        width: 100%;
+      }
+  
+    }
+  
+  }

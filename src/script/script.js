@@ -14,6 +14,7 @@ import Modal from './Modal';
 
 import 'owl.carousel';
 import lightSlider from '../../node_modules/lightslider/dist/js/lightslider';
+import lightGallery from '../../node_modules/lightgallery/dist/js/lightgallery-all';
 import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
@@ -73,6 +74,21 @@ $(document).ready(function() {
         }
     ]
   });
+
+  $("#lightGallery").lightSlider({
+    gallery: true,
+    item: 1,
+    loop: true,
+    thumbItem: 10,
+    slideMargin: 0,
+    enableDrag: false,
+    currentPagerPosition: 'left',
+    onSliderLoad: function(el) {
+      el.lightGallery({
+        selector: '#lightGallery .lslide'
+      });
+    }     
+  }); 
 
   $("#full-width-slideshow").owlCarousel({
     //navigation : true, // Show next and prev buttons
