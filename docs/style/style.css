@@ -644,6 +644,34 @@
 .textcontent .col-full {
   width: 100%;
 }
+.genericFlex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.genericFlex .col {
+  min-width: 200px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .genericFlex .col-second {
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .genericFlex .col-third {
+    max-width: 33.33%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .genericFlex .col-fourth {
+    max-width: 25%;
+  }
+}
+.genericFlex .col-full {
+  width: 100%;
+}
 #map {
   width: 100%;
   height: 40vh;
