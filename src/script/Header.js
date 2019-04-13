@@ -14,6 +14,8 @@ class Header {
     //the element after which site header is revealed
     this.triggerPullDownSiteHeader = $("[data-trigger-pullDown-header=true]");
 
+    if (!this.triggerPullDownSiteHeader.length) this.triggerPullDownSiteHeader = $("section").first();
+
     //the element after which the header hides
     this.triggerHideSiteHeader = $("[data-trigger-hide-header=true]");
 
