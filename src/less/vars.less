@@ -9,17 +9,18 @@
 @widthMedium: 768px;
 @widthLarge: 1100px;
 
-@main-content-max-width-large: 80vw;
-@main-content-max-width-medium: 90vw;
+@main-content-max-width-large: 100vw;
+@main-content-max-width-medium: 100vw;
 
-@body-background: black url(@body-background-path) no-repeat fixed center;
+//@body-background: black url(@body-background-path) no-repeat fixed center;
+@body-background: rgb(61, 61, 61);
 
 @background-color: #dddddd;
 @bg-light: boolean(luma(@background-color) > 40%);
 @font-color-dark: #333333;
 @font-color-light: #dddddd;
 
-@font-family: "Montserrat", sans-serif;
+@font-family: "Open Sans", sans-serif;
 
 @page-margin-left-right: 5vw;
 @margin-top: 10vh;
@@ -38,21 +39,21 @@
 /* Header */
 
 @header-is-fixed: false;
-@header-font-family: "Montserrat", sans-serif;
+@header-font-family: "Open Sans", sans-serif;
 @menu-font-color-dark: #333333;
 @menu-font-color-light: #dddddd;
 @menu-font-size: 1.2rem;
 @menu-font-weight: 100;
 
 //regular header, first and second row, gradient
-@header-background-color-1: #303030;
+@header-background-color-1: rgb(136, 136, 136);
 @header-bg-1-light: boolean(luma(@header-background-color-1) > 40%);
 @header-border-1: none;
-@header-background-color-2: #c0c0c0;
+@header-background-color-2: rgb(208, 208, 208);
 @header-bg-2-light: boolean(luma(@header-background-color-2) > 40%);
 @header-border-2: none;
-@header-has-gradient: false;
-@header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0,0,0,0) 100%);
+@header-has-gradient: true;
+@header-gradient: linear-gradient(90deg, rgba(208,208,208,1) 0%, rgba(240,240,240,1) 50%, rgba(208,208,208,1) 100%);;
 
 
 //alternative header, first and second row, gradient
@@ -145,17 +146,17 @@
 
 /* Previewlist */
 
-@previewlist-grid-gap:  1rem;
+@previewlist-grid-gap:  0rem;
 @previewlist-item-padding: 0.5rem;
 @previewlist-font-size: 1rem;
-@previewlist-background-color: rgba(0, 0, 0, 0.8);
+@previewlist-background-color: rgb(170,170,170);
 @previewlist-bg-light: boolean(luma(@previewlist-background-color) > 40%);
 @previewlist-font-color-light: #cccccc;
 @previewlist-font-color-dark: #333333;
 @previewlist-border: none;
-@previewlist-border-radius: 10px;
+@previewlist-border-radius: 0px;
 @previewlist-more-link-color: #c0c0c0;
-@previewlist-img-height: 60px;
+@previewlist-img-height: 100px;
 
 
 
