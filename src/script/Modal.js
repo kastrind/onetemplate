@@ -29,7 +29,7 @@ class Modal {
 
     //clicking out of modal closes it
     this.modal.on("click", function(e) {
-      if (!$(e.target).is(this.modalContent)) {
+      if (!$(e.target).is(this.modalContent) && !$(this.modalContent).find(e.target).length) {
         this.closeModal(e);
       }
     }.bind(this));
