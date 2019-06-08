@@ -9,13 +9,8 @@ import Sidebar from './Sidebar';
 import BackToTop from './BackToTop';
 import AppearOnLoad from './AppearOnLoad';
 import ParallaxImg from './ParallaxImg';
-import GMaps from 'gmaps';
 import Modal from './Modal';
 
-import 'owl.carousel';
-import lightSlider from '../../node_modules/lightslider/dist/js/lightslider';
-import lightGallery from '../../node_modules/lightgallery/dist/js/lightgallery-all';
-import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
 
@@ -29,23 +24,56 @@ new BackToTop("75%");
 
 console.log('Javascript working.');
 
-var initMap = function() {
-  var map = new GMaps({
-    el: '#map',
-    lat: 35.51708,
-    lng: 24.017993,
-    zoom: 15
-  });
+var offset = 0;
+var fetching = false;
+var initial = true;
 
-  map.addMarker({
-    title: 'Marker',
-    lat: 35.51708,
-    lng: 24.017993,
-    click: function(e) {
-      alert('You clicked on this marker!');
-    }
-  });
-}
+$(window).bind("load scroll", function() {
+  //console.log('scrolled '+ $(window).scrollTop() + "wh: "+ $(window).height()+ "dh: "+ $(document).height());
+  var scroll_distance =  Math.ceil($(window).scrollTop());
+  var wh =$(window).height();
+  var dh = $(document).height();
+
+  if(initial || (scroll_distance + wh >= dh -20 && !fetching)) {
+      $('.loadingMore').show();
+      fetching = true;
+      initial = false;
+
+      $.ajax({
+        dataType: "json",
+        data: {"offset": offset},
+        type: "GET",
+        url: "https://kastrind.info/wcx/api/poi/read.php",
+        retryLimit: 3,
+        retryCount: 0,
+        complete: function(data, status) {
+          //alert(data["responseText"]);return;//DEBUGGING
+          if (data['status'] != 200) {
+            var thisAjax = this;
+            if (this.retryCount++ < this.retryLimit) { setTimeout(function() { $.ajax(thisAjax); }, 1000); return; }
+            $('.loadingMore').hide();
+            return;
+          }
+          var json = JSON.parse(data["responseText"]);
+          $('.loadingMore').hide();
+          for (var key in json) {
+            var date = new Date(json[key]['extraction_date']);
+            var previewitem = "<div class=\"previewlist-item\">\
+            <a target=\"_blank\" href=\""+json[key]['link']+"\">\
+            <img data-srcset=\""+json[key]['img']+"\" class=\"lazyload\" />\
+            <h4>"+json[key]['title']+"</h4>\
+            <p>"+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"</p>\
+            <p>"+json[key]['txt']+"</p></a>\
+          </div>";
+            $("#previewlist > .previewlist").append(previewitem);
+            offset++;
+          }
+          fetching = false;         
+        }//end complete  
+      });//end ajax call  
+
+  }
+});
 
 $(document).ready(function() {
 
@@ -75,37 +103,6 @@ $(document).ready(function() {
     ]
   });
 
-  $("#lightGallery").lightSlider({
-    gallery: true,
-    item: 1,
-    loop: true,
-    thumbItem: 10,
-    slideMargin: 0,
-    enableDrag: false,
-    currentPagerPosition: 'left',
-    onSliderLoad: function(el) {
-      el.lightGallery({
-        selector: '#lightGallery .lslide'
-      });
-    }     
-  }); 
-
-  $("#full-width-slideshow").owlCarousel({
-    //navigation : true, // Show next and prev buttons
-    dots: false,
-    autoplay: true,
-    loop: true,
-    autoplayTimeout: 3000,
-    autoHeight: false,
-    smartSpeed: 1500,
-    paginationSpeed: 400,
-    items: 1,
-    itemsDesktop: false,
-    itemsDesktopSmall: false,
-    itemsTablet: false,
-    itemsMobile: false
-  });
-
 });
 
 new AppearOnLoad();
@@ -115,8 +112,6 @@ new ParallaxImg();
 new Modal();
 
 $(window).on("load", function () {
-  
-  initMap();
 
   TweenMax.from(".logo", 2, {y:-300, opacity:0, scale:1.5});
 

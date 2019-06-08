@@ -7,6 +7,10 @@
     grid-template-columns: 1fr 1fr;
   });
 
+  .atLarge({
+    grid-template-columns: 1fr 1fr 1fr;
+  });
+
   grid-gap: @previewlist-grid-gap;
 
   &-item {
@@ -14,7 +18,8 @@
     padding: @previewlist-item-padding;
     box-sizing: border-box;
     color: if((@previewlist-bg-light), @previewlist-font-color-dark, @previewlist-font-color-light);
-    background-color: @previewlist-background-color;
+    background: @previewlist-background-color;
+    background: linear-gradient(30deg, rgba(204,204,204,1) 0%, rgba(223,223,223,1) 35%, rgba(255,255,255,1) 75%);
     border-radius: @previewlist-border-radius;
     border: @previewlist-border;
 
