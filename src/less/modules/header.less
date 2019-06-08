@@ -9,6 +9,7 @@
   position: fixed;
   z-index: @z-index-3;
   left: 0;right: 0;
+  transform: if((@header-is-fixed=true), translateY(0), translateY(-100%));
   .submenu-expansion-fix-mixin();
 }
 
@@ -95,7 +96,8 @@
     }
   }
   &-pushedUp {
-    transform: translateY(-100%);
+    //transform: translateY(-100%);
+    transform: if((@header-is-fixed=true), translateY(-100%), translateY(-200%));
   }
 
   * {
@@ -149,13 +151,13 @@
         text-align: center;
 
         img {
-          max-height: 5vh;
-          min-height: 60px;
+          max-height: 7vh;
+          min-height: 80px;
         }
         &-shrunk {
           img {
-            max-height: 3vh;
-            min-height: 40px;
+            max-height: 5vh;
+            min-height: 60px;
           }
         }
       }

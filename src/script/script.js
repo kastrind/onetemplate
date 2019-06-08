@@ -29,7 +29,7 @@ var fetching = false;
 var initial = true;
 
 $(window).bind("load scroll", function() {
-  console.log('scrolled '+ $(window).scrollTop() + "wh: "+ $(window).height()+ "dh: "+ $(document).height());
+  //console.log('scrolled '+ $(window).scrollTop() + "wh: "+ $(window).height()+ "dh: "+ $(document).height());
   var scroll_distance =  Math.ceil($(window).scrollTop());
   var wh =$(window).height();
   var dh = $(document).height();

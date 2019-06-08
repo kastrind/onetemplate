@@ -146,6 +146,12 @@ class Header {
     this.siteHeader.removeClass("site-header-alt");
     this.siteHeaderRows.removeClass("header-wrapper-row-alt");
     !this.altLogo[0] ? this.logo.removeClass("logo-shrunk") : this.altLogo.hide(), this.logo.show();
+
+    // remove padding from body top if header not fixed
+    if (this.siteHeader.css("position") != "fixed") {
+      $("body").css({"padding-top": 0});
+    }
+    
     this.siteHeader.removeClass("site-header-pushedUp site-header-fixed site-header-animated");
     this.hiddenWhenSiteHeaderPulledDown.css({display: ""});
     if (!this.sidebar.hasClass("sidebar-is-visible") || this.siteHeader.css("position") != "fixed") {
@@ -161,7 +167,16 @@ class Header {
     this.siteHeaderRows.addClass("header-wrapper-row-alt");
     !this.altLogo[0] ? this.logo.addClass("logo-shrunk") : this.altLogo.show(), this.logo.hide();
     this.hiddenWhenSiteHeaderPulledDown.css({display: "none"});
-    this.siteHeader.removeClass("site-header-pushedUp").addClass("site-header-fixed");
+    
+    // add padding on body top if header not fixed
+    if (this.siteHeader.css("position") != "fixed") {
+      $("body").css({"padding-top": this.siteHeader.height()});
+    }else {
+      this.siteHeader.removeClass("site-header-pushedUp");
+    }
+
+    this.siteHeader.addClass("site-header-fixed");
+
     if (this.sidebar.hasClass("sidebar-is-visible")) {
       this.siteHeader.addClass("site-header-fixed-squashed");
     }
