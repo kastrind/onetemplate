@@ -1,29 +1,33 @@
 {
-  "_from": "@fortawesome/fontawesome-free",
+  "_args": [
+    [
+      "@fortawesome/fontawesome-free@5.6.3",
+      "C:\\Users\\Dimitrios\\Desktop\\onetemplate"
+    ]
+  ],
+  "_from": "@fortawesome/fontawesome-free@5.6.3",
   "_id": "@fortawesome/fontawesome-free@5.6.3",
   "_inBundle": false,
   "_integrity": "sha512-s5PLdI9NYgjBvfrv6rhirPHlAHWx+Sfo/IjsAeiXYfmemC/GSjwsyz1wLnGPazbLPXWfk62ks980o9AmsxYUEQ==",
   "_location": "/@fortawesome/fontawesome-free",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "@fortawesome/fontawesome-free",
+    "raw": "@fortawesome/fontawesome-free@5.6.3",
     "name": "@fortawesome/fontawesome-free",
     "escapedName": "@fortawesome%2ffontawesome-free",
     "scope": "@fortawesome",
-    "rawSpec": "",
+    "rawSpec": "5.6.3",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "5.6.3"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.6.3.tgz",
-  "_shasum": "61c122c420d7a91613f393d6a06e5a4c6ae6abf3",
-  "_spec": "@fortawesome/fontawesome-free",
-  "_where": "C:\\Users\\Dimitris\\Desktop\\onetemplate",
+  "_spec": "5.6.3",
+  "_where": "C:\\Users\\Dimitrios\\Desktop\\onetemplate",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",
@@ -32,7 +36,6 @@
   "bugs": {
     "url": "http://github.com/FortAwesome/Font-Awesome/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Brian Talbot",
@@ -56,7 +59,6 @@
     }
   ],
   "dependencies": {},
-  "deprecated": false,
   "description": "The iconic font, CSS, and SVG framework",
   "engines": {
     "node": ">=6"

@@ -19,6 +19,7 @@ var sourceStyles = [
                     'dist/style/*.css',
                     'dist/assets/img/svg/css/sprite.css',
                     'dist/addons/lightslider/css/lightslider.css',
+                    'dist/addons/lightgallery/css/lightgallery.css',
                     'dist/addons/owl.carousel/assets/owl.carousel.css',
                     'dist/addons/owl.carousel/assets/owl.theme.default.css',
                     'dist/addons/lightbox2/css/lightbox.css',
@@ -28,6 +29,7 @@ var sourceStyles = [
 var sourceScripts = [
                      'dist/script/*.js',
                      'dist/addons/lightslider/js/lightslider.js',
+                     'dist/addons/lightgallery/js/lightgallery-all.js',
                      'dist/addons/owl.carousel/owl.carousel.js',
                      'dist/addons/lightbox2/js/lightbox.js',
                      'dist/addons/lazysizes/lazysizes.js'
@@ -49,6 +51,9 @@ gulp.task('copy-addons', function () {
 
   gulp.src('node_modules/lightslider/dist/**')
     .pipe(gulp.dest('dist/addons/lightslider'));
+
+  gulp.src('node_modules/lightgallery/dist/**')
+    .pipe(gulp.dest('dist/addons/lightgallery'));
 
   gulp.src('node_modules/owl.carousel/dist/**')
     .pipe(gulp.dest('dist/addons/owl.carousel'));

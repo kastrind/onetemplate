@@ -457,7 +457,7 @@
   position: relative;
   height: 300px;
   overflow: hidden;
-  background-color: black;
+  background: black;
 }
 .parallax-container .parallax-img {
   position: absolute;
@@ -510,7 +510,7 @@
   text-align: left;
   color: #cccccc;
   text-shadow: 0 0 0.3rem black;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 .itemlist {
   display: grid;
@@ -680,7 +680,7 @@
   position: relative;
   height: 80vh;
   overflow: hidden;
-  background-color: black;
+  background: black;
   z-index: 100;
 }
 .video-container .full-width-video {
@@ -741,7 +741,7 @@
   height: 100%;
   position: fixed;
   z-index: 500;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   top: 0;
   bottom: 0;
   left: 0;

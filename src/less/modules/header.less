@@ -9,7 +9,6 @@
   position: fixed;
   z-index: @z-index-3;
   left: 0;right: 0;
-  transform: if((@header-is-fixed=true), translateY(0), translateY(-100%));
   .submenu-expansion-fix-mixin();
 }
 
@@ -96,8 +95,7 @@
     }
   }
   &-pushedUp {
-    //transform: translateY(-100%);
-    transform: if((@header-is-fixed=true), translateY(-100%), translateY(-200%));
+    transform: translateY(-100%);
   }
 
   * {
@@ -151,8 +149,8 @@
         text-align: center;
 
         img {
-          max-height: 7vh;
-          min-height: 80px;
+          max-height: 10vh;
+          min-height: 120px;
         }
         &-shrunk {
           img {
