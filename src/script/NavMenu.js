@@ -3,7 +3,7 @@ window.jQuery = $;
 import SmoothScroll from './SmoothScroll';
 
 class NavMenu {
-	constructor() {
+	constructor(internalRefsOffset) {
 		this.siteHeader = $(".site-header");
 		this.menuIcon = $(".site-header .header-nav-btn");
 		this.menuContent = $(".site-header nav.menu");
@@ -14,6 +14,7 @@ class NavMenu {
 		//style internal links
 		this.inRefDests = $("[data-internal-ref]");
 		this.inRefs = this.menuItem;
+		this.internalRefsOffset = internalRefsOffset;
 		this.createInternalRefsWaypoints();
 
 		this.events();
@@ -119,7 +120,7 @@ class NavMenu {
 						$(matchingHeaderLink).addClass("is-current-link");
 					}
 				},
-				offset: "30%"
+				offset: that.internalRefsOffset
 			});
 			new Waypoint({
 				element: currentDest,

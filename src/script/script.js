@@ -21,11 +21,13 @@ import lazySizes from '../../node_modules/lazysizes/lazysizes';
 
 new Header();
 
-new NavMenu();
+//          internal references' offset
+new NavMenu("30%");
 
 new Sidebar();
 
-new BackToTop("75%");
+//            offset, duration, timing_function
+new BackToTop("75%", 900, "swing");
 
 console.log('Javascript working.');
 

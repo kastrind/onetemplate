@@ -4,10 +4,12 @@ import SmoothScroll from './SmoothScroll';
 
 class BackToTop {
 
-	constructor(offset) {
+	constructor(offset, duration, timing_func) {
 		this.backToTopElem = $(".back-to-top");
 		this.triggerElem = $("[data-trigger-back-to-top=true]");
 		this.offsetPercentage = offset;
+		this.duration = duration;
+		this.timing_func = timing_func;
 		this.hideInitially();
 		this.createWaypoints();
 		this.events();
@@ -35,7 +37,7 @@ class BackToTop {
 	events() {
 		this.backToTopElem.click(function(e) {
 			e.preventDefault();
-			new SmoothScroll(this.backToTopElem.parent(), 0, 900, 'swing');
+			new SmoothScroll(this.backToTopElem.parent(), 0, this.duration, this.timing_func);
 		}.bind(this));
 	}
 
