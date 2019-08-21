@@ -83,7 +83,7 @@ class Header {
           consecutive_scrollups = 0;
         }
 
-        if (consecutive_scrollups >= 20) {
+        if (consecutive_scrollups >= 15) {
           this.siteHeader.removeClass("site-header-pushedUp");
         }else if (consecutive_scrollups == 0) {
           this.siteHeader.addClass("site-header-pushedUp");

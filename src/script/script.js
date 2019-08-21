@@ -47,6 +47,16 @@ var initMap = function() {
       alert('You clicked on this marker!');
     }
   });
+
+  map.addMarker({
+    title: 'Marker2',
+    lat: 35.52708,
+    lng: 24.027993,
+    click: function(e) {
+      alert('You clicked on this marker!');
+    }
+  });
+
 }
 
 $(document).ready(function() {
@@ -81,7 +91,7 @@ $(document).ready(function() {
     gallery: true,
     item: 1,
     loop: true,
-    thumbItem: 10,
+    thumbItem: 8,
     slideMargin: 0,
     enableDrag: false,
     currentPagerPosition: 'left',
