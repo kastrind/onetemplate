@@ -40,18 +40,18 @@ var initMap = function() {
   });
 
   map.addMarker({
-    title: 'Marker',
-    lat: 35.51708,
-    lng: 24.017993,
+    title: 'Levanda 1 & 2',
+    lat: 35.515446,
+    lng: 24.018132,
     click: function(e) {
       alert('You clicked on this marker!');
     }
   });
 
   map.addMarker({
-    title: 'Marker2',
-    lat: 35.52708,
-    lng: 24.027993,
+    title: 'Rosmarino 1 & 2',
+    lat: 35.5128611,
+    lng: 24.0153056,
     click: function(e) {
       alert('You clicked on this marker!');
     }
@@ -91,7 +91,7 @@ $(document).ready(function() {
     gallery: true,
     item: 1,
     loop: true,
-    thumbItem: 8,
+    thumbItem: 9,
     slideMargin: 0,
     enableDrag: false,
     currentPagerPosition: 'left',
