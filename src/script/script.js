@@ -31,12 +31,30 @@ new BackToTop("75%", 900, "swing");
 
 console.log('Javascript working.');
 
+var noPoi = [
+    {
+      featureType: "poi.business",
+      stylers: [
+        { visibility: "off" }
+      ]   
+    }
+  ];
+
 var initMap = function() {
   var map = new GMaps({
     el: '#map',
     lat: 35.51708,
     lng: 24.017993,
-    zoom: 15
+    zoom: 15,
+    styles: noPoi
+  });
+
+  var infowindow1 = new google.maps.InfoWindow({
+    content: "<h3>Studios Levanda 1, Levanda 2</h3><p>1st floor, #3 Athinagora Square, next to the Metropolitan Church - Chania Old Town 73132</p>"
+  });
+
+  var infowindow2 = new google.maps.InfoWindow({
+    content: "<h3>Studios Rosmarino 1, Rosmarino 2</h3><p>#1 Manousogiannakidon street, behind ZARA Clothing Store - Chania Downtown 73136</p>"
   });
 
   map.addMarker({
@@ -44,7 +62,7 @@ var initMap = function() {
     lat: 35.515446,
     lng: 24.018132,
     click: function(e) {
-      alert('You clicked on this marker!');
+      infowindow1.open(map, this);
     }
   });
 
@@ -53,7 +71,7 @@ var initMap = function() {
     lat: 35.5128611,
     lng: 24.0153056,
     click: function(e) {
-      alert('You clicked on this marker!');
+      infowindow2.open(map, this);
     }
   });
 
