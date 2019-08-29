@@ -4,9 +4,18 @@ module.exports = {
 	entry: {
 		app: "./src/script/script.js"
 	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				addons: { test: /[\\/]node_modules[\\/]((jquery).*)[\\/]/, name: "addons", chunks: "all" },
+				jquery: { test: /[\\/]node_modules[\\/]((?!jquery).*)[\\/]/, name: "jquery", chunks: "all" },
+			}
+		}
+	},
 	output: {
 		path: path.resolve(__dirname, "./dist/script"),
-		filename: "script.js"
+		//filename: "script.js"
+		filename: '[name].js'
 	},
 	mode: 'development',
 	devtool: 'source-map',

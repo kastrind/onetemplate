@@ -90,8 +90,8 @@ gulp.task('minify-bundle-css', ['compile-less', 'copy-addons', 'create-svg-sprit
 
 /* Task to minify and bundle js */
 gulp.task('minify-bundle-js', ['transpile-bundle-scripts'], function() {
-  return gulp.src(sourceScripts)
-	.pipe(concat('scripts.min.js'))
+  return gulp.src('dist/script/*.js')
+	//.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
   .pipe(gulp.dest('dist/script/min'));
 });
