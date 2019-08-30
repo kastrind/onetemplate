@@ -7,8 +7,8 @@ module.exports = {
 	optimization: {
 		splitChunks: {
 			cacheGroups: {
-				addons: { test: /[\\/]node_modules[\\/]((jquery).*)[\\/]/, name: "addons", chunks: "all" },
-				jquery: { test: /[\\/]node_modules[\\/]((?!jquery).*)[\\/]/, name: "jquery", chunks: "all" },
+				jquery: { test: /[\\/]node_modules[\\/]((jquery).*)[\\/]/, name: "jquery", chunks: "all" },
+				other: { test: /[\\/]node_modules[\\/]((?!jquery).*)[\\/]/, name: "other", chunks: "all" },
 			}
 		}
 	},

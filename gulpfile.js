@@ -18,22 +18,13 @@ var svgSprite = require("gulp-svg-sprites");
 var sourceStyles = [
                     'dist/style/*.css',
                     'dist/assets/img/svg/css/sprite.css',
-                    'dist/addons/lightslider/css/lightslider.css',
-                    'dist/addons/lightgallery/css/lightgallery.css',
-                    'dist/addons/owl.carousel/assets/owl.carousel.css',
-                    'dist/addons/owl.carousel/assets/owl.theme.default.css',
-                    'dist/addons/lightbox2/css/lightbox.css',
-                    'dist/addons/fontawesome-free/css/all.css'
+                    'node_modules/lightbox2/dist/css/lightbox.css',
+                    'node_modules/lightslider/dist/css/lightslider.css',
+                    'node_modules/lightgallery/dist/css/lightgallery.css',
+                    'node_modules/owl.carousel/dist/assets/owl.carousel.css',
+                    'node_modules/owl.carousel/dist/assets/owl.theme.default.css',
+                    'node_modules/@fortawesome/fontawesome-free/css/all.css'
                    ];
-
-var sourceScripts = [
-                     'dist/script/*.js',
-                     'dist/addons/lightslider/js/lightslider.js',
-                     'dist/addons/lightgallery/js/lightgallery-all.js',
-                     'dist/addons/owl.carousel/owl.carousel.js',
-                     'dist/addons/lightbox2/js/lightbox.js',
-                     'dist/addons/lazysizes/lazysizes.js'
-                    ];
 
 /* Task to clean the project from built files */
 gulp.task('clean', function () {
@@ -41,28 +32,10 @@ gulp.task('clean', function () {
   del('./docs/*');
 });
 
-/* Task to copy js add-ons like jquery plugins */
-gulp.task('copy-addons', function () {
-  gulp.src('node_modules/lightbox2/dist/**')
-    .pipe(gulp.dest('dist/addons/lightbox2'));
-
-  gulp.src('node_modules/gmaps/gmaps.js')
-    .pipe(gulp.dest('dist/addons/gmaps'));
-
-  gulp.src('node_modules/lightslider/dist/**')
-    .pipe(gulp.dest('dist/addons/lightslider'));
-
-  gulp.src('node_modules/lightgallery/dist/**')
-    .pipe(gulp.dest('dist/addons/lightgallery'));
-
-  gulp.src('node_modules/owl.carousel/dist/**')
-    .pipe(gulp.dest('dist/addons/owl.carousel'));
-
-  gulp.src('node_modules/lazysizes/lazysizes.js')
-    .pipe(gulp.dest('dist/addons/lazysizes'));
-    
-  gulp.src('node_modules/@fortawesome/fontawesome-free/**')
-  .pipe(gulp.dest('dist/addons/fontawesome-free'));
+/* Task to copy styles from plugins */
+gulp.task('copy-vendor-styles', function () {
+  return gulp.src(sourceStyles.slice(2))
+  .pipe(gulp.dest('dist/style'));
 });
 
 /* Task to compile less */
@@ -79,7 +52,7 @@ gulp.task('compile-less', ['copy-assets'], function () {
 });
 
 /* Task to minify & bundle css */
-gulp.task('minify-bundle-css', ['compile-less', 'copy-addons', 'create-svg-sprites'], function () {
+gulp.task('minify-bundle-css', ['compile-less', 'copy-vendor-styles', 'create-svg-sprites'], function () {
   return gulp.src(sourceStyles)
     .pipe(base64({exclude: [sourceStyles[0]]}))
     .pipe(cleanCSS({rebaseTo : 'dist/style/min'}))
@@ -88,16 +61,8 @@ gulp.task('minify-bundle-css', ['compile-less', 'copy-addons', 'create-svg-sprit
     .pipe(browserSync.stream());
 });
 
-/* Task to minify and bundle js */
-gulp.task('minify-bundle-js', ['transpile-bundle-scripts'], function() {
-  return gulp.src('dist/script/*.js')
-	//.pipe(concat('scripts.min.js'))
-	.pipe(uglify())
-  .pipe(gulp.dest('dist/script/min'));
-});
-
 /* Task to replace style and script inclusions in HTML with minified, bundled style and script inclusions */
-gulp.task('useref', ['minify-bundle-css', 'minify-bundle-js'], function () {
+gulp.task('useref', ['minify-bundle-css'], function () {
 return gulp.src('index.html')
     .pipe(replace('src/assets', 'assets'))
     .pipe(useref({ noAssets: true }))
@@ -105,12 +70,12 @@ return gulp.src('index.html')
 });
 
 gulp.task('webpack-prod', function () {
-  webpackConfig.devtool = false;
+  webpackConfig.devtool = 'source-map';
   webpackConfig.mode = 'production';
 });
 
 /* transpile and bundle scripts with webpack */
-gulp.task('transpile-bundle-scripts', function (callback) {
+gulp.task('transpile-bundle-scripts', ['copy-vendor-styles'], function (callback) {
 	webpack(webpackConfig, function(err, stats) {
 		if (err) {
 			console.log(err.toString());
@@ -133,9 +98,9 @@ gulp.task('create-svg-sprites', ['copy-assets'], function () {
         .pipe(gulp.dest("dist/assets/img/svg"));
 });
 
-gulp.task('build-prod', ['copy-assets', 'compile-less', 'create-svg-sprites', 'copy-addons', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'minify-bundle-js', 'useref']);
+gulp.task('build-prod', ['copy-assets', 'compile-less', 'create-svg-sprites', 'copy-vendor-styles', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'useref']);
 
-gulp.task('build-dev', ['compile-less', 'copy-assets', 'copy-addons', 'transpile-bundle-scripts']);
+gulp.task('build-dev', ['compile-less', 'copy-assets', 'copy-vendor-styles', 'transpile-bundle-scripts']);
 
 gulp.task('refresh-prod', ['build-prod'], function() {
 	browserSync.reload();
