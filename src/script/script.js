@@ -18,6 +18,8 @@ import lightGallery from '../../node_modules/lightgallery/dist/js/lightgallery-a
 import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
+import fa from '../../node_modules/@fortawesome/fontawesome-free/js/all';
+
 
 new Header();
 
@@ -31,22 +33,49 @@ new BackToTop("75%", 900, "swing");
 
 console.log('Javascript working.');
 
-var initMap = function() {
-  var map = new GMaps({
-    el: '#map',
-    lat: 35.51708,
-    lng: 24.017993,
-    zoom: 15
-  });
+var noPoi = [
+  {
+    featureType: "poi.business",
+    stylers: [
+      { visibility: "off" }
+    ]   
+  }
+];
 
-  map.addMarker({
-    title: 'Marker',
-    lat: 35.51708,
-    lng: 24.017993,
-    click: function(e) {
-      alert('You clicked on this marker!');
-    }
-  });
+var initMap = function() {
+var map = new GMaps({
+  el: '#map',
+  lat: 35.51708,
+  lng: 24.017993,
+  zoom: 15,
+  styles: noPoi
+});
+
+var infowindow1 = new google.maps.InfoWindow({
+  content: "<h3>Test 1</h3><p>some address</p>"
+});
+
+var infowindow2 = new google.maps.InfoWindow({
+  content: "<h3>Test 2</h3><p>address blah blah</p>"
+});
+
+map.addMarker({
+  title: 'Test 1',
+  lat: 35.515446,
+  lng: 24.018132,
+  click: function(e) {
+    infowindow1.open(map, this);
+  }
+});
+
+map.addMarker({
+  title: 'Test 2',
+  lat: 35.5128611,
+  lng: 24.0153056,
+  click: function(e) {
+    infowindow2.open(map, this);
+  }
+});
 }
 
 $(document).ready(function() {
