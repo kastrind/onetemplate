@@ -16,15 +16,24 @@ var base64 = require('gulp-base64');
 var svgSprite = require("gulp-svg-sprites");
 
 var sourceStyles = [
-                    'dist/style/*.css',
-                    'dist/assets/img/svg/css/sprite.css',
-                    'node_modules/lightbox2/dist/css/lightbox.css',
-                    'node_modules/lightslider/dist/css/lightslider.css',
-                    'node_modules/lightgallery/dist/css/lightgallery.css',
-                    'node_modules/owl.carousel/dist/assets/owl.carousel.css',
-                    'node_modules/owl.carousel/dist/assets/owl.theme.default.css',
-                    'node_modules/@fortawesome/fontawesome-free/css/all.css'
-                   ];
+  'dist/style/*.css',
+  'dist/assets/img/svg/css/sprite.css',
+  'dist/addons/lightbox2/css/lightbox.css',
+  'dist/addons/lightslider/css/lightslider.css',
+  'dist/addons/lightgallery/css/lightgallery.css',
+  'dist/addons/owl.carousel/assets/owl.carousel.css',
+  'dist/addons/owl.carousel/assets/owl.theme.default.css',
+  'dist/addons/fontawesome-free/css/all.css'
+];
+
+/* We have to include some add-ons in order to include their css assets easily */ 
+var addons = [
+  { src: 'node_modules/lightbox2/dist/**', dest: 'dist/addons/lightbox' },
+  { src: 'node_modules/lightslider/dist/**', dest: 'dist/addons/lightslider' },
+  { src: 'node_modules/lightgallery/dist/**', dest: 'dist/addons/lightgallery' },
+  { src: 'node_modules/owl.carousel/dist/**', dest: 'dist/addons/owl.carousel' },
+  { src: 'node_modules/@fortawesome/fontawesome-free/**', dest: 'dist/addons/fontawesome-free' }
+];
 
 /* Task to clean the project from built files */
 gulp.task('clean', function () {
@@ -32,10 +41,15 @@ gulp.task('clean', function () {
   del('./docs/*');
 });
 
-/* Task to copy styles from plugins */
-gulp.task('copy-vendor-styles', function () {
-  return gulp.src(sourceStyles.slice(2))
-  .pipe(gulp.dest('dist/style'));
+/* Task to copy add-ons and plugins */
+gulp.task('copy-addons', function () {
+  for (var key in addons) {
+    if (key == addons.length-1) break;
+    gulp.src(addons[key].src)
+    .pipe(gulp.dest(addons[key].dest));
+  }
+  return gulp.src(addons[addons.length-1].src)
+  .pipe(gulp.dest(addons[addons.length-1].dest));
 });
 
 /* Task to compile less */
@@ -52,7 +66,7 @@ gulp.task('compile-less', ['copy-assets'], function () {
 });
 
 /* Task to minify & bundle css */
-gulp.task('minify-bundle-css', ['compile-less', 'copy-vendor-styles', 'create-svg-sprites'], function () {
+gulp.task('minify-bundle-css', ['compile-less', 'copy-addons', 'create-svg-sprites'], function () {
   return gulp.src(sourceStyles)
     .pipe(base64({exclude: [sourceStyles[0]]}))
     .pipe(cleanCSS({rebaseTo : 'dist/style/min'}))
@@ -75,7 +89,7 @@ gulp.task('webpack-prod', function () {
 });
 
 /* transpile and bundle scripts with webpack */
-gulp.task('transpile-bundle-scripts', ['copy-vendor-styles'], function (callback) {
+gulp.task('transpile-bundle-scripts', ['copy-addons'], function (callback) {
 	webpack(webpackConfig, function(err, stats) {
 		if (err) {
 			console.log(err.toString());
@@ -98,9 +112,9 @@ gulp.task('create-svg-sprites', ['copy-assets'], function () {
         .pipe(gulp.dest("dist/assets/img/svg"));
 });
 
-gulp.task('build-prod', ['copy-assets', 'compile-less', 'create-svg-sprites', 'copy-vendor-styles', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'useref']);
+gulp.task('build-prod', ['copy-assets', 'compile-less', 'create-svg-sprites', 'copy-addons', 'minify-bundle-css', 'webpack-prod', 'transpile-bundle-scripts', 'useref']);
 
-gulp.task('build-dev', ['compile-less', 'copy-assets', 'copy-vendor-styles', 'transpile-bundle-scripts']);
+gulp.task('build-dev', ['compile-less', 'copy-assets', 'copy-addons', 'transpile-bundle-scripts']);
 
 gulp.task('refresh-prod', ['build-prod'], function() {
 	browserSync.reload();

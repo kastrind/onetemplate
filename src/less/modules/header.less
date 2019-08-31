@@ -113,9 +113,18 @@
 
       .atMedium({
         display: grid;
-        grid-template-columns: 2fr 6fr 2fr;
+        /* grid-template-columns: 2fr 6fr 2fr; */
+        grid-template-columns: 2fr 3fr 5fr;
         grid-gap: 0;
       });
+
+      &-override {
+        .atMedium({
+          display: grid;
+          grid-template-columns: 2fr 6fr 2fr !important;
+          grid-gap: 0;
+        });
+      }
 
     }
 
@@ -124,7 +133,8 @@
 
       .atMedium({
         display: grid;
-        grid-template-columns: 2fr 6fr 2fr;
+        /* grid-template-columns: 2fr 6fr 2fr; */
+        grid-template-columns: 2fr 3fr 5fr;
         grid-gap: 0;
       });
     }
@@ -149,7 +159,7 @@
         text-align: center;
 
         img {
-          max-height: 7vh;
+          max-height: 5vh;
           min-height: 15px;
         }
         &-shrunk {
