@@ -121,7 +121,7 @@ $(document).ready(function() {
     }     
   }); 
 
-  $("#full-width-slideshow").owlCarousel({
+  var owl = $("#full-width-slideshow").owlCarousel({
     //navigation : true, // Show next and prev buttons
     dots: false,
     autoplay: true,
@@ -135,6 +135,17 @@ $(document).ready(function() {
     itemsDesktopSmall: false,
     itemsTablet: false,
     itemsMobile: false
+  });
+
+  // first slide slogan animation
+  $(window).on("load", function(event) {
+    TweenMax.fromTo($('.owl-item.active .slide-slogan'), 7, {opacity: 0, right: '0'}, {opacity: .8,  right: '70%', repeat: -1});
+  });
+
+  // slogan animations for the next slides
+  owl.on('changed.owl.carousel', function(event) {
+    var cur_slogan = $(this).find(".owl-stage").children().eq(event.item.index).find(".slide-slogan");
+    var test = TweenMax.fromTo(cur_slogan, 7, {opacity: 0, right: 0}, {opacity: .8,  right: '70%', repeat: -1});
   });
 
 });
