@@ -28,7 +28,7 @@ var sourceStyles = [
 
 /* We have to include some add-ons in order to include their css assets easily */ 
 var addons = [
-  { src: 'node_modules/lightbox2/dist/**', dest: 'dist/addons/lightbox' },
+  { src: 'node_modules/lightbox2/dist/**', dest: 'dist/addons/lightbox2' },
   { src: 'node_modules/lightslider/dist/**', dest: 'dist/addons/lightslider' },
   { src: 'node_modules/lightgallery/dist/**', dest: 'dist/addons/lightgallery' },
   { src: 'node_modules/owl.carousel/dist/**', dest: 'dist/addons/owl.carousel' },
