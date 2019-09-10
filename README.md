@@ -7,8 +7,8 @@ Written in ES2015+ and LESS for CSS preprocessing.
 ## Installation & Build
 - Clone this repository
 - run `npm install`
-- run `gulp watch-dev` for development
-- run `gulp build-prod` to create the distribution
+- run `gulp build-dev`, `gulp watch-dev` for development
+- run `gulp build-prod` to create the distribution (can also run `gulp watch-prod` but it is pointless, as `watch-dev` is recommended for development)
 
 - Generate favicons: https://www.favicon-generator.org/
 - If Google APIs and Services are used, obtain keys: https://console.cloud.google.com/home/dashboard
