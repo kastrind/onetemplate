@@ -27,6 +27,7 @@ Written in ES2015+ and LESS for CSS preprocessing.
 - Fill out the meta tags in the index.html
 - Include microdata: https://schema.org/
 - Generate a sitemap.xml: https://www.xml-sitemaps.com/
+- Use dns prefetch to resolve multiple domains like `<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">` and `<link rel="dns-prefetch" href="https://maps.google.com">`
 
 ## Optional
 - Create a Progressive Web App (PWA) for users to be able to add site to their Home Screen: https://codelabs.developers.google.com/codelabs/add-to-home-screen/#0
