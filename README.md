@@ -7,6 +7,7 @@ Written in ES2015+ and LESS for CSS preprocessing.
 ## Installation & Build
 - Clone this repository
 - run `npm install`
+- if building for the first time or switching branch, run `gulp clean`
 - run `gulp build-dev`, `gulp watch-dev` for development
 - run `gulp build-prod` to create the distribution (can also run `gulp watch-prod` but it is pointless, as `watch-dev` is recommended for development)
 
