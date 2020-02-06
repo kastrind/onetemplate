@@ -37,7 +37,7 @@
 .header-row-mixin() {
   &:nth-of-type(1) {
     background-color: @header-background-color-1;
-    padding: @menu-font-size - @menu-font-size*0.8;
+    padding: 0;
     * {
       font-size: @menu-font-size - @menu-font-size*0.3;
       color: if((@header-bg-1-light), @menu-font-color-dark, @menu-font-color-light);
@@ -46,7 +46,7 @@
   }
   &:nth-of-type(2) {
     background-color: @header-background-color-2;
-    padding: @menu-font-size - @menu-font-size*0.5;
+    padding: 0;
     .header-gradient-mixin();
     * {
       font-size: @menu-font-size - @menu-font-size*0.3;
@@ -139,8 +139,13 @@
           text-align: center;
         }
 
+        &:first-of-type {
+          padding-left: 0.5rem;
+        }
+
         &:last-of-type {
           text-align: right;
+          padding-right: 0.5rem;
         }
 
       });
@@ -151,6 +156,7 @@
         img {
           max-height: 10vh;
           min-height: 120px;
+          vertical-align: middle;
         }
         &-shrunk {
           img {

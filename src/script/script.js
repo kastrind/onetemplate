@@ -120,6 +120,6 @@ $(window).on("load", function () {
   
   initMap();
 
-  TweenMax.from(".logo", 2, {y:-300, opacity:0, scale:1.5});
+  TweenMax.from(".logo", 3, {y:"50%", x:"50%", opacity:0, scale:2});
 
 });
