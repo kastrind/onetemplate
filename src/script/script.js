@@ -55,9 +55,11 @@ $(document).ready(function() {
 
   //$('#lightSliderFull').lightSlider({item: 1, autoWidth: true, loop: true, auto: true, addClass: "lightSliderFull"});
   $('#lightSlider').lightSlider({
-    item: 4,
+    item: 3,
     auto: true,
     loop: true,
+    controls: false,
+    pager: false,
     responsive: [
         {
           breakpoint: 768,
@@ -81,7 +83,7 @@ $(document).ready(function() {
     gallery: true,
     item: 1,
     loop: true,
-    thumbItem: 10,
+    thumbItem: 7,
     slideMargin: 0,
     enableDrag: false,
     currentPagerPosition: 'left',

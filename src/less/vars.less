@@ -1,5 +1,6 @@
 @import "./paths";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');*/
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
 
 
 
@@ -19,7 +20,7 @@
 @font-color-dark: #333333;
 @font-color-light: #dddddd;
 
-@font-family: "Montserrat", sans-serif;
+@font-family: "Russo One", sans-serif;
 
 @page-margin-left-right: 5vw;
 @margin-top: 10vh;
@@ -38,7 +39,7 @@
 /* Header */
 
 @header-is-fixed: false;
-@header-font-family: "Montserrat", sans-serif;
+@header-font-family: "Russo One", sans-serif;
 @menu-font-color-dark: #ed1c24;
 @menu-font-color-light: #ffffff;
 @menu-font-size: 1.4rem;
@@ -70,7 +71,7 @@
 @header-nav-btn-color: #ed1c24;
 //alternative button colors
 @header-nav-btn-background-alt-color: #f0f0f0;
-@header-nav-btn-alt-color: #303030;
+@header-nav-btn-alt-color: #ed1c24;
 @header-nav-btn-padding: 8px;
 @header-nav-btn-bar-height: 5px;
 @header-nav-btn-radius: 0;
@@ -78,12 +79,12 @@
 @header-nav-btn-bar-gap: 5px;
 
 //header submenu colors
-@header-submenu-background-color:  #2a3894de;
+@header-submenu-background-color:  #2a3894;
 @header-submenu-bg-light: boolean(luma(@header-submenu-background-color) > 40%);
-@header-submenu-border: 2px solid #2a3894;
-@header-submenu-background-alt-color:  #303030;
+@header-submenu-border: 2px solid #3b50d6;
+@header-submenu-background-alt-color:  #2a3894;
 @header-submenu-bg-alt-light: boolean(luma(@header-submenu-background-alt-color) > 40%);
-@header-submenu-alt-border: 1px solid #f0f0f0;
+@header-submenu-alt-border: 2px solid #3b50d6;
 
 //search
 @header-search-color: #404040;
@@ -120,7 +121,7 @@
 
 /* Gallery */
 
-@gallery-grid-gap:  0.5rem;
+@gallery-grid-gap:  1rem;
 @gallery-caption-padding: 0.5rem;
 @gallery-font-size: 1rem;
 @gallery-line-height: 1rem;
@@ -174,33 +175,33 @@
 
 /* Video */
 
-@video-container-height: 80vh;
+@video-container-height: 50vh;
 @video-translate: -30%;
 @video-overlay: true;
-@video-overlay-color: black; // can also be a gradient
-@video-overlay-opacity: 0.5;
+@video-overlay-color: black;// can also be a gradient
+@video-overlay-opacity: 0.6;
 
 
 
 /* Buttons */
 
-@btn-background-color: #eeeeee;
+@btn-background-color: #2a3894;
 @btn-bg-light: boolean(luma(@btn-background-color) > 40%);
 @btn-font-color-dark: #333333;
 @btn-font-color-light: #dddddd;
 @btn-font-size: 1rem;
 @btn-padding: 0.5rem;
 @btn-border: 2px solid;
-@btn-border-radius: 0.3rem;
+@btn-border-radius: 0;
 
 
 
 /* Parallax */
 
-@parallax-container-height: 300px;
+@parallax-container-height: 400px;
 @parallax-overlay: true;
 @parallax-overlay-color: black; // can also be a gradient
-@parallax-overlay-opacity: 0.4;
+@parallax-overlay-opacity: 0.6;
 @parallax-font-size: 1rem;
 @parallax-font-weight: 100;
 @parallax-text-shadow: 2px 2px 3px black;
@@ -225,10 +226,10 @@
 
 /* Footer */
 
-@footer-background-color: #303040;
+@footer-background-color: #0b123d;
 @footer-bg-light: boolean(luma(@footer-background-color) > 40%);
 @footer-font-color-dark: #333333;
-@footer-font-color-light: #cccccc;
+@footer-font-color-light: #ed1c24;
 @footer-border: 1px solid darken(@footer-background-color, 5%);
 
 
