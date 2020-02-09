@@ -25,18 +25,18 @@ class NavMenu {
 		//toggle the menu on click of the hamburger icon
 		this.menuIcon.click(this.toggleTheMenu.bind(this));
 
-		$(window).on("load", function () {
+		// $(window).on("load", function () {
 
-			this.menuItem.on("click", this.handleTouches.bind(this));
-			this.menuItem.off("mouseenter");
-			this.subMenu.off("mouseleave");
-		}.bind(this));
+		// 	this.menuItem.on("click", this.handleTouches.bind(this));
+		// 	this.menuItem.off("mouseenter");
+		// 	this.subMenu.off("mouseleave");
+		// }.bind(this));
 
 		$(window).on("load resize", function () {
 			let isMobile = this.subMenu.css("position") != 'absolute';
 			let changed = isMobile != this.isMobile;
 			this.isMobile = isMobile;
-			/*
+			
 			if (changed) {
 				//on mobile view
 				if (this.isMobile) {
@@ -52,7 +52,7 @@ class NavMenu {
 					//on hovering away from a menu item, hide its submenu
 					this.subMenu.on("mouseleave", this.handleMouseLeave.bind(this));
 				}
-			}*/
+			}
 			$("nav.menu ul li a[href^='#']").parent().off("click");
 			//smooth scroll menu links
 			$("nav.menu ul li a[href^='#']").parent().click(function(e) {
@@ -80,6 +80,9 @@ class NavMenu {
 		let adj_ul = $(event.target).next("ul:first");
 		let point = $(event.target).find(".point");
 		if (adj_ul.is(":not(:visible)")) {
+			let other_ul = $(event.target).closest("ul").find("ul").not(adj_ul);
+			other_ul.slideUp();
+			other_ul.prev("a").find(".point").removeClass("point-up").addClass("point-down");
 			adj_ul.slideDown();
 			$(point).removeClass("point-down").addClass("point-up");
 		}

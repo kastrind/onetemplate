@@ -18,6 +18,7 @@ import lightGallery from '../../node_modules/lightgallery/dist/js/lightgallery-a
 import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 import waypoints from '../../node_modules/waypoints/lib/noframework.waypoints';
 import lazySizes from '../../node_modules/lazysizes/lazysizes';
+import fa from '../../node_modules/@fortawesome/fontawesome-free/js/all';
 
 new Header();
 
