@@ -139,8 +139,13 @@
           text-align: center;
         }
 
+        &:first-of-type {
+          padding-left: 0.5rem;
+        }
+
         &:last-of-type {
           text-align: right;
+          padding-right: 0.5rem;
         }
 
       });
@@ -151,6 +156,7 @@
         img {
           max-height: 10vh;
           min-height: 120px;
+          vertical-align: middle;
         }
         &-shrunk {
           img {
@@ -371,7 +377,7 @@
             padding: 0 1rem;
             background-color: @header-submenu-background-color;
             border: @header-submenu-border;
-            border-radius: 3px;
+            border-radius: @header-submenu-border-radius;
             list-style: none;
 
             li * {
@@ -400,7 +406,7 @@
               ul {
 
                 .atMedium({
-                  left: 30%;
+                  left: 60%;
                 });
 
               }

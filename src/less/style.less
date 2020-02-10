@@ -29,6 +29,7 @@ body {
   margin: 0;
   padding: 0;
   background: @body-background;
+  background-size: cover;
 }
 
 body * {
@@ -124,6 +125,7 @@ body * {
 
   &-hidden {
     opacity: 0;
+    cursor: initial;
   }
 
   .caretup {
@@ -162,5 +164,14 @@ body * {
 .lightSlider {
   li {
     text-align: center;
+  }
+}
+
+#lightGallery {
+  li.lslide {
+    img {
+      height: auto;
+      max-width: 100%;
+    }
   }
 }

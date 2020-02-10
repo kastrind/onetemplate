@@ -132,8 +132,12 @@
   .site-header .header-wrapper-col:not(:first-of-type):not(:last-of-type) {
     text-align: center;
   }
+  .site-header .header-wrapper-col:first-of-type {
+    padding-left: 0.5rem;
+  }
   .site-header .header-wrapper-col:last-of-type {
     text-align: right;
+    padding-right: 0.5rem;
   }
 }
 .site-header .header-wrapper-col .logo {
@@ -142,6 +146,7 @@
 .site-header .header-wrapper-col .logo img {
   max-height: 10vh;
   min-height: 120px;
+  vertical-align: middle;
 }
 .site-header .header-wrapper-col .logo-shrunk img {
   max-height: 5vh;
@@ -369,7 +374,7 @@
 }
 @media screen and (min-width: 768px) {
   .site-header .header-wrapper nav.menu ul li ul li ul {
-    left: 30%;
+    left: 60%;
   }
 }
 .sidebar {
@@ -433,24 +438,32 @@
   width: 100%;
   height: auto;
 }
-#full-width-slideshow div h1 {
+#full-width-slideshow div .slide-slogan {
   position: absolute;
+  right: 0;
+  top: 30%;
+  opacity: 0;
+  min-width: 30%;
+  max-width: 50%;
+  padding: 0.5rem;
+  background-color: white;
+  color: #333333;
+  border-radius: none;
+  text-align: center;
   font-weight: 100;
-  font-size: 2rem;
+  font-size: 1.3rem;
+  box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
-  #full-width-slideshow div h1 {
-    font-size: 2.7rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  #full-width-slideshow div h1 {
-    font-size: 2.7rem;
+  #full-width-slideshow div .slide-slogan {
+    font-size: 2.07rem;
+    top: 20%;
   }
 }
 @media screen and (min-width: 1100px) {
-  #full-width-slideshow div h1 {
-    font-size: 3.6rem;
+  #full-width-slideshow div .slide-slogan {
+    font-size: 2.97rem;
+    top: 10%;
   }
 }
 .parallax-container {
@@ -791,6 +804,7 @@ body {
   margin: 0;
   padding: 0;
   background: black url('../assets/img/abstract.jpeg') no-repeat fixed center;
+  background-size: cover;
 }
 body * {
   font-family: "Montserrat", sans-serif;
@@ -888,6 +902,7 @@ body * {
 }
 .back-to-top-hidden {
   opacity: 0;
+  cursor: initial;
 }
 .back-to-top .caretup {
   display: block;
@@ -918,4 +933,8 @@ body * {
 }
 .lightSlider li {
   text-align: center;
+}
+#lightGallery li.lslide img {
+  height: auto;
+  max-width: 100%;
 }

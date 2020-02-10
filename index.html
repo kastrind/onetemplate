@@ -145,8 +145,8 @@
           -->
 
           <div id="full-width-slideshow" class="owl-carousel owl-theme">
-            <div><h1 style="left:10%;top:10%;color:#f0f0f0;">Live your Dreams</h1><img src="src/assets/img/fullwidth/night.jpg" /></div>
-            <div><h1 style="left:25%;top:10%;color:#f0f0f0;">Amazing Experiences</h1><img src="src/assets/img/fullwidth/clouds.jpg" /></div>
+            <div><h1 class="slide-slogan">Live your Dreams</h1><img src="src/assets/img/fullwidth/night.jpg" /></div>
+            <div><h1 class="slide-slogan">Amazing Experiences</h1><img src="src/assets/img/fullwidth/clouds.jpg" /></div>
           </div>
 
         </section>
@@ -628,8 +628,18 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
-    <!-- build:js script/min/scripts.min.js -->
-    <script src="dist/script/script.js"></script>
+    <!-- if using regular webpack.config.js, replace below with similar for dist/script/script.js -->
+
+    <!-- build:js script/jquery.js -->
+    <script src="dist/script/jquery.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js script/other.js -->
+    <script src="dist/script/other.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js script/app.js -->
+    <script src="dist/script/app.js"></script>
     <!-- endbuild -->
 
   </body>

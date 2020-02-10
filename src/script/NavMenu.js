@@ -72,6 +72,9 @@ class NavMenu {
 		let adj_ul = $(event.target).next("ul:first");
 		let point = $(event.target).find(".point");
 		if (adj_ul.is(":not(:visible)")) {
+			let other_ul = $(event.target).closest("ul").find("ul").not(adj_ul);
+			other_ul.slideUp();
+			other_ul.prev("a").find(".point").removeClass("point-up").addClass("point-down");
 			adj_ul.slideDown();
 			$(point).removeClass("point-down").addClass("point-up");
 		}
