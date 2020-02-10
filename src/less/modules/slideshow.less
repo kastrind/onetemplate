@@ -10,21 +10,30 @@
         height: auto;
     }
 
-    h1 {
+    .slide-slogan {
       position:absolute;
-      font-weight:  100;
+      right: 0;
+      top: 30%;
+      opacity: 0;
+      min-width: 30%;
+      max-width: 50%;
+      padding: @slideshow-padding;
+      background-color: @slideshow-background-color;
+      color: @slideshow-font-color;
+      border-radius: @slideshow-border-radius;
+      text-align: @slideshow-text-align;
+      font-weight:  @slideshow-font-weight;
       font-size: @slideshow-font-size;
+      box-sizing: border-box;
 
       .atMedium({
         font-size: (@slideshow-font-size + 1) - (@slideshow-font-size + 1)*0.1;
-      });
-
-      .atMedium({
-        font-size: (@slideshow-font-size + 1) - (@slideshow-font-size + 1)*0.1;
+        top: 20%;
       });
 
       .atLarge({
         font-size: (@slideshow-font-size + 2) - (@slideshow-font-size + 2)*0.1;
+        top: 10%;
       });
 
     }

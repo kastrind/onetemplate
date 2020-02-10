@@ -32,12 +32,30 @@ new BackToTop("75%", 900, "swing");
 
 console.log('Javascript working.');
 
+var noPoi = [
+  {
+    featureType: "poi.business",
+    stylers: [
+      { visibility: "off" }
+    ]   
+  }
+];
+
 var initMap = function() {
   var map = new GMaps({
     el: '#map',
     lat: 35.51708,
     lng: 24.017993,
-    zoom: 15
+    zoom: 15,
+    styles: noPoi
+  });
+
+  var infowindow1 = new google.maps.InfoWindow({
+    content: "<h3>Marker 1</h3><p>content</p>"
+  });
+
+  var infowindow2 = new google.maps.InfoWindow({
+    content: "<h3>Marker 2</h3><p>content</p>"
   });
 
   map.addMarker({
@@ -45,9 +63,19 @@ var initMap = function() {
     lat: 35.51708,
     lng: 24.017993,
     click: function(e) {
-      alert('You clicked on this marker!');
+      infowindow1.open(map, this);
     }
   });
+
+  map.addMarker({
+    title: 'Rosmarino 1 & 2',
+    lat: 35.51586,
+    lng: 24.01530,
+    click: function(e) {
+      infowindow2.open(map, this);
+    }
+  });
+
 }
 
 $(document).ready(function() {
@@ -93,9 +121,11 @@ $(document).ready(function() {
         selector: '#lightGallery .lslide'
       });
     }     
-  }); 
+  });
 
-  $("#full-width-slideshow").owlCarousel({
+  var owl = $('#full-width-slideshow');
+
+  owl.owlCarousel({
     //navigation : true, // Show next and prev buttons
     dots: false,
     autoplay: true,
@@ -109,6 +139,17 @@ $(document).ready(function() {
     itemsDesktopSmall: false,
     itemsTablet: false,
     itemsMobile: false
+  });
+
+  // first slide slogan animation
+  $(window).on("load", function(event) {
+    TweenMax.fromTo($('.owl-item.active .slide-slogan'), 9, {opacity: 0, right: 0}, {opacity: .8,  right: '80%', repeat: -1});
+  });
+
+  // slogan animations for the next slides
+  owl.on('changed.owl.carousel', function(event) {
+    var cur_slogan = $(this).find(".owl-stage").children().eq(event.item.index).find(".slide-slogan");
+    var test = TweenMax.fromTo(cur_slogan, 9, {opacity: 0, right: 0}, {opacity: .8,  right: '80%', repeat: -1});
   });
 
 });
