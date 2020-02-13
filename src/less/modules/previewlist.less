@@ -9,6 +9,16 @@
 
   grid-gap: @previewlist-grid-gap;
 
+  &.related {
+    display: grid;
+    grid-template-columns: 1fr;
+  
+    .atMedium({
+      grid-template-columns: 1fr;
+    });
+
+  }
+
   &-item {
     width: 100%;
     padding: @previewlist-item-padding;
@@ -17,6 +27,22 @@
     background-color: @previewlist-background-color;
     border-radius: @previewlist-border-radius;
     border: @previewlist-border;
+
+    &.related {
+      min-width: 120px;
+      max-width: 70%;
+      box-sizing: border-box;
+      border-radius: 0;
+      border-left: 2px solid #5565cf;
+      border-bottom: 2px solid #5565cf;
+      background-color: none;
+      padding: 0 0.5rem 0 0;
+      justify-self: end;
+
+      img {
+        padding: 0 0.5rem 0 0;
+      }
+    }
 
     img {
       height: @previewlist-img-height;
