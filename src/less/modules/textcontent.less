@@ -5,7 +5,6 @@
   justify-content: center;
 
   .col {
-    min-width: 200px;
     box-sizing: border-box;
     padding: @textcontent-padding;
     background-color: @textcontent-background-color;
@@ -13,6 +12,7 @@
     border: @textcontent-border;
     border-radius: @textcontent-border-radius;
     font-size: @textcontent-font-size;
+    width: 100%;
 
     .atLarge({
       font-size: (@textcontent-font-size + 0.2) - (@textcontent-font-size + 0.2)*0.1;
@@ -30,14 +30,26 @@
       });
     }
 
+    &-two-thirds {
+      .atMedium({
+        max-width: 66.66%;
+      });
+    }
+
     &-fourth {
       .atMedium({
         max-width: 25%;
       });
     }
 
+    &-three-fourths {
+      .atMedium({
+        max-width: 75%;
+      });
+    }
+
     &-full {
-      width: 100%;
+      max-width: 100%;
     }
 
   }

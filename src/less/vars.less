@@ -109,7 +109,6 @@
 @sidebar-font-color-dark: #333333;
 @sidebar-font-color-light: #cccccc;
 @sidebar-padding: 1rem;
-@test1: true;
 
 
 
@@ -150,6 +149,18 @@
 
 
 
+/* Itemlist on the side */
+
+@itemlist-side-caption-padding: 0.5rem;
+@itemlist-side-font-size: 0.8rem;
+@itemlist-side-line-height: 1rem;
+@itemlist-side-background-color: rgba(255, 255, 255, 0.9);
+@itemlist-side-bg-light: boolean(luma(@itemlist-side-background-color) > 40%);
+@itemlist-side-font-color-light: #cccccc;
+@itemlist-side-font-color-dark: #333333;
+
+
+
 /* Previewlist */
 
 @previewlist-grid-gap:  1rem;
@@ -163,6 +174,25 @@
 @previewlist-border-radius: 10px;
 @previewlist-more-link-color: #c0c0c0;
 @previewlist-img-height: 60px;
+@previewlist-img-padding: 0 0.5rem 0.5rem 0;
+
+
+
+/* Previewlist on the side */
+
+@previewlist-side-grid-gap:  1rem;
+@previewlist-side-max-width: 70%;
+@previewlist-side-item-padding: 0 0.5rem 0 0;
+@previewlist-side-font-size: 0.8rem;
+@previewlist-side-background-color: rgba(0, 0, 0, 0.8);
+@previewlist-side-bg-light: boolean(luma(@previewlist-side-background-color) > 40%);
+@previewlist-side-font-color-light: #cccccc;
+@previewlist-side-font-color-dark: #333333;
+@previewlist-side-border: none;
+@previewlist-side-border-radius: 0;
+@previewlist-side-more-link-color: #c0c0c0;
+@previewlist-side-img-height: 60px;
+@previewlist-side-img-padding: 0 0.5rem 0 0;
 
 
 

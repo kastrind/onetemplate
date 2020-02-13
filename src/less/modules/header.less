@@ -110,6 +110,20 @@
 
     &-row {
       .header-row-mixin();
+    }
+
+    &-row:first-of-type {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      .atMedium({
+        display: grid;
+        grid-template-columns: 3fr 4fr 3fr;
+        grid-gap: 0;
+      });
+    }
+
+    &-row:last-of-type {
 
       .atMedium({
         display: grid;
