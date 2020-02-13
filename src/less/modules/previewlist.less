@@ -1,12 +1,11 @@
 .previewlist {
   display: grid;
   grid-template-columns: 1fr;
+  grid-gap: @previewlist-grid-gap;
 
   .atMedium({
     grid-template-columns: 1fr 1fr;
   });
-
-  grid-gap: @previewlist-grid-gap;
 
   &-item {
     width: 100%;

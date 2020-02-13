@@ -14,27 +14,27 @@
       object-fit: cover;
     }
 
-  }
+    &-caption {
+      width: 100%;
+      min-height: 100px;
+      margin-top: -5px;
+      padding: @itemlist-caption-padding;
+      box-sizing: border-box;
+      font-size: @itemlist-font-size;
+      line-height: @itemlist-line-height;
+      text-align: left;
+      background-color: @itemlist-background-color;
+      color: if((@itemlist-bg-light), @itemlist-font-color-dark, @itemlist-font-color-light);
 
-  &-caption {
-    width: 100%;
-    min-height: 100px;
-    margin-top: -5px;
-    padding: @itemlist-caption-padding;
-    box-sizing: border-box;
-    font-size: @itemlist-font-size;
-    line-height: @itemlist-line-height;
-    text-align: left;
-    background-color: @itemlist-background-color;
-    color: if((@itemlist-bg-light), @itemlist-font-color-dark, @itemlist-font-color-light);
+      .atMedium({
+        font-size: (@itemlist-font-size + 0.1) - (@itemlist-font-size + 0.1)*0.1;
+      });
 
-    .atMedium({
-      font-size: (@itemlist-font-size + 0.1) - (@itemlist-font-size + 0.1)*0.1;
-    });
+      .atLarge({
+        font-size: (@itemlist-font-size + 0.2) - (@itemlist-font-size + 0.2)*0.1;
+      });
 
-    .atLarge({
-      font-size: (@itemlist-font-size + 0.2) - (@itemlist-font-size + 0.2)*0.1;
-    });
+    }
 
   }
 

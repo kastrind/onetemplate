@@ -1,10 +1,15 @@
 .previewlist-side {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: @previewlist-side-grid-gap;
+    justify-items: stretch;
+
+    .atMedium({
+      justify-items: end;
+      grid-template-columns: 1fr;
+    });
   
     &-item {
-      max-width: @previewlist-side-max-width;
       min-width: 120px;
       padding: @previewlist-side-item-padding;
       box-sizing: border-box;
@@ -12,7 +17,10 @@
       background-color: @previewlist-side-background-color;
       border-radius: @previewlist-side-border-radius;
       border: @previewlist-side-border;
-      justify-self: end;
+
+      .atMedium({
+        max-width: @previewlist-side-max-width;
+      });
   
       img {
         height: @previewlist-side-img-height;
