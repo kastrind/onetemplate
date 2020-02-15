@@ -8,6 +8,8 @@ class Header {
     //the site header
     this.siteHeader = $(".site-header");
 
+    this.originalHeaderHeight = this.siteHeader.outerHeight();
+
     //the site header rows the style of which to alternate
     this.siteHeaderRows = $(".site-header").find(".header-wrapper-row");
 
@@ -83,7 +85,7 @@ class Header {
           consecutive_scrollups = 0;
         }
 
-        if (consecutive_scrollups >= 20) {
+        if (consecutive_scrollups >= 10) {
           this.siteHeader.removeClass("site-header-pushedUp");
         }else if (consecutive_scrollups == 0) {
           this.siteHeader.addClass("site-header-pushedUp");
@@ -148,6 +150,8 @@ class Header {
   }
 
   restoreHeader() {
+    this.siteHeader.css({"visibility": "hidden"});
+    $(".main-content").css({"padding-top": 0});
     this.searchField.removeClass("alt");
     this.subMenu.removeClass("alt");
     this.menuIcon.removeClass("alt");
@@ -159,9 +163,12 @@ class Header {
     if (!this.sidebar.hasClass("sidebar-is-visible") || this.siteHeader.css("position") != "fixed") {
       this.siteHeader.removeClass("site-header-fixed-squashed");
     }
+    this.siteHeader.css({"visibility": ""});
   }
 
   pullDownHeader() {
+    this.siteHeader.css({"visibility": "hidden"});
+    $(".main-content").css({"padding-top": this.originalHeaderHeight+"px"});
     this.searchField.addClass("alt");
     this.subMenu.addClass("alt");
     this.menuIcon.addClass("alt");
@@ -173,6 +180,7 @@ class Header {
     if (this.sidebar.hasClass("sidebar-is-visible")) {
       this.siteHeader.addClass("site-header-fixed-squashed");
     }
+    this.siteHeader.css({"visibility": ""});
   }
 
 }
