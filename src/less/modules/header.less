@@ -76,6 +76,7 @@
 
 .site-header {
   .header-fixed-mixin();
+  .submenu-expansion-fix-mixin();
   transform: translateY(0);
   transition: margin ease-in 0.5s;
 
@@ -372,8 +373,13 @@
             .point {
               font-size: @menu-font-size;
               transition: all linear 0.5s;
-              display: inline-block;
+              display: inline-flex;
               margin-left: @menu-font-size*0.5;
+              width: 1.5rem;
+              height: 2.5rem;
+              align-items: center;
+              justify-content: center;
+
 
               &-down {
                 transform: rotate(90deg);

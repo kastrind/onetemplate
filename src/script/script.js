@@ -32,48 +32,27 @@ new BackToTop("75%", 900, "swing");
 
 console.log('Javascript working.');
 
-var noPoi = [
-  {
-    featureType: "poi.business",
-    stylers: [
-      { visibility: "off" }
-    ]   
-  }
-];
-
 var initMap = function() {
   var map = new GMaps({
     el: '#map',
-    lat: 35.51708,
-    lng: 24.017993,
-    zoom: 15,
-    styles: noPoi
+    lat: constants['gmap']['lat'],
+    lng: constants['gmap']['lng'],
+    zoom: constants['gmap']['zoom'],
+    styles: constants['gmap']['styles']
   });
 
-  var infowindow1 = new google.maps.InfoWindow({
-    content: "<h3>Marker 1</h3><p>content</p>"
-  });
-
-  var infowindow2 = new google.maps.InfoWindow({
-    content: "<h3>Marker 2</h3><p>content</p>"
-  });
-
-  map.addMarker({
-    title: 'Marker',
-    lat: 35.51708,
-    lng: 24.017993,
-    click: function(e) {
-      infowindow1.open(map, this);
-    }
-  });
-
-  map.addMarker({
-    title: 'Rosmarino 1 & 2',
-    lat: 35.51586,
-    lng: 24.01530,
-    click: function(e) {
-      infowindow2.open(map, this);
-    }
+  constants['gmap']['markers'].forEach( function(marker) {
+    var infowindow = new google.maps.InfoWindow({
+      content: marker['infowindow']
+    });
+    map.addMarker({
+      title: marker['title'],
+      lat: marker['lat'],
+      lng: marker['lng'],
+      click: function(e) {
+        infowindow.open(map, this);
+      }
+    });
   });
 
 }

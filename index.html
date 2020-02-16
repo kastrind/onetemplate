@@ -84,7 +84,7 @@
                 <ul>
                   <li><a href="#">Home</a></li>
                   <li>
-                    <a>About Us<span class="point point-down">&#8250;</span></a>
+                    <a href="">About Us<span class="point point-down">&#8250;</span></a>
                     <ul>
                       <li><a href="#">Our Company</a></li>
                       <li><a href="#">Terms & Conditions</a></li>
@@ -659,6 +659,35 @@
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+    <script>
+      var constants = { gmap: { markers: {} } };
+      constants['gmap']['lat'] = 35.51708;
+      constants['gmap']['lng'] = 24.017993;
+      constants['gmap']['zoom'] = 13;
+      constants['gmap']['styles'] = [
+                                      {
+                                        featureType: "poi.business",
+                                        stylers: [
+                                          { visibility: "off" }
+                                        ]   
+                                      }
+                                    ];
+      constants['gmap']['markers'] =  [
+        {
+          title: 'Title One',
+          lat: 35.5064679,
+          lng: 24.0039472,
+          infowindow: '<h4>Infowindow Title</h4><p>This is some content for the marker infowindow.</p>'
+        },
+        {
+          title: 'Title Two',
+          lat: 35.5138559,
+          lng: 24.0205762,
+          infowindow: '<h4>Infowindow Title 2</h4><p>This is also some content for the marker infowindow.</p>'
+        }
+      ];
+    </script>
 
     <!-- build:js script/jquery.js -->
     <script src="dist/script/jquery.js"></script>
