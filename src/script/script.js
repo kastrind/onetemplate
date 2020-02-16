@@ -32,49 +32,30 @@ new BackToTop("75%", 900, "swing");
 
 console.log('Javascript working.');
 
-var noPoi = [
-  {
-    featureType: "poi.business",
-    stylers: [
-      { visibility: "off" }
-    ]   
-  }
-];
-
 var initMap = function() {
 var map = new GMaps({
   el: '#map',
-  lat: 35.51708,
-  lng: 24.017993,
-  zoom: 15,
-  styles: noPoi
+  lat: constants['gmap']['lat'],
+  lng: constants['gmap']['lng'],
+  zoom: constants['gmap']['zoom'],
+  styles: constants['gmap']['styles']
 });
 
-var infowindow1 = new google.maps.InfoWindow({
-  content: "<h3>Test 1</h3><p>some address</p>"
+constants['gmap']['markers'].forEach( function(marker) {
+  var infowindow = new google.maps.InfoWindow({
+    content: marker['infowindow']
+  });
+  map.addMarker({
+    title: marker['title'],
+    lat: marker['lat'],
+    lng: marker['lng'],
+    click: function(e) {
+      infowindow.open(map, this);
+    }
+  });
+
 });
 
-var infowindow2 = new google.maps.InfoWindow({
-  content: "<h3>Test 2</h3><p>address blah blah</p>"
-});
-
-map.addMarker({
-  title: 'Test 1',
-  lat: 35.515446,
-  lng: 24.018132,
-  click: function(e) {
-    infowindow1.open(map, this);
-  }
-});
-
-map.addMarker({
-  title: 'Test 2',
-  lat: 35.5128611,
-  lng: 24.0153056,
-  click: function(e) {
-    infowindow2.open(map, this);
-  }
-});
 }
 
 $(document).ready(function() {
