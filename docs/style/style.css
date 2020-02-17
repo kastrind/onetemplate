@@ -38,6 +38,18 @@
           transform: translateY(0);
   transition: margin ease-in 0.5s;
 }
+.site-header nav.menu {
+  max-width: 90vw;
+  max-height: 50vh;
+  overflow: auto;
+}
+@media screen and (min-width: 768px) {
+  .site-header nav.menu {
+    max-width: initial;
+    max-height: initial;
+    overflow: initial;
+  }
+}
 .site-header-animated {
   transition: margin ease-in 0.5s, -webkit-transform ease-in 0.5s;
   transition: transform ease-in 0.5s, margin ease-in 0.5s;
@@ -345,8 +357,12 @@
 .site-header .header-wrapper nav.menu ul li a .point {
   font-size: 1.2rem;
   transition: all linear 0.5s;
-  display: inline-block;
+  display: inline-flex;
   margin-left: 0.6rem;
+  width: 1.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
 }
 .site-header .header-wrapper nav.menu ul li a .point-down {
   -webkit-transform: rotate(90deg);

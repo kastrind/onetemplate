@@ -8,7 +8,7 @@ class Header {
     //the site header
     this.siteHeader = $(".site-header");
 
-    this.originalHeaderHeight = this.siteHeader.outerHeight();
+    this.originalHeaderHeight = this.siteHeader.height();
 
     //the site header rows the style of which to alternate
     this.siteHeaderRows = $(".site-header").find(".header-wrapper-row");
