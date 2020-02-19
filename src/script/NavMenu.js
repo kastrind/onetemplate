@@ -41,7 +41,7 @@ class NavMenu {
 				//on mobile view
 				if (this.isMobile) {
 					//on touching a menu item, toggle its submenu visibility
-					this.menuItem.on("click", function(event) {if (event.target.hasClass("point")) event.preventDefault();});
+					this.menuItem.on("click", function(event) {if ($(event.target).hasClass("point")) event.preventDefault();});
 					this.menuItem.find("span.point").on("click", this.handleTouches.bind(this));
 					this.menuItem.off("mouseenter");
 					this.subMenu.off("mouseleave");
