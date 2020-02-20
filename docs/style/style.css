@@ -409,6 +409,8 @@
 .sidebar {
   height: 0;
   width: 0;
+  max-width: 0;
+  min-width: 0;
   position: fixed;
   top: 0;
   z-index: 400;
@@ -420,6 +422,12 @@
   opacity: 0;
   transition: all ease-in 0.5s;
   left: 0;
+}
+@media screen and (min-width: 768px) {
+  .sidebar {
+    max-width: none;
+    min-width: none;
+  }
 }
 .sidebar-is-visible {
   max-width: 50%;
@@ -816,6 +824,7 @@
 .genericFlex .col {
   min-width: 200px;
   box-sizing: border-box;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .genericFlex .col-second {

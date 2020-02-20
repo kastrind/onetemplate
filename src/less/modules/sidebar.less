@@ -13,6 +13,8 @@
 .sidebar {
     height: 0;
     width: 0;
+    max-width: 0;
+    min-width: 0;
     position: fixed;
     top: 0;
     z-index: @z-index-4;
@@ -25,6 +27,11 @@
     transition: all ease-in 0.5s;
     .sidebar-is-left-mixin();
     .sidebar-is-right-mixin();
+
+    .atMedium({
+      max-width: none;
+      min-width: none;
+    });
 
     &-is-visible {
       max-width: 50%;
