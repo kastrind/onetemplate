@@ -179,6 +179,9 @@ body h6 {
 
 section.generic-sec {
   background-color: #f0f0f0ce;
+  -webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.75);
 
   h1, h2, h3, h4, h5, h6 {
     padding: 1rem 0 0 1rem;
@@ -227,6 +230,37 @@ section.album-text-sec {
 
 section.gallery-sec {
   padding: 1rem;
+}
+
+
+.bloglist .previewlist-item {
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.75);
+}
+
+.bloglist .previewlist-item {
+  .tagline {
+    font-style: italic;
+    color: #666666;
+  }
+  .date {
+    text-align:right;
+  }
+}
+
+.textcontent {
+  .summary {
+    color: #666666;
+    font-size: 1rem;
+    
+    .atMedium({
+      font-size: 1.1rem;
+    });
+    .atLarge({
+      font-size: 1.2rem;
+    });
+  }
 }
 
 li.lslide {
