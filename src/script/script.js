@@ -33,7 +33,19 @@ var initMap = function() {
     el: '#map',
     lat: 35.5145555,
     lng: 23.9273744,
-    zoom: 15
+    zoom: 15,
+    styles: [
+      {
+        featureType: "poi.business",
+        stylers: [
+          { visibility: "off" }
+        ]   
+      }
+    ]
+  });
+
+  var infowindow = new google.maps.InfoWindow({
+    content: "<img src=\"assets/img/logo.svg\" alt=\"Diktamo House\" title=\"Diktamo House\" /><p><a style=\"color: #536928;font-weight: 500;\" href=\"https://goo.gl/maps/ku3vLWcPfzz\" target=\"_blank\">Find us on Google Maps</a></p>"
   });
 
   map.addMarker({
@@ -41,7 +53,7 @@ var initMap = function() {
     lat: 35.5145555,
     lng: 23.9273744,
     click: function(e) {
-      //alert('You clicked on this marker!');
+      infowindow.open(map, this);
     }
   });
 }
