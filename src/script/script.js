@@ -33,28 +33,29 @@ new BackToTop("75%", 900, "swing");
 console.log('Javascript working.');
 
 var initMap = function() {
-  var map = new GMaps({
-    el: '#map',
-    lat: constants['gmap']['lat'],
-    lng: constants['gmap']['lng'],
-    zoom: constants['gmap']['zoom'],
-    styles: constants['gmap']['styles']
-  });
-
-  constants['gmap']['markers'].forEach( function(marker) {
-    var infowindow = new google.maps.InfoWindow({
-      content: marker['infowindow']
+  if (constants) {
+    var map = new GMaps({
+      el: '#map',
+      lat: constants['gmap']['lat'],
+      lng: constants['gmap']['lng'],
+      zoom: constants['gmap']['zoom'],
+      styles: constants['gmap']['styles']
     });
-    map.addMarker({
-      title: marker['title'],
-      lat: marker['lat'],
-      lng: marker['lng'],
-      click: function(e) {
-        infowindow.open(map, this);
-      }
-    });
-  });
 
+    constants['gmap']['markers'].forEach( function(marker) {
+      var infowindow = new google.maps.InfoWindow({
+        content: marker['infowindow']
+      });
+      map.addMarker({
+        title: marker['title'],
+        lat: marker['lat'],
+        lng: marker['lng'],
+        click: function(e) {
+          infowindow.open(map, this);
+        }
+      });
+    });
+  }
 }
 
 $(document).ready(function() {
