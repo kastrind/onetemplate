@@ -123,13 +123,13 @@ $(document).ready(function() {
 
   // first slide slogan animation
   $(window).on("load", function(event) {
-    TweenMax.fromTo($('.owl-item.active .slide-slogan'), 9, {opacity: 0, right: 0}, {opacity: .8,  right: '80%', repeat: -1});
+    TweenMax.fromTo($('.owl-item.active .slide-slogan'), 9, {opacity: 0.1, left: '-20%'}, {opacity: 1,  left: '80%', repeat: -1});
   });
 
   // slogan animations for the next slides
   owl.on('changed.owl.carousel', function(event) {
     var cur_slogan = $(this).find(".owl-stage").children().eq(event.item.index).find(".slide-slogan");
-    var test = TweenMax.fromTo(cur_slogan, 9, {opacity: 0, right: 0}, {opacity: .8,  right: '80%', repeat: -1});
+    var test = TweenMax.fromTo(cur_slogan, 9, {opacity: 0.1, left: '-20%'}, {opacity: 1,  left: '80%', repeat: -1});
   });
 
 });
