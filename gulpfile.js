@@ -95,7 +95,7 @@ return gulp.src('index.html')
     .pipe(gulp.dest('dist'));
 }));
 
-gulp.task('webpack-prod', function () {
+gulp.task('webpack-prod', async function () {
   webpackConfig.devtool = 'source-map';
   webpackConfig.mode = 'production';
 });

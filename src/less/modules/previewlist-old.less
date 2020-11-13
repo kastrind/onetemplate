@@ -1,4 +1,3 @@
-
 .previewlist {
   display: grid;
   grid-template-columns: 1fr;
@@ -8,16 +7,12 @@
     grid-template-columns: 1fr 1fr;
   });
 
-  .atLarge({
-    grid-template-columns: 1fr 1fr 1fr;
-  });
-
   &-item {
     width: 100%;
     padding: @previewlist-item-padding;
     box-sizing: border-box;
     color: if((@previewlist-bg-light), @previewlist-font-color-dark, @previewlist-font-color-light);
-    background: @previewlist-background-color;
+    background-color: @previewlist-background-color;
     border-radius: @previewlist-border-radius;
     border: @previewlist-border;
 

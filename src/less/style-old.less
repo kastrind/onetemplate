@@ -38,11 +38,6 @@ body * {
   font-family: @font-family;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .margin-left-right {
   margin: 0 @page-margin-left-right 0 @page-margin-left-right;
 }
@@ -131,8 +126,8 @@ a {
   background-color: @back-to-top-background-color;
 
   &-hidden {
-	opacity: 0;
-	cursor: initial;
+    opacity: 0;
+    cursor: initial;
   }
 
   .caretup {
@@ -152,7 +147,7 @@ a {
   transition: opacity 1s;
 
   .splash-logo {
-    width: 20%;
+    width: 10%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -174,24 +169,13 @@ a {
   }
 }
 
-/* Standard syntax */
-@keyframes example {
-  0%   {width: 0vw;}
-  50%  {width: 10vw;}
-  100% {width: 0vw;}
-}
-
 #lightGallery {
-	li.lslide {
-	  img {
-		height: auto;
-		max-width: 100%;
-	  }
-	}
-}
-
-.previewlist-item:nth-child(2n) {
-  background-color: #efefef;
+  li.lslide {
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
 }
 
 .loadingMore {

@@ -9,18 +9,17 @@
 @widthMedium: 768px;
 @widthLarge: 1100px;
 
-@main-content-max-width-large: 100vw;
-@main-content-max-width-medium: 100vw;
+@main-content-max-width-large: 80vw;
+@main-content-max-width-medium: 90vw;
 
-//@body-background: black url(@body-background-path) no-repeat fixed center;
-@body-background: rgb(61, 61, 61);
+@body-background: black url(@body-background-path) no-repeat fixed center;
 
 @background-color: #dddddd;
 @bg-light: boolean(luma(@background-color) > 40%);
 @font-color-dark: #333333;
 @font-color-light: #dddddd;
 
-@font-family: "Open Sans", sans-serif;
+@font-family: "Montserrat", sans-serif;
 
 @page-margin-left-right: 5vw;
 @margin-top: 10vh;
@@ -32,35 +31,35 @@
 @z-index-4: 400;
 @z-index-5: 500;
 
-@loading-overlay-color: #fefefe;
+@loading-overlay-color: black;
 
 
 
 /* Header */
 
 @header-is-fixed: false;
-@header-font-family: "Open Sans", sans-serif;
+@header-font-family: "Montserrat", sans-serif;
 @menu-font-color-dark: #333333;
 @menu-font-color-light: #dddddd;
 @menu-font-size: 1.2rem;
 @menu-font-weight: 100;
 
 //regular header, first and second row, gradient
-@header-background-color-1: #505050;
+@header-background-color-1: #303030;
 @header-bg-1-light: boolean(luma(@header-background-color-1) > 40%);
 @header-border-1: none;
-@header-background-color-2: rgb(208, 208, 208);
+@header-background-color-2: #c0c0c0;
 @header-bg-2-light: boolean(luma(@header-background-color-2) > 40%);
 @header-border-2: none;
-@header-has-gradient: true;
-@header-gradient: linear-gradient(90deg, rgba(208,208,208,1) 0%, rgba(240,240,240,1) 50%, rgba(208,208,208,1) 100%);;
+@header-has-gradient: false;
+@header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0,0,0,0) 100%);
 
 
 //alternative header, first and second row, gradient
 @header-background-alt-color-1: #c0c0c0;
 @header-bg-alt-1-light: boolean(luma(@header-background-alt-color-1) > 40%);
 @header-border-alt-1: none;
-@header-background-alt-color-2: #e0e0e0;
+@header-background-alt-color-2: #303030;
 @header-bg-alt-2-light: boolean(luma(@header-background-alt-color-2) > 40%);
 @header-border-alt-2: none;
 @header-has-gradient-alt: false;
@@ -72,11 +71,10 @@
 //alternative button colors
 @header-nav-btn-background-alt-color: #f0f0f0;
 @header-nav-btn-alt-color: #303030;
-@header-nav-btn-padding: 5px;
+@header-nav-btn-padding: 8px;
 @header-nav-btn-bar-height: 5px;
-@header-nav-btn-radius: 0;
-@header-nav-btn-bar-radius: 0;
-@header-nav-btn-bar-gap: 5x;
+@header-nav-btn-radius: 3px;
+@header-nav-btn-bar-radius: 3px;
 
 //header submenu colors
 @header-submenu-background-color:  #f0f0f0;
@@ -117,7 +115,7 @@
 
 @slideshow-background-color: white;
 @slideshow-border-radius: none;
-@slideshow-font-size: 2rem;
+@slideshow-font-size: 1.3rem;
 @slideshow-font-color: #333333;
 @slideshow-font-weight: 100;
 @slideshow-text-align: center;
@@ -167,17 +165,17 @@
 
 /* Previewlist */
 
-@previewlist-grid-gap:  0rem;
+@previewlist-grid-gap:  1rem;
 @previewlist-item-padding: 0.5rem;
 @previewlist-font-size: 1rem;
-@previewlist-background-color: #fefefe;
+@previewlist-background-color: rgba(0, 0, 0, 0.8);
 @previewlist-bg-light: boolean(luma(@previewlist-background-color) > 40%);
 @previewlist-font-color-light: #cccccc;
 @previewlist-font-color-dark: #333333;
 @previewlist-border: none;
-@previewlist-border-radius: 0px;
+@previewlist-border-radius: 10px;
 @previewlist-more-link-color: #c0c0c0;
-@previewlist-img-height: 100px;
+@previewlist-img-height: 60px;
 @previewlist-img-padding: 0 0.5rem 0.5rem 0;
 
 
@@ -195,7 +193,7 @@
 @previewlist-side-border: none;
 @previewlist-side-border-radius: 0;
 @previewlist-side-more-link-color: #c0c0c0;
-@previewlist-side-img-height: 100px;
+@previewlist-side-img-height: 60px;
 @previewlist-side-img-padding: 0 0.5rem 0 0;
 
 
@@ -238,12 +236,12 @@
 
 /* Parallax */
 
-@parallax-container-height: 250px;
+@parallax-container-height: 300px;
 @parallax-overlay: true;
-@parallax-overlay-color: black;
-@parallax-overlay-opacity: 0.2;
-@parallax-font-size: 2rem;
-@parallax-font-weight: 200;
+@parallax-overlay-color: black; // can also be a gradient
+@parallax-overlay-opacity: 0.4;
+@parallax-font-size: 1rem;
+@parallax-font-weight: 100;
 @parallax-text-shadow: 2px 2px 3px black;
 
 
@@ -259,24 +257,24 @@
 
 @back-to-top-background-color: black;
 @back-to-top-color: white;
-@back-to-top-font-size: 1px; //still relative because of the contained svg dimensions
+@back-to-top-font-size: 0.5px; //still relative because of the contained svg dimensions
 @back-to-top-padding: 0 0.5rem;
 
 
 
 /* Footer */
 
-@footer-background-color: #303030;
+@footer-background-color: #303040;
 @footer-bg-light: boolean(luma(@footer-background-color) > 40%);
 @footer-font-color-dark: #333333;
-@footer-font-color-light: #dddddd;
+@footer-font-color-light: #cccccc;
 @footer-border: 1px solid darken(@footer-background-color, 5%);
 
 
 
 /* Modal */
 
-@modal-overlay-color: rgba(0, 0, 0, 0.7);
+@modal-overlay-color: rgba(0, 0, 0, 0.7); // can also be a gradient
 @modal-background-color: rgba(200, 200, 200, .94);
 @modal-bg-light: boolean(luma(@modal-background-color) > 40%);
 @modal-font-color-dark: #333333;
